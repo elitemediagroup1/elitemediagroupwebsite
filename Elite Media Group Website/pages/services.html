@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Elite Media Group</title>
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    /* ===== Services Grid ===== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+      margin: 60px auto;
+      max-width: 1100px;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 28px;
+      border-radius: 14px;
+      text-align: left;
+      transition: transform 0.25s ease, box-shadow 0.35s ease;
+      backdrop-filter: blur(4px);
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0, 191, 166, 0.25);
+    }
+
+    .service-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .service-description {
+      font-size: 1rem;
+      color: var(--gray);
+      line-height: 1.5;
+    }
+
+    /* Button */
+    .back-btn {
+      display: inline-block;
+      margin: 40px auto 20px;
+      padding: 12px 26px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--teal);
+      border: 2px solid var(--teal);
+      border-radius: 8px;
+      transition: 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: var(--teal);
+      color: #000;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Navigation ======= -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="../index.html">
+          <img src="../assets/logo.png" alt="Elite Media Group Logo" class="nav-logo" />
+        </a>
+      </div>
+
+      <div class="nav-center">
+        <span class="nav-title">Elite Media Group</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="/pages/about.html">About Us</a></li>
+        <li><a href="/pages/services.html">Services</a></li>
+        <li><a href="/pages/lead-form.html">Get in Touch</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ======= Page Content ======= -->
+  <div class="page-content">
+
+    <h1 style="margin-bottom: 1.5rem;">Our Services</h1>
+
+    <p style="max-width: 850px; margin: 0 auto 3rem;">
+      Elite Media Group is a full-funnel growth engine built at the intersection of
+      <strong>influencer strategy</strong>, <strong>performance media</strong>,
+      <strong>funnel optimization</strong>, and next-generation
+      <strong>agentic AI systems</strong>.
+      <br><br>
+      We don’t run campaigns — <strong>we engineer outcomes</strong>.
+    </p>
+
+    <!-- ======= Services Grid ======= -->
+    <div class="services-grid">
+
+      <!-- Influencer -->
+      <div class="service-card">
+        <h3 class="service-title">Engineered Influencer Marketing</h3>
+        <p class="service-description">
+          Creator campaigns built for performance — not vanity metrics.  
+          We source, script, and optimize creators across TikTok, IG, YouTube, micro-local talent, niche vertical experts, and UGC specialists.
+        </p>
+      </div>
+
+      <!-- Paid Media -->
+      <div class="service-card">
+        <h3 class="service-title">Performance Media</h3>
+        <p class="service-description">
+          Full-service media buying across TikTok, Meta, Google/YouTube, and CTV.  
+          We run rapid creative testing and optimize for CAC, ROAS, CPL, or custom outcomes.
+        </p>
+      </div>
+
+      <!-- Funnels -->
+      <div class="service-card">
+        <h3 class="service-title">Landing Pages & Funnel Architecture</h3>
+        <p class="service-description">
+          Conversion-first landing pages, multi-step funnels, CRO, and lead distribution systems.  
+          Designed for measurable outcomes and scalable acquisition.
+        </p>
+      </div>
+
+      <!-- AI Systems -->
+      <div class="service-card">
+        <h3 class="service-title">Agentic AI Systems</h3>
+        <p class="service-description">
+          AI-powered nurturing, qualification, lead scoring, and multi-step conversational journeys.  
+          Real-time responses, dynamic personalization, and fraud protection.
+        </p>
+      </div>
+
+      <!-- Lead Gen -->
+      <div class="service-card">
+        <h3 class="service-title">Lead Generation & Pay-Per-Call</h3>
+        <p class="service-description">
+          High-intent acquisition engines using paid media, influencers, search, and AI-driven routing.  
+          SSDI, clinical trials, auto, home services, Medicare, political, and more.
+        </p>
+      </div>
+
+      <!-- Local + National Programs -->
+      <div class="service-card">
+        <h3 class="service-title">Local & National Influencer Programs</h3>
+        <p class="service-description">
+          Hyperlocal programs that sound like the neighborhoods they live in —  
+          with the ability to scale nationally using paid media amplification.
+        </p>
+      </div>
+
+      <!-- Content Production -->
+      <div class="service-card">
+        <h3 class="service-title">Creative & UGC Production</h3>
+        <p class="service-description">
+          Scripted creator ads, UGC, branded content, product showcases, demos, testimonials, narrative ads, and more — all optimized for conversion and Spark Ads performance.
+        </p>
+      </div>
+
+      <!-- Political -->
+      <div class="service-card">
+        <h3 class="service-title">Political & Advocacy Influence</h3>
+        <p class="service-description">
+          Community influencers, GOTV engagement, voter targeting, issue-based messaging, and district-level content.  
+          Built for measurable persuasion and turnout.
+        </p>
+      </div>
+
+      <!-- Clinical -->
+      <div class="service-card">
+        <h3 class="service-title">Clinical Trial Recruitment</h3>
+        <p class="service-description">
+          High-compliance patient acquisition funnels for pharmaceutical partners.  
+          Pre-screening logic, AI routing, medical criteria flows, and integrated reporting.
+        </p>
+      </div>
+
+    </div>
+
+    <a class="back-btn" href="../index.html">← Back to Home</a>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="year"></span> Elite Media Group. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
