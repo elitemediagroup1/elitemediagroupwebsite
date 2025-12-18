@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Elite Media Group</title>
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    .contact-container {
+      padding-top: 150px;
+      max-width: 750px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-container h1 {
+      margin-bottom: 1rem;
+    }
+
+    .contact-container p {
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      color: var(--gray);
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    form {
+      text-align: left;
+      margin-top: 20px;
+      background: rgba(255,255,255,0.05);
+      padding: 40px 30px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(4px);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: white;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      background: rgba(255,255,255,0.08);
+      color: white;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #aaa;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      background: rgba(255,255,255,0.12);
+    }
+
+    .form-button {
+      display: inline-block;
+      width: 100%;
+      padding: 14px 0;
+      background: var(--button-gradient);
+      color: white;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s ease;
+    }
+
+    .form-button:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, #00a896, #00695f);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Navbar ======= -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="../index.html">
+          <img src="../assets/logo.png" alt="Elite Media Group Logo" class="nav-logo" />
+        </a>
+      </div>
+
+      <div class="nav-center">
+        <span class="nav-title">Elite Media Group</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/pages/about.html">About Us</a></li>
+        <li><a href="/pages/services.html">Services</a></li>
+        <li><a href="/pages/contact.html">Get in Touch</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ======= Contact Page ======= -->
+  <div class="contact-container">
+    <h1>Get in Touch</h1>
+
+    <p>
+      Whether you're exploring influencer campaigns, full-funnel growth systems, political outreach, 
+      or AI-powered acquisition — we’d love to learn more about your goals.
+      <br><br>
+      A member of our team will respond within 24 hours.
+    </p>
+
+    <!-- Netlify Contact Form -->
+    <form name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact" />
+
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required placeholder="Full name" />
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required placeholder="email@example.com" />
+
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" rows="6" required placeholder="Tell us how we can help…"></textarea>
+
+      <button type="submit" class="form-button">Send Message</button>
+    </form>
+  </div>
+
+  <!-- ======= Footer ======= -->
+  <footer>
+    <p>&copy; <span id="year"></span> Elite Media Group. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

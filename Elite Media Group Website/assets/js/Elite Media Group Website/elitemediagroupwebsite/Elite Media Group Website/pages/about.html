@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Elite Media Group</title>
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    /* === Logo Section Styling === */
+
+    .founder-section {
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 3rem 2rem;
+      background: rgba(255,255,255,0.06);
+      border-radius: 16px;
+      backdrop-filter: blur(4px);
+      text-align: center;
+    }
+
+    .founder-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .founder-section p {
+      color: var(--gray);
+      font-size: 1.1rem;
+      max-width: 750px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 30px;
+      align-items: center;
+      justify-items: center;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .brand-logo {
+      width: 120px;
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+      filter: grayscale(100%) brightness(1.4);
+    }
+
+    @keyframes fadePop {
+      0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .fade-in {
+      animation: fadePop 0.8s ease forwards;
+    }
+
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
+    .delay-4 { animation-delay: 0.8s; }
+    .delay-5 { animation-delay: 1.0s; }
+    .delay-6 { animation-delay: 1.2s; }
+    .delay-7 { animation-delay: 1.4s; }
+    .delay-8 { animation-delay: 1.6s; }
+
+    .quote {
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--teal);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Navigation ======= -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="../index.html">
+          <img src="../assets/logo.png" alt="Elite Media Group Logo" class="nav-logo" />
+        </a>
+      </div>
+
+      <div class="nav-center">
+        <span class="nav-title">Elite Media Group</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/pages/about.html">About Us</a></li>
+        <li><a href="/pages/lead-form.html">Get in Touch</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ======= Page Content ======= -->
+  <div class="page-content">
+
+    <h1 style="margin-bottom: 2rem;">About Elite Media Group</h1>
+
+    <p style="max-width: 800px; margin: 0 auto 3rem;">
+      Elite Media Group is a full-funnel growth partner operating at the intersection of
+      <strong>influencer marketing</strong>, <strong>performance media</strong>,
+      <strong>funnel architecture</strong>, and next-generation <strong>agentic AI systems</strong>.
+      <br><br>
+      We don’t run campaigns — <strong>we architect outcomes</strong>.
+    </p>
+
+    <!-- ===== Founder Section with Logo Animation ===== -->
+    <section class="founder-section">
+      <h2>Built by One of the Industry’s Most Versatile Operators</h2>
+
+      <p>
+        EMG was founded by <strong>Charlie Brugnolotti</strong>, a strategist and operator with 15+ years of experience
+        building growth systems across entertainment, brand marketing, politics, performance media, and AI.
+      </p>
+
+      <p>Charlie has led major initiatives for global brands including:</p>
+
+      <!-- LOGO GRID WITH ANIMATIONS -->
+      <div class="logo-rotator">
+  <img src="../assets/nissan.jpg" class="logo-slide active" alt="Nissan" />
+  <img src="../assets/chevy.jpg" class="logo-slide" alt="Chevy" />
+  <img src="../assets/pfizer.jpg" class="logo-slide" alt="Pfizer" />
+  <img src="../assets/enfamil.jg" class="logo-slide" alt="Enfamil" />
+  <img src="../assets/sanofi.png" class="logo-slide" alt="Sanofi" />
+  <img src="../assets/hershey.jpg" class="logo-slide" alt="Hershey" />
+  <img src="../assets/sony.jpg" class="logo-slide" alt="Sony Pictures" />
+  <img src="../assets/mars.jpg" class="logo-slide" alt="Mars" />
+</div>
+
+      <p class="quote">“He sees around corners.”</p>
+    </section>
+
+    <!-- ===== Mission ===== -->
+    <section>
+      <h2>Our Mission</h2>
+
+      <p>
+        To build modern influence and full-funnel growth systems that scale brands, drive meaningful outcomes,
+        and connect businesses to the audiences that matter most.
+      </p>
+
+      <p>
+        We exist to turn <strong>attention into action</strong> — and action into measurable growth.
+      </p>
+    </section>
+
+    <!-- ===== What Makes Us Different ===== -->
+    <section>
+      <h2>What Makes EMG Different</h2>
+
+      <ul class="bullet-list">
+        <li><strong>Engineered Influencer Marketing</strong> — We don’t “pick creators.” We build creator-led conversion systems.</li>
+        <li><strong>Performance Media at Scale</strong> — TikTok, Meta, Google/YouTube, CTV, and cross-platform optimization.</li>
+        <li><strong>Agentic AI Systems (Our Moat)</strong> — AI agents that nurture, qualify, educate, and guide prospects in real time.</li>
+        <li><strong>Full-Funnel Architecture</strong> — Landing pages, multi-step funnels, CRO, and lifecycle messaging.</li>
+        <li><strong>Local + National Mastery</strong> — Hyperlocal influencer programs + national-scale performance media.</li>
+        <li><strong>Outcome-First Operations</strong> — If it can be measured, we can build a funnel to achieve it.</li>
+        <li><strong>Speed & Precision</strong> — We move in days, not weeks.</li>
+        <li><strong>We’re partners, not vendors</strong> — We think, solve, and operate like an extension of your team.</li>
+      </ul>
+    </section>
+
+    <!-- ===== Capabilities Summary ===== -->
+    <section>
+      <h2>Our Capabilities</h2>
+
+      <ul class="bullet-list">
+        <li>Influencer sourcing, strategy & content production</li>
+        <li>UGC + creator ads for Spark/whitelisted amplification</li>
+        <li>Paid media campaigns across TikTok, Meta, Google/YouTube, CTV</li>
+        <li>Landing page development & conversion-rate optimization</li>
+        <li>AI-powered nurturing, lead scoring & multi-step logic flows</li>
+        <li>Multi-touch funnels for sales, leads, trials, or voter engagement</li>
+        <li>Analytics dashboards and performance insights</li>
+        <li>Political & advocacy influence programs</li>
+      </ul>
+
+      <p>
+        Everything we build is designed to drive measurable, trackable, outcome-based growth.
+      </p>
+    </section>
+
+  </div>
+
+  <!-- ======= Footer ======= -->
+  <footer>
+    <p>&copy; <span id="year"></span> Elite Media Group. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <footer>
+  <p>&copy; <span id="year"></span> Elite Media Group. All rights reserved.</p>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
+
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lead Generation Inquiry | Elite Media Group</title>
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    /* ===== Layout ===== */
+    .form-wrapper {
+      padding-top: 160px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding-left: 20px;
+      padding-right: 20px;
+      text-align: center;
+    }
+
+    .form-wrapper h1 {
+      margin-bottom: 1rem;
+    }
+
+    .form-wrapper p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      color: var(--gray);
+      line-height: 1.5;
+    }
+
+    /* ===== Form Card ===== */
+    .form-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 40px 35px;
+      backdrop-filter: blur(4px);
+      max-width: 900px;
+      margin: 0 auto 80px;
+      text-align: left;
+    }
+
+    label {
+      font-weight: 600;
+      margin-top: 20px;
+      display: block;
+      color: white;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.08);
+      color: white;
+      font-size: 1rem;
+      transition: background 0.25s ease;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      background: rgba(255,255,255,0.14);
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #aaa;
+    }
+
+    .checkbox-group {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+    }
+
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      font-weight: 400;
+      gap: 6px;
+    }
+
+    /* ===== Submit Button ===== */
+    .form-button {
+      margin-top: 40px;
+      padding: 14px 0;
+      width: 100%;
+      background: var(--button-gradient);
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .form-button:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, #00a896, #00695f);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .form-card {
+        padding: 30px 20px;
+      }
+
+      .form-button {
+        width: 100%;
+      }
+
+      .checkbox-group {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="../index.html">
+          <img src="../assets/logo.png" alt="Elite Media Group Logo" class="nav-logo" />
+        </a>
+      </div>
+
+      <div class="nav-center">
+        <span class="nav-title">Elite Media Group</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/pages/about.html">About Us</a></li>
+        <li><a href="/pages/services.html">Services</a></li>
+        <li><a href="/pages/contact.html">Get in Touch</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- ===== FORM WRAPPER ===== -->
+  <div class="form-wrapper">
+
+    <h1>Lead Generation & Performance Marketing Intake</h1>
+    <p>
+      EMG builds high-intent lead funnels using performance media, landing pages, and agentic AI follow-up systems.  
+      Tell us what outcome you want — calls, leads, appointments, applications, customers — and we’ll design the engine to deliver it.
+    </p>
+
+    <div class="form-card">
+
+      <!-- Netlify Form -->
+      <form name="lead-gen" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="lead-gen" />
+
+        <!-- SECTION 1 — Contact Info -->
+        <h2 style="margin-bottom: 10px;">Contact Information</h2>
+
+        <label>Full Name*</label>
+        <input type="text" name="name" required />
+
+        <label>Company Name*</label>
+        <input type="text" name="company" required />
+
+        <label>Work Email*</label>
+        <input type="email" name="email" required />
+
+        <label>Phone Number (Optional)</label>
+        <input type="tel" name="phone" />
+
+        <label>Website URL*</label>
+        <input type="url" name="website" required />
+
+
+        <!-- SECTION 2 — Lead Generation Info -->
+        <h2 style="margin-top: 40px; margin-bottom: 10px;">Lead Generation Details</h2>
+
+        <label>Industry*</label>
+        <select name="industry" required>
+          <option value="">Select an industry</option>
+          <option>SSDI</option>
+          <option>Medicare / Health Insurance</option>
+          <option>Auto Insurance</option>
+          <option>Home Services</option>
+          <option>Legal / Mass Tort</option>
+          <option>Real Estate</option>
+          <option>Finance</option>
+          <option>SaaS</option>
+          <option>E-commerce</option>
+          <option>Healthcare</option>
+          <option>Education</option>
+          <option>Automotive</option>
+          <option>Political</option>
+          <option>Marketing / Advertising</option>
+          <option>Other</option>
+        </select>
+
+        <label>Describe Your Target Audience*</label>
+        <textarea name="audience" rows="4" placeholder="Age, location, qualifying criteria, behaviors…" required></textarea>
+
+        <label>Desired Lead Volume*</label>
+        <select name="volume" required>
+          <option value="">Select an option</option>
+          <option>10–50 leads/month</option>
+          <option>50–200 leads/month</option>
+          <option>200–500 leads/month</option>
+          <option>500+ leads/month</option>
+          <option>Not sure — advise me</option>
+        </select>
+
+        <label>Lead Qualification Requirements</label>
+        <textarea name="criteria" rows="4" placeholder="What defines a qualified lead for you?"></textarea>
+
+        <label>Campaign Objective*</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="objective" value="Inbound Calls" /> Inbound Calls</label>
+          <label><input type="checkbox" name="objective" value="Form Fills" /> Form Fills</label>
+          <label><input type="checkbox" name="objective" value="Applications" /> Applications</label>
+          <label><input type="checkbox" name="objective" value="Warm Transfers" /> Warm Transfers</label>
+          <label><input type="checkbox" name="objective" value="Appointment Booking" /> Appointment Booking</label>
+          <label><input type="checkbox" name="objective" value="Sales" /> Sales</label>
+          <label><input type="checkbox" name="objective" value="Other" /> Other</label>
+        </div>
+
+        <label>Monthly Budget*</label>
+        <select name="budget" required>
+          <option value="">Select a range</option>
+          <option>Under $1,000</option>
+          <option>$1,000 – $5,000</option>
+          <option>$5,000 – $15,000</option>
+          <option>$15,000 – $50,000</option>
+          <option>$50,000+</option>
+          <option>Flexible / Discuss</option>
+        </select>
+
+        <label>What challenges are you facing with your current lead flow?</label>
+        <textarea name="challenges" rows="3" placeholder="Optional"></textarea>
+
+        <label>Preferred Communication Method</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="communication" value="Email" /> Email</label>
+          <label><input type="checkbox" name="communication" value="Phone Call" /> Phone Call</label>
+          <label><input type="checkbox" name="communication" value="Video Call" /> Video Call</label>
+        </div>
+
+        <button type="submit" class="form-button">
+          Get Your Lead Generation Blueprint
+        </button>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>&copy; <span id="year"></span> Elite Media Group. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

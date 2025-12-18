@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Start an Influencer Campaign | Elite Media Group</title>
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    /* ===== Layout Wrappers ===== */
+    .form-wrapper {
+      padding-top: 160px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding-left: 20px;
+      padding-right: 20px;
+      text-align: center;
+    }
+
+    .form-wrapper h1 {
+      margin-bottom: 1rem;
+    }
+
+    .form-wrapper p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      color: var(--gray);
+    }
+
+    /* ===== Form Card ===== */
+    .form-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 40px 35px;
+      backdrop-filter: blur(4px);
+      max-width: 900px;
+      margin: 0 auto 80px;
+      text-align: left;
+    }
+
+    label {
+      font-weight: 600;
+      margin-top: 20px;
+      display: block;
+      color: var(--white);
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.08);
+      color: white;
+      font-size: 1rem;
+      transition: background 0.25s ease;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      background: rgba(255,255,255,0.14);
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #aaa;
+    }
+
+    .checkbox-group {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+    }
+
+    .checkbox-group label {
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ===== CTA Button ===== */
+    .form-button {
+      margin-top: 40px;
+      padding: 14px 0;
+      width: 100%;
+      background: var(--button-gradient);
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .form-button:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, #00a896, #00695f);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .form-card {
+        padding: 30px 20px;
+      }
+
+      .form-button {
+        width: 100%;
+      }
+
+      .checkbox-group {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="../index.html">
+          <img src="../assets/logo.png" alt="Elite Media Group Logo" class="nav-logo" />
+        </a>
+      </div>
+
+      <div class="nav-center">
+        <span class="nav-title">Elite Media Group</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="/pages/about.html">About Us</a></li>
+        <li><a href="/pages/services.html">Services</a></li>
+        <li><a href="/pages/contact.html">Get in Touch</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== FORM WRAPPER ===== -->
+  <div class="form-wrapper">
+
+    <h1>Influencer Campaign Intake Form</h1>
+    <p>
+      EMG builds engineered influencer systems — not random creator posts.  
+      Tell us about your brand and objectives, and we’ll design a high-performance creator strategy tailored to your outcome.
+    </p>
+
+    <!-- ===== FORM CARD ===== -->
+    <div class="form-card">
+
+      <!-- Netlify Form -->
+      <form name="influencer-campaign" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="influencer-campaign" />
+
+        <!-- ============================
+             CONTACT INFORMATION
+        ============================= -->
+        <h2 style="margin-bottom: 10px;">Contact Information</h2>
+
+        <label>Full Name*</label>
+        <input type="text" name="name" required placeholder="Your Name" />
+
+        <label>Company / Brand Name*</label>
+        <input type="text" name="company" required placeholder="Brand or Company" />
+
+        <label>Work Email*</label>
+        <input type="email" name="email" required placeholder="you@yourcompany.com" />
+
+        <label>Phone Number (Optional)</label>
+        <input type="tel" name="phone" placeholder="(Optional)" />
+
+        <label>Website URL*</label>
+        <input type="url" name="website" required placeholder="https://yourcompany.com" />
+
+        <label>Social Media Handles</label>
+        <input type="text" name="socials" placeholder="@brand (Instagram, TikTok, LinkedIn…)" />
+
+
+        <!-- ============================
+             CAMPAIGN INFORMATION
+        ============================= -->
+        <h2 style="margin-top: 40px; margin-bottom: 10px;">Campaign Information</h2>
+
+        <label>Industry*</label>
+        <select name="industry" required>
+          <option value="">Select your industry</option>
+          <option>Fashion</option>
+          <option>Beauty</option>
+          <option>Tech</option>
+          <option>Food & Beverage</option>
+          <option>Home Goods</option>
+          <option>Travel</option>
+          <option>Gaming</option>
+          <option>Health & Wellness</option>
+          <option>Automotive</option>
+          <option>Finance</option>
+          <option>B2B</option>
+          <option>Other</option>
+        </select>
+
+        <label>Product(s) or Service(s) to Promote*</label>
+        <textarea name="products" rows="3" required></textarea>
+
+        <label>Campaign Objectives*</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="objectives" value="Brand Awareness" /> Brand Awareness</label>
+          <label><input type="checkbox" name="objectives" value="Sales / Conversions" /> Sales / Conversions</label>
+          <label><input type="checkbox" name="objectives" value="Website Traffic" /> Website Traffic</label>
+          <label><input type="checkbox" name="objectives" value="Lead Generation" /> Lead Generation</label>
+          <label><input type="checkbox" name="objectives" value="Content Creation (UGC)" /> Content Creation (UGC)</label>
+          <label><input type="checkbox" name="objectives" value="Product Launch" /> Product Launch</label>
+          <label><input type="checkbox" name="objectives" value="Other" /> Other</label>
+        </div>
+
+        <label>Target Audience*</label>
+        <textarea name="audience" rows="3" required></textarea>
+
+        <label>Preferred Platforms*</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="platforms" value="Instagram" /> Instagram</label>
+          <label><input type="checkbox" name="platforms" value="TikTok" /> TikTok</label>
+          <label><input type="checkbox" name="platforms" value="YouTube" /> YouTube</label>
+          <label><input type="checkbox" name="platforms" value="Facebook" /> Facebook</label>
+          <label><input type="checkbox" name="platforms" value="LinkedIn" /> LinkedIn</label>
+          <label><input type="checkbox" name="platforms" value="Pinterest" /> Pinterest</label>
+          <label><input type="checkbox" name="platforms" value="Blogs" /> Blogs</label>
+          <label><input type="checkbox" name="platforms" value="Other" /> Other</label>
+        </div>
+
+        <label>Influencer Tier(s)</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="tiers" value="Nano" /> Nano (1k–10k)</label>
+          <label><input type="checkbox" name="tiers" value="Micro" /> Micro (10k–100k)</label>
+          <label><input type="checkbox" name="tiers" value="Mid-Tier" /> Mid-Tier (100k–500k)</label>
+          <label><input type="checkbox" name="tiers" value="Macro" /> Macro (500k–1M)</label>
+          <label><input type="checkbox" name="tiers" value="Mega" /> Mega (1M+)</label>
+          <label><input type="checkbox" name="tiers" value="Not Sure" /> Not Sure — advise me</label>
+        </div>
+
+        <label>Key Messaging / Theme</label>
+        <textarea name="messaging" rows="3"></textarea>
+
+        <label>Timeline*</label>
+        <select name="timeline" required>
+          <option value="">Select timeline</option>
+          <option>Within 1–3 months</option>
+          <option>3–6 months</option>
+          <option>Just exploring</option>
+          <option>Specific date</option>
+        </select>
+
+        <label>Approximate Budget*</label>
+        <select name="budget" required>
+          <option value="">Select your range</option>
+          <option>Under $5,000</option>
+          <option>$5,000 – $15,000</option>
+          <option>$15,000 – $50,000</option>
+          <option>$50,000+</option>
+          <option>Flexible / Discuss</option>
+        </select>
+
+        <label>Anything else?</label>
+        <textarea name="notes" rows="3"></textarea>
+
+        <!-- Submit -->
+        <button type="submit" class="form-button">Submit Campaign Inquiry</button>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>&copy; <span id="year"></span> Elite Media Group. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
