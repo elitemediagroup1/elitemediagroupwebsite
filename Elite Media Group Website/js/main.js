@@ -9,31 +9,28 @@
   // ---------- Configuration ----------
   const ROTATOR_INTERVAL = 4000; // ms
   const MOBILE_BREAKPOINT = 900; // px - close mobile nav above this
+  const FORM_TIMEOUT_MS = 12000; // ms - prevent infinite "Sending..."
 
   // ---------- Small helpers ----------
   const q = (sel, ctx = document) => ctx.querySelector(sel);
   const qa = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
-  const on = (el, evt, fn, opts) => el && el.addEventListener(evt, fn, opts);
-
-  // Safe text setter
   const setText = (el, txt) => { if (el) el.textContent = txt; };
 
   // Read a cookie value by name
   function readCookie(name) {
     if (!document.cookie) return null;
-    const match = document.cookie.match(new RegExp('(?:^|; )' + name.replace(/([.*+?^${}()|[\]\\])/g, '\\$1') + '=([^;]*)'));
+    const match = document.cookie.match(
+      new RegExp('(?:^|; )' + name.replace(/([.*+?^${}()|[\]\\])/g, '\\$1') + '=([^;]*)')
+    );
     return match ? decodeURIComponent(match[1]) : null;
   }
 
-  // ---------- DOMContentLoaded ----------
   document.addEventListener('DOMContentLoaded', () => {
 
     // --- 1) Small page utilities ---
-    // Set current year if #year exists
     const yearEl = q('#year');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
+    if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-    // Populate pageUri hidden field if exists
     const pageUriEl = q('#pageUri');
     if (pageUriEl) pageUriEl.value = window.location.href;
 
@@ -42,63 +39,73 @@
     const navLinks = document.getElementById('primary-navigation') || q('.nav-links');
 
     if (navToggle && navLinks) {
-      const focusableSelector = 'a[href], button:not([disabled]), input, textarea, select, [tabindex]:not([tabindex="-1"])';
+      const focusableSelector =
+        'a[href], button:not([disabled]), input, textarea, select, [tabindex]:not([tabindex="-1"])';
 
-      // Manage state
-      function isOpen() { return navToggle.getAttribute('aria-expanded') === 'true'; }
+      function isOpen() {
+        return navToggle.getAttribute('aria-expanded') === 'true';
+      }
+
+      function getFocusableInNav() {
+        return Array.from(navLinks.querySelectorAll(focusableSelector))
+          .filter(el => el.offsetParent !== null);
+      }
 
       function openNav() {
         navToggle.setAttribute('aria-expanded', 'true');
         navLinks.classList.add('open');
         document.body.classList.add('nav-open');
-        // focus first focusable inside nav
-        const focusables = Array.from(navLinks.querySelectorAll(focusableSelector)).filter(el => el.offsetParent !== null);
+
+        const focusables = getFocusableInNav();
         if (focusables.length) focusables[0].focus();
-        // attach a11y listeners
+
         document.addEventListener('click', outsideClickHandler);
         document.addEventListener('keydown', trapHandler);
       }
 
-      function closeNav() {
+      function closeNav({ returnFocus = true } = {}) {
         navToggle.setAttribute('aria-expanded', 'false');
         navLinks.classList.remove('open');
         document.body.classList.remove('nav-open');
-        navToggle.focus();
+
+        if (returnFocus) navToggle.focus();
+
         document.removeEventListener('click', outsideClickHandler);
         document.removeEventListener('keydown', trapHandler);
       }
 
-      // Toggle on button
       navToggle.addEventListener('click', (e) => {
         e.stopPropagation();
         if (isOpen()) closeNav(); else openNav();
       });
 
-      // Close when a link is clicked (mobile)
-      qa('.nav-links a').forEach(a => a.addEventListener('click', () => {
-        if (isOpen()) closeNav();
+      // Close when a nav link is clicked (scoped to this nav)
+      qa('a', navLinks).forEach(a => a.addEventListener('click', () => {
+        if (isOpen()) closeNav({ returnFocus: false });
       }));
 
-      // Close on outside click (keeps inside/outside detection minimal)
       function outsideClickHandler(e) {
         if (!navLinks.classList.contains('open')) return;
         if (navLinks.contains(e.target) || navToggle.contains(e.target)) return;
-        closeNav();
+        closeNav({ returnFocus: true });
       }
 
-      // Focus trap + Escape key handler
       function trapHandler(e) {
         if (!navLinks.classList.contains('open')) return;
+
         if (e.key === 'Escape') {
           e.preventDefault();
-          closeNav();
+          closeNav({ returnFocus: true });
           return;
         }
+
         if (e.key === 'Tab') {
-          const focusables = Array.from(navLinks.querySelectorAll(focusableSelector)).filter(el => el.offsetParent !== null);
+          const focusables = getFocusableInNav();
           if (!focusables.length) return;
+
           const first = focusables[0];
           const last = focusables[focusables.length - 1];
+
           if (e.shiftKey && document.activeElement === first) {
             e.preventDefault();
             last.focus();
@@ -109,13 +116,12 @@
         }
       }
 
-      // Ensure nav closes on resize beyond mobile breakpoint
       window.addEventListener('resize', () => {
         if (window.innerWidth > MOBILE_BREAKPOINT && navLinks.classList.contains('open')) {
-          closeNav();
+          closeNav({ returnFocus: false });
         }
       });
-    } // end nav
+    }
 
     // ---------- Logo Rotator ----------
     const rotator = q('.logo-rotator');
@@ -124,31 +130,33 @@
       if (slides.length > 0) {
         let current = slides.findIndex(s => s.classList.contains('active'));
         if (current < 0) current = 0;
-        // ensure one slide has 'active'
         slides.forEach((s, i) => s.classList.toggle('active', i === current));
 
         let timer = null;
-        const start = () => {
-          stop();
-          timer = setInterval(() => { showSlide((current + 1) % slides.length); }, ROTATOR_INTERVAL);
-        };
-        const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
 
         function showSlide(index) {
           slides.forEach((s, i) => s.classList.toggle('active', i === index));
           current = index;
         }
 
-        // Start auto-rotation
+        const start = () => {
+          stop();
+          timer = setInterval(() => {
+            showSlide((current + 1) % slides.length);
+          }, ROTATOR_INTERVAL);
+        };
+
+        const stop = () => {
+          if (timer) { clearInterval(timer); timer = null; }
+        };
+
         start();
 
-        // Pause/Resume on hover and focus
         rotator.addEventListener('mouseenter', stop);
         rotator.addEventListener('mouseleave', start);
         rotator.addEventListener('focusin', stop);
         rotator.addEventListener('focusout', start);
 
-        // Keyboard left/right support; make container keyboard-focusable in HTML with tabindex="0"
         rotator.addEventListener('keydown', (e) => {
           if (e.key === 'ArrowLeft') {
             e.preventDefault();
@@ -162,102 +170,125 @@
     }
 
     // ---------- Lead Form Submit (Netlify -> HubSpot) ----------
-    // Assumes a single #lead-form on page. If you have multiple forms, adapt accordingly.
     const form = q('#lead-form');
     if (form) {
       const status = q('#formStatus') || null;
       const submitBtn = form.querySelector('button[type="submit"]');
       const optionalDemoBtn = q('#optionalDemo');
 
-      // Utility to set form status text safely
       function updateStatus(message, isError = false) {
         if (!status) return;
         status.textContent = message;
-        status.style.color = isError ? '#ffb4b4' : ''; // light visual feedback for error
+        status.style.color = isError ? '#ffb4b4' : '';
       }
 
-      // Read hubspot cookie if available (for contact matching)
       const hutk = readCookie('hubspotutk') || null;
 
       async function postToNetlify(bodyObj) {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), FORM_TIMEOUT_MS);
+
         try {
           const res = await fetch('/.netlify/functions/submitHubspot', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(bodyObj),
-            credentials: 'same-origin'
+            credentials: 'same-origin',
+            signal: controller.signal
           });
 
           if (!res.ok) {
-            // try to parse details
             const txt = await res.text().catch(() => null);
             throw new Error(txt || `HTTP ${res.status}`);
           }
 
           return { ok: true, data: await res.json().catch(() => ({})) };
         } catch (err) {
-          return { ok: false, error: err.message || String(err) };
+          const msg = (err && err.name === 'AbortError')
+            ? 'Request timed out'
+            : (err && err.message) ? err.message : String(err);
+          return { ok: false, error: msg };
+        } finally {
+          clearTimeout(timeout);
         }
+      }
+
+      function disableSubmit(isDisabled) {
+        if (!submitBtn) return;
+        submitBtn.disabled = isDisabled;
+        if (isDisabled) submitBtn.setAttribute('aria-busy', 'true');
+        else submitBtn.removeAttribute('aria-busy');
       }
 
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        if (submitBtn) {
-          submitBtn.disabled = true;
-          submitBtn.setAttribute('aria-busy', 'true');
-        }
+        disableSubmit(true);
         updateStatus('Sending…');
 
-        // Build payload
         const fd = new FormData(form);
         const payload = {};
+
         for (const [k, v] of fd.entries()) {
-          // include only non-empty values
           if (typeof v !== 'undefined' && String(v).trim() !== '') {
             payload[k] = String(v).trim();
           }
         }
+
         payload.pageUri = payload.pageUri || window.location.href;
         payload.pageName = document.title || '';
         if (hutk) payload.hutk = hutk;
 
-        // Post to Netlify function
         const result = await postToNetlify(payload);
 
         if (result.ok) {
-          updateStatus('Thanks — we received your request. Someone will be in touch within 48 hours.');
+          updateStatus('Thanks — we received your request. Someone will be in touch soon.');
           form.reset();
         } else {
           console.error('Form submission error:', result.error);
           updateStatus('There was an error submitting the form. Please email hello@elitemediagroup.io.', true);
         }
 
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.removeAttribute('aria-busy');
-        }
+        disableSubmit(false);
       });
 
-      // Optional demo button: focus the form and set interest value to 'demo'
+      // Optional demo button:
+      // - If the select supports 'demo', set it.
+      // - Otherwise, set interest to 'other' and prepend "Demo request:" into the message.
       if (optionalDemoBtn) {
         optionalDemoBtn.addEventListener('click', (e) => {
           e.preventDefault();
-          const interestEl = form.querySelector('select[name="interest"]') || form.querySelector('input[name="interest"]');
-          if (interestEl) {
-            try {
+
+          const interestEl = form.querySelector('select[name="interest"]');
+          const messageEl = form.querySelector('textarea[name="message"]');
+
+          let demoSet = false;
+
+          if (interestEl && interestEl.tagName === 'SELECT') {
+            const hasDemoOption = Array.from(interestEl.options || [])
+              .some(opt => (opt && opt.value) === 'demo');
+
+            if (hasDemoOption) {
               interestEl.value = 'demo';
-            } catch (_) { /* ignore */ }
+              demoSet = true;
+            } else {
+              // fallback: keep schema stable
+              interestEl.value = 'other';
+            }
           }
-          // smooth scroll to form and focus first field
+
+          if (messageEl) {
+            const existing = (messageEl.value || '').trim();
+            const prefix = demoSet ? '' : 'Demo request: ';
+            messageEl.value = existing.startsWith(prefix) ? existing : (prefix + existing).trim();
+          }
+
           form.scrollIntoView({ behavior: 'smooth', block: 'center' });
           const firstInput = form.querySelector('input[name="name"], input[type="text"], input[type="email"], textarea');
           if (firstInput) firstInput.focus();
         });
       }
-    } // end form
-
-    // ---------- End DOMContentLoaded ----------
+    }
   });
-
 })();
+
