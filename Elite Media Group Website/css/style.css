@@ -1,9 +1,7 @@
 /* =========================================================
    Elite Media Group - style.css
-   - Consolidated, production-ready stylesheet matching index.html
-   - Place at: css/style.css
-   - Fonts loaded in HTML:
-       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+   - Production stylesheet matching index.html
+   - Place at: /css/style.css
 ========================================================= */
 
 /* ===========================
@@ -30,14 +28,18 @@
 ========================================================= */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html,body { height: 100%; }
+
 body {
   font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   color: var(--white);
-  /* CSS file sits at css/style.css so assets are referenced via ../assets/ */
+
+  /* IMPORTANT:
+     Removed the full-page background hero image to avoid double-loading
+     (you already have a hero <picture>/<img> in the HTML).
+     If you want a page background image, use a lightweight, separate asset. */
   background:
-    linear-gradient(rgba(10,10,10,0.75), rgba(10,10,10,0.75)),
-    url('../assets/hero-1200.jpg') center center / cover no-repeat;
-  background-attachment: fixed;
+    linear-gradient(rgba(10,10,10,0.85), rgba(10,10,10,0.85));
+
   line-height: 1.6;
   min-height: 100vh;
   text-align: center;
@@ -46,6 +48,13 @@ body {
   -webkit-tap-highlight-color: transparent;
   padding-bottom: 60px;
   -webkit-font-feature-settings: "liga" 1;
+}
+
+/* Optional: if you *do* want a page background image, add class="has-bg-image" on <body> */
+body.has-bg-image{
+  background:
+    linear-gradient(rgba(10,10,10,0.75), rgba(10,10,10,0.75)),
+    url('/assets/bg-optimized.jpg') center center / cover no-repeat;
 }
 
 /* Respect reduced-motion preference */
@@ -75,8 +84,9 @@ a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; height: auto; }
 .container { max-width: var(--container); margin: 0 auto; padding: 0 20px; }
 
-/* Keyboard focus */
-:focus { outline: none; box-shadow: var(--focus); border-radius: 6px; }
+/* Keyboard focus (use focus-visible so mouse users don't get focus rings) */
+:focus { outline: none; }
+:focus-visible { box-shadow: var(--focus); border-radius: 6px; }
 
 /* Prevent scrolling while mobile nav open */
 .nav-open { overflow: hidden; }
@@ -86,6 +96,7 @@ img { display: block; max-width: 100%; height: auto; }
 ========================================================= */
 .site-header { position: sticky; top: 0; z-index: 999; }
 .navbar{
+  position: relative; /* anchors absolute-positioned mobile dropdown */
   display:flex; align-items:center; justify-content:space-between;
   height: var(--nav-height); padding: 18px 30px;
   background: rgba(10,10,10,0.15); backdrop-filter: blur(6px);
@@ -111,7 +122,7 @@ img { display: block; max-width: 100%; height: auto; }
   padding: 8px 10px; border-radius: 8px; transition: color var(--transition), background var(--transition);
 }
 .nav-links a:hover,
-.nav-links a:focus { color: var(--brand); background: rgba(255,255,255,0.02); }
+.nav-links a:focus-visible { color: var(--brand); background: rgba(255,255,255,0.02); }
 
 /* Active page */
 .nav-links a[aria-current="page"]{
@@ -128,7 +139,7 @@ img { display: block; max-width: 100%; height: auto; }
   display: none; background: transparent; border: 0; color: var(--white);
   font-size: 20px; padding: 8px; cursor: pointer;
 }
-.nav-toggle:focus{ box-shadow: var(--focus); }
+.nav-toggle:focus-visible{ box-shadow: var(--focus); }
 
 /* When nav open on mobile */
 .nav-links.open{ display:flex; flex-direction:column; gap:12px; }
@@ -170,6 +181,7 @@ img { display: block; max-width: 100%; height: auto; }
   box-shadow: 0 6px 22px rgba(0,0,0,0.35);
 }
 .btn-primary:hover{ transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+
 .btn-ghost{
   background:transparent; color:var(--white); border:1px solid rgba(255,255,255,0.08);
   padding:10px 16px; border-radius:10px;
@@ -177,7 +189,10 @@ img { display: block; max-width: 100%; height: auto; }
 .btn-ghost:hover{ border-color: rgba(191,191,191,0.2); }
 
 /* Hero proofs */
-.hero-proofs{ list-style:none; display:flex; gap:18px; margin-top:18px; padding:0; color:var(--muted); font-weight:600; align-items:center; }
+.hero-proofs{
+  list-style:none; display:flex; gap:18px; margin-top:18px; padding:0;
+  color:var(--muted); font-weight:600; align-items:center;
+}
 .hero-proofs li strong{ color:var(--white); display:block; font-size:1.05rem; }
 
 /* =========================================================
@@ -191,7 +206,10 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .img-card img{ width:100%; height:100%; object-fit:cover; display:block; }
 .img-card:hover{ transform: scale(1.035); box-shadow: 0 12px 30px rgba(0,0,0,0.45); }
-.img-card .overlay{ position:absolute; bottom:0; width:100%; background: rgba(0,0,0,0.56); padding:12px; font-weight:600; font-size:1.05rem; color:var(--white); }
+.img-card .overlay{
+  position:absolute; bottom:0; width:100%;
+  background: rgba(0,0,0,0.56); padding:12px; font-weight:600; font-size:1.05rem; color:var(--white);
+}
 
 /* =========================================================
    BUFFER / VALUE
@@ -209,7 +227,8 @@ img { display: block; max-width: 100%; height: auto; }
 ========================================================= */
 section{
   max-width:980px; margin:3rem auto; padding:2.6rem 2rem;
-  background: var(--card-bg); backdrop-filter: blur(5px); border-radius:14px; border:1px solid rgba(255,255,255,0.06);
+  background: var(--card-bg); backdrop-filter: blur(5px);
+  border-radius:14px; border:1px solid rgba(255,255,255,0.06);
   text-align:left;
 }
 section h2{ font-size:2rem; margin-bottom:0.75rem; font-weight:600; }
@@ -252,7 +271,9 @@ section p{ color:var(--muted); font-size:1.05rem; margin-bottom:1rem; line-heigh
 ========================================================= */
 .logo-rotator{ position: relative; width: 200px; height: 130px; margin: 2.5rem auto; outline: none; }
 .logo-slide{
-  position:absolute; inset:0; width:100%; height:100%; opacity:0; transition: opacity 0.9s ease-in-out; display:flex; align-items:center; justify-content:center;
+  position:absolute; inset:0; width:100%; height:100%;
+  opacity:0; transition: opacity 0.9s ease-in-out;
+  display:flex; align-items:center; justify-content:center;
 }
 .logo-slide img{ max-height:100%; max-width:100%; object-fit:contain; }
 .logo-slide.active{ opacity:1; }
@@ -277,12 +298,17 @@ footer{
 }
 
 @media (max-width: 900px){
-  /* mobile adjustments */
-  body{ background-attachment: scroll; background-position: center top; }
   .nav-toggle{ display: inline-flex; }
   .nav-links{
-    position: absolute; right: 16px; top: calc(var(--nav-height) + 6px);
-    background: rgba(0,0,0,0.72); padding: 12px; border-radius:8px; display:none; min-width:220px; box-shadow: var(--shadow-lg);
+    position: absolute;
+    right: 16px;
+    top: calc(var(--nav-height) + 6px);
+    background: rgba(0,0,0,0.72);
+    padding: 12px;
+    border-radius:8px;
+    display:none;
+    min-width:220px;
+    box-shadow: var(--shadow-lg);
   }
   .nav-links.open{ display:flex; }
   .nav-links a{ color: var(--white); padding:10px 12px; }
@@ -302,3 +328,4 @@ footer{
   .hero-subtitle{ font-size:0.98rem; }
   .brand img{ max-height:56px; }
 }
+
