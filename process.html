@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Process — EMG Loop™ | Elite Media Group</title>
+<meta name="description" content="From conversation to compounding. The 5-step EMG Loop™ engagement process: Discovery, System Design, Pilot Launch, Optimize, and Scale." />
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/global.css" />
+<style>
+  .pro-hero { background: var(--dark); padding: 180px 64px 120px; }
+  .step-row { display: grid; grid-template-columns: 120px 1fr 280px; gap: 60px; padding: 64px 0; border-bottom: 1px solid var(--warm-gray); align-items: start; }
+  .step-row:last-child { border-bottom: none; }
+  .step-num { font-family: 'Instrument Serif', serif; font-size: 96px; line-height: 1; color: var(--teal); }
+  .step-title { font-family: 'Instrument Serif', serif; font-size: 36px; margin-bottom: 16px; color: var(--navy); }
+  .step-desc { font-size: 16px; line-height: 1.8; color: var(--mid-gray); margin-bottom: 20px; }
+  .step-meta { background: var(--warm-off); padding: 24px 28px; }
+  .step-meta-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; }
+  .step-meta ul li { font-size: 13px; line-height: 1.7; color: var(--mid-gray); margin-bottom: 4px; padding-left: 14px; position: relative; }
+  .step-meta ul li::before { content: '→'; position: absolute; left: 0; color: var(--teal); }
+  .step-timeline { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--teal); margin-top: 14px; }
+  .models-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--warm-gray); }
+  .model-card { background: var(--white); padding: 48px 40px; transition: background .25s; }
+  .model-card:hover { background: var(--navy); }
+  .model-card:hover .mc-name, .model-card:hover .mc-desc, .model-card:hover .mc-best { color: var(--white); }
+  .model-card:hover .mc-tag { color: var(--teal-light); border-color: rgba(61,196,173,.3); }
+  .model-card:hover .mc-best-l { color: var(--teal-light); }
+  .mc-tag { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--mid-gray); border: 1px solid var(--warm-gray); display: inline-block; padding: 4px 10px; margin-bottom: 24px; }
+  .mc-name { font-family: 'Instrument Serif', serif; font-size: 26px; margin-bottom: 14px; color: var(--navy); }
+  .mc-desc { font-size: 15px; line-height: 1.75; color: var(--mid-gray); margin-bottom: 28px; }
+  .mc-best-l { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+  .mc-best { font-size: 14px; line-height: 1.6; color: var(--navy); }
+  @media (max-width: 960px) {
+    .pro-hero { padding: 140px 32px 80px; }
+    .step-row { grid-template-columns: 1fr; gap: 24px; padding: 48px 0; }
+    .step-num { font-size: 64px; }
+    .models-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 36 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M11 11C11 7.686 8.314 5 5 5C2.239 5 0 7.239 0 10C0 12.761 2.239 15 5 15C7.761 15 10 12.761 10 10" stroke="white" stroke-width="2.5" fill="none"/>
+      <path d="M25 11C25 14.314 27.686 17 31 17C33.761 17 36 14.761 36 12C36 9.239 33.761 7 31 7C28.239 7 26 9.239 26 12" stroke="#3ec4ad" stroke-width="2.5" fill="none"/>
+      <path d="M10 10 Q18 4 26 12" stroke="white" stroke-width="2.5" fill="none"/>
+    </svg>
+    <span class="nav-wordmark">EMG <span>Loop™</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="verticals.html">Verticals</a></li>
+    <li><a href="why-emg.html">Why EMG</a></li>
+    <li><a href="process.html" class="active">Process</a></li>
+    <li><a href="contact.html" class="nav-cta">Start a Conversation</a></li>
+  </ul>
+</nav>
+
+<section class="pro-hero">
+  <div class="container">
+    <div class="label label-light">Engagement Process</div>
+    <h1 class="h2" style="color:var(--white);font-size:clamp(42px,6vw,72px);">From conversation<br><em>to compounding.</em></h1>
+    <p class="body-l" style="color:rgba(255,255,255,.65);margin-top:24px;max-width:660px;">Five phases. Predictable timelines. Honest checkpoints. The Loop is built systematically — and we'll tell you exactly when each gate clears.</p>
+  </div>
+</section>
+
+<section class="sec sec-white">
+  <div class="container">
+
+    <div class="step-row">
+      <div class="step-num">01</div>
+      <div>
+        <h2 class="step-title">Discovery</h2>
+        <p class="step-desc">Before we propose anything, we listen. We map your current funnel, your existing performance data, your conversion economics, and the gap between where you are and where you need to be. This is not a pitch meeting — it's a diagnostic.</p>
+        <p class="step-desc">We're looking for three things: a clear KPI, a measurable conversion event, and the unit economics that justify the investment. If those three pieces don't exist yet, we'll help you build them before we run a single ad.</p>
+        <div class="step-timeline">⏱ 1–2 weeks</div>
+      </div>
+      <div class="step-meta">
+        <div class="step-meta-label">Deliverables</div>
+        <ul>
+          <li>Funnel + economics audit</li>
+          <li>KPI &amp; attribution scorecard</li>
+          <li>Vertical compliance review</li>
+          <li>Go/no-go recommendation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step-row">
+      <div class="step-num">02</div>
+      <div>
+        <h2 class="step-title">System Design</h2>
+        <p class="step-desc">We design the Loop configuration for your specific vertical and entry point. Which creator strategy. Which media channels. Which AI follow-up sequence. Which attribution model. Every component is justified against your KPI.</p>
+        <p class="step-desc">You will see — in writing — exactly what the system will look like, what each component costs, and what the projected outcome is at three spend levels. No black boxes. No "trust us."</p>
+        <div class="step-timeline">⏱ 1–2 weeks</div>
+      </div>
+      <div class="step-meta">
+        <div class="step-meta-label">Deliverables</div>
+        <ul>
+          <li>Loop architecture document</li>
+          <li>Creative + media brief</li>
+          <li>AI sequence specifications</li>
+          <li>3-tier projection model</li>
+          <li>Compliance protocol</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step-row">
+      <div class="step-num">03</div>
+      <div>
+        <h2 class="step-title">Pilot Launch</h2>
+        <p class="step-desc">Limited spend. Real campaigns. Real data. Pilot phase is structured to produce statistically meaningful signal as fast as possible — typically within two to three weeks of launch — without committing to scale spend until the system has proven itself.</p>
+        <p class="step-desc">We set explicit pass/fail thresholds for each component before launch. By the end of the pilot, the data tells us whether to scale, refine, or rebuild — and we share that read with you honestly.</p>
+        <div class="step-timeline">⏱ Week 3–4</div>
+      </div>
+      <div class="step-meta">
+        <div class="step-meta-label">Deliverables</div>
+        <ul>
+          <li>Live creative + media launch</li>
+          <li>AI follow-up live</li>
+          <li>Attribution dashboard active</li>
+          <li>Daily monitoring + weekly reads</li>
+          <li>Pass/fail signal report</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step-row">
+      <div class="step-num">04</div>
+      <div>
+        <h2 class="step-title">Optimize &amp; Learn</h2>
+        <p class="step-desc">Ongoing optimization is where most agencies coast and most systems decay. We treat it as the most important phase. Every week, we identify the highest-leverage improvement — creative, channel, funnel, follow-up — and ship it.</p>
+        <p class="step-desc">Cohort analysis. Creative fatigue tracking. Conversion rate by source. AI message performance. The system is constantly learning, and so are we. You see every read.</p>
+        <div class="step-timeline">⏱ Ongoing — weekly cadence</div>
+      </div>
+      <div class="step-meta">
+        <div class="step-meta-label">Deliverables</div>
+        <ul>
+          <li>Weekly attribution reports</li>
+          <li>Bi-weekly creative refreshes</li>
+          <li>Monthly system audits</li>
+          <li>Cohort + LTV analysis</li>
+          <li>Quarterly strategy reviews</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step-row">
+      <div class="step-num">05</div>
+      <div>
+        <h2 class="step-title">Scale</h2>
+        <p class="step-desc">Only after the unit economics are proven do we scale spend. This isn't a fixed timeline — it's a KPI gate. When CPA is stable, conversion rates are predictable, and downstream metrics confirm quality, we open the spigot.</p>
+        <p class="step-desc">Scaling adds new channels, expands creator networks, deepens AI automation, and stress-tests funnels at higher volume. The Loop compounds — every layer added makes the next one more effective.</p>
+        <div class="step-timeline">⏱ When KPIs are proven</div>
+      </div>
+      <div class="step-meta">
+        <div class="step-meta-label">Deliverables</div>
+        <ul>
+          <li>Channel expansion plan</li>
+          <li>Creator network growth</li>
+          <li>Advanced AI sequences</li>
+          <li>Multi-funnel architecture</li>
+          <li>Compounding attribution</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="sec sec-cream">
+  <div class="container">
+    <div class="label">Engagement Models</div>
+    <h2 class="h2">Structured for <em>accountability.</em></h2>
+    <p class="body-l" style="margin-bottom:56px;">Three ways to work with us. Each one is built so we win when you win — and pause when we shouldn't be running spend.</p>
+    <div class="models-grid">
+      <div class="model-card">
+        <span class="mc-tag">Performance-Only</span>
+        <h3 class="mc-name">Performance-Only</h3>
+        <p class="mc-desc">We get paid per qualified lead, booked appointment, or closed transaction. Zero fixed retainer. Maximum alignment. We only make money when the Loop is producing.</p>
+        <div class="mc-best-l">Best for</div>
+        <p class="mc-best">High-volume verticals with clear unit economics: home services, insurance, legal intake.</p>
+      </div>
+      <div class="model-card">
+        <span class="mc-tag">Hybrid</span>
+        <h3 class="mc-name">Hybrid</h3>
+        <p class="mc-desc">A lean operational retainer that covers system management, plus performance fees tied to defined outcomes. Stability for both sides, with upside aligned to KPIs.</p>
+        <div class="mc-best-l">Best for</div>
+        <p class="mc-best">Mid-market brands and franchise systems that want consistent operational rigor with performance teeth.</p>
+      </div>
+      <div class="model-card">
+        <span class="mc-tag">Strategic Partner</span>
+        <h3 class="mc-name">Strategic Partner</h3>
+        <p class="mc-desc">Embedded, multi-vertical or multi-brand engagement. We function as your performance marketing operating system, with deep integration into your data stack and revenue team.</p>
+        <div class="mc-best-l">Best for</div>
+        <p class="mc-best">National brands, portfolio companies, or PE-backed organizations rolling up multiple revenue lines.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-white">
+  <div class="container" style="max-width:900px;">
+    <div class="label">Common Questions</div>
+    <h2 class="h2">What people <em>actually ask.</em></h2>
+    <div style="margin-top:48px;">
+
+      <div class="faq-item">
+        <div class="faq-q">How long until we see results?</div>
+        <p class="faq-a">Pilot launches typically produce statistically meaningful signal within 2–3 weeks. Whether that signal points to scale, refine, or rebuild depends on your vertical, your conversion economics, and the entry point we chose. We share the read honestly either way.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What does pricing actually look like?</div>
+        <p class="faq-a">Pricing depends on the engagement model and the scope of the Loop configuration. Performance-only pricing is per outcome (per lead, per call, per appointment, per closed deal). Hybrid retainers typically range from a mid-five to a six-figure monthly operational fee plus performance triggers. We share specific pricing after the discovery conversation — never before.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How do you handle compliance in regulated verticals?</div>
+        <p class="faq-a">Every regulated vertical we serve has a pre-built compliance protocol: TCPA opt-in standards, FTC creator disclosure requirements, HIPAA-aware data handling, state-specific advertising rules, and category-specific creative review. It ships with the campaign — not as an afterthought.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Do you work with brands that already have in-house marketing teams?</div>
+        <p class="faq-a">Often. The Loop is designed to integrate with internal teams, not replace them. We typically operate the performance media, AI follow-up, and attribution layers while your team owns brand, content, and strategic positioning. Lines are drawn cleanly.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What if it doesn't work?</div>
+        <p class="faq-a">We tell you. The pass/fail gates at the end of the pilot phase exist specifically so neither side wastes spend on a system that isn't producing. If the data says rebuild, we recommend rebuild. If it says walk away, we say walk away. That's the operator standard.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Can we start with just one service?</div>
+        <p class="faq-a">Yes. The Loop has five entry points by design. You can start with just AI follow-up on your existing leads, just performance media against an existing funnel, or just a creator program against an existing media plan. The other components plug in when the data justifies expansion.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <div class="cta-label">From conversation to compounding</div>
+    <h2>Start with one conversation.</h2>
+    <p>No commitments. We'll diagnose your funnel, identify the highest-leverage entry point, and tell you whether the Loop is the right system for your situation.</p>
+    <a href="contact.html" class="btn-p">Start a Conversation</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="ft-grid">
+      <div>
+        <span class="nav-wordmark">EMG <span style="color:var(--teal-light)">Loop™</span></span>
+        <p class="ft-brand-tagline">Influence fades. Systems endure.</p>
+      </div>
+      <div class="ft-col">
+        <div class="ft-col-head">Services</div>
+        <ul>
+          <li><a href="services.html">All Services</a></li>
+          <li><a href="services.html">Influencer Programs</a></li>
+          <li><a href="services.html">Performance Media</a></li>
+          <li><a href="services.html">AI Messaging</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <div class="ft-col-head">Verticals</div>
+        <ul>
+          <li><a href="verticals.html">Home Services</a></li>
+          <li><a href="verticals.html">Insurance</a></li>
+          <li><a href="verticals.html">Legal &amp; Mass Tort</a></li>
+          <li><a href="verticals.html">All Verticals</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <div class="ft-col-head">Company</div>
+        <ul>
+          <li><a href="why-emg.html">Why EMG</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span class="ft-copy">&copy; 2025 Elite Media Group. All rights reserved.</span>
+      <span class="ft-tagline">Influence fades. Systems endure.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/global.js"></script>
+</body>
+</html>
