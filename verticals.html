@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Verticals — EMG Loop™ | Elite Media Group</title>
+<meta name="description" content="One loop. Every vertical. EMG Loop™ serves Home Services, Insurance, Legal, Disability, SMB, CPG, and Automotive markets with the same accountable performance system." />
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/global.css" />
+<style>
+  .vert-hero { background: var(--dark); padding: 180px 64px 120px; }
+  .vert-list { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-top: 32px; display: flex; flex-wrap: wrap; gap: 8px 28px; }
+  .vert-list span { color: var(--teal-light); margin-right: 6px; }
+  .vert-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--warm-gray); }
+  .vert-card { background: var(--white); padding: 56px 48px; transition: background .25s; }
+  .vert-card:hover { background: var(--navy); }
+  .vert-card:hover .vc-num, .vert-card:hover .vc-name, .vert-card:hover .vc-desc, .vert-card:hover .vc-loop-steps { color: var(--white); }
+  .vert-card:hover .vc-tag { color: var(--teal-light); border-color: rgba(61,196,173,.3); }
+  .vert-card:hover .vc-loop { color: var(--teal-light); }
+  .vc-num { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .18em; color: var(--mid-gray); margin-bottom: 24px; display: block; }
+  .vc-name { font-family: 'Instrument Serif', serif; font-size: 28px; margin-bottom: 8px; }
+  .vc-tag { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--mid-gray); border: 1px solid var(--warm-gray); display: inline-block; padding: 3px 9px; margin-bottom: 20px; }
+  .vc-desc { font-size: 15px; line-height: 1.75; color: var(--mid-gray); margin-bottom: 24px; }
+  .vc-loop { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--navy); margin-bottom: 10px; }
+  .vc-loop-steps { font-size: 13px; color: var(--mid-gray); line-height: 1.6; }
+  .vc-note { background: var(--warm-off); padding: 16px 20px; margin-top: 20px; }
+  .vert-card:hover .vc-note { background: rgba(255,255,255,.04); }
+  .vc-note-label { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; }
+  .vc-note p { font-size: 13px; color: var(--mid-gray); line-height: 1.6; }
+  .why-it-works { background: var(--navy); padding: 100px 64px; }
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(255,255,255,.06); margin-top: 56px; }
+  .why-card { background: var(--navy); padding: 40px 36px; border: 1px solid rgba(255,255,255,.06); }
+  .why-card-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 16px; letter-spacing: .08em; text-transform: uppercase; color: var(--white); margin-bottom: 10px; }
+  .why-card-body { font-size: 14px; color: rgba(255,255,255,.5); line-height: 1.7; }
+  @media (max-width: 960px) {
+    .vert-hero { padding: 140px 32px 80px; }
+    .vert-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .why-it-works { padding: 80px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 36 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M11 11C11 7.686 8.314 5 5 5C2.239 5 0 7.239 0 10C0 12.761 2.239 15 5 15C7.761 15 10 12.761 10 10" stroke="white" stroke-width="2.5" fill="none"/>
+      <path d="M25 11C25 14.314 27.686 17 31 17C33.761 17 36 14.761 36 12C36 9.239 33.761 7 31 7C28.239 7 26 9.239 26 12" stroke="#3ec4ad" stroke-width="2.5" fill="none"/>
+      <path d="M10 10 Q18 4 26 12" stroke="white" stroke-width="2.5" fill="none"/>
+    </svg>
+    <span class="nav-wordmark">EMG <span>Loop™</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="verticals.html" class="active">Verticals</a></li>
+    <li><a href="why-emg.html">Why EMG</a></li>
+    <li><a href="process.html">Process</a></li>
+    <li><a href="contact.html" class="nav-cta">Start a Conversation</a></li>
+  </ul>
+</nav>
+
+<section class="vert-hero">
+  <div class="label label-light">Markets We Serve</div>
+  <h1 class="h2" style="color:var(--white);font-size:clamp(42px,6vw,72px);">Every vertical.<br><em>Same loop.</em></h1>
+  <p class="body-l" style="color:rgba(255,255,255,.65);margin-top:24px;max-width:660px;">The system doesn't change. The configuration does. Seven markets. One accountable performance architecture built for each one's compliance, cost, and conversion requirements.</p>
+  <div class="vert-list">
+    <div><span>01</span> Home Services</div>
+    <div><span>02</span> Insurance</div>
+    <div><span>03</span> Legal &amp; Mass Tort</div>
+    <div><span>04</span> Disability / SSDI</div>
+    <div><span>05</span> SMB</div>
+    <div><span>06</span> CPG</div>
+    <div><span>07</span> Automotive</div>
+  </div>
+</section>
+
+<section style="background:var(--white);">
+  <div class="vert-grid">
+
+    <div class="vert-card">
+      <span class="vc-num">01 — VERTICAL</span>
+      <h2 class="vc-name">Home Services</h2>
+      <span class="vc-tag">HVAC · Roofing · Solar · Pest · Plumbing</span>
+      <p class="vc-desc">Local intent. High ticket. Competitive CPCs. The Loop targets homeowners at the moment of need — creator content builds trust, performance media captures the click, AI follow-up books the appointment before a competitor can.</p>
+      <div class="vc-loop">The Loop in this vertical:</div>
+      <p class="vc-loop-steps">Micro-local creator content → geo-targeted paid media → inbound call generation → AI follow-up → appointment booked → attribution to source</p>
+      <div class="vc-note">
+        <div class="vc-note-label">Compliance Note</div>
+        <p>TCPA-compliant opt-in flows on all lead capture. DNC scrubbing on every campaign. State-specific license disclosures where required.</p>
+      </div>
+    </div>
+
+    <div class="vert-card">
+      <span class="vc-num">02 — VERTICAL</span>
+      <h2 class="vc-name">Insurance</h2>
+      <span class="vc-tag">Health · Life · Auto · Medicare · ACA</span>
+      <p class="vc-desc">Regulated, competitive, and trust-sensitive. We generate verified, high-intent insurance leads and inbound calls using compliant creator content and media buying strategies built specifically for the insurance compliance environment.</p>
+      <div class="vc-loop">The Loop in this vertical:</div>
+      <p class="vc-loop-steps">Benefit-forward creator content → intent-based search + social → compliant landing pages → live transfer or call routing → AI follow-up on non-converters</p>
+      <div class="vc-note">
+        <div class="vc-note-label">Compliance Note</div>
+        <p>HIPAA-aware data handling. CMS marketing guidelines followed for Medicare. State-licensed agent disclosure on all creatives. No misleading benefit claims.</p>
+      </div>
+    </div>
+
+    <div class="vert-card">
+      <span class="vc-num">03 — VERTICAL</span>
+      <h2 class="vc-name">Legal &amp; Mass Tort</h2>
+      <span class="vc-tag">PI · Mass Tort · Class Action · SSDI</span>
+      <p class="vc-desc">Cost-per-retained-case economics demand verified, high-quality lead intake. We build call-qualified intake funnels that screen for case eligibility before the call reaches a legal team — reducing wasted intake hours dramatically.</p>
+      <div class="vc-loop">The Loop in this vertical:</div>
+      <p class="vc-loop-steps">Awareness content → intake funnel with qualification logic → call-only ad campaigns → live transfer to intake team → AI re-engagement for warm non-converters</p>
+      <div class="vc-note">
+        <div class="vc-note-label">Compliance Note</div>
+        <p>No attorney-client relationship implied in advertising. State bar advertising rules respected per jurisdiction. No specific outcome guarantees in creative.</p>
+      </div>
+    </div>
+
+    <div class="vert-card">
+      <span class="vc-num">04 — VERTICAL</span>
+      <h2 class="vc-name">Disability / SSDI</h2>
+      <span class="vc-tag">SSDI · SSI · Disability Advocates</span>
+      <p class="vc-desc">Empathy-first messaging combined with rigorous qualification. We identify individuals actively in the disability claims process and connect them to advocates through compliant, conversion-optimized intake systems.</p>
+      <div class="vc-loop">The Loop in this vertical:</div>
+      <p class="vc-loop-steps">Empathy-driven creator content → keyword-specific search campaigns → multi-step qualification funnel → call routing to advocate → AI nurture for pending claimants</p>
+      <div class="vc-note">
+        <div class="vc-note-label">Compliance Note</div>
+        <p>SSA advertising standards observed. No benefit amount guarantees. Plain-language eligibility framing only. TCPA-compliant re-engagement sequences.</p>
+      </div>
+    </div>
+
+    <div class="vert-card">
+      <span class="vc-num">05 — VERTICAL</span>
+      <h2 class="vc-name">SMB</h2>
+      <span class="vc-tag">Franchise · Local Business · Service Brands</span>
+      <p class="vc-desc">Small businesses don't need brand campaigns. They need phones ringing and appointment books full. We deliver turnkey performance marketing built for SMB budgets — with the same Loop architecture used by national brands.</p>
+      <div class="vc-loop">The Loop in this vertical:</div>
+      <p class="vc-loop-steps">Local creator testimonial content → Google Local + Meta geo campaigns → appointment booking funnel → AI confirmation + follow-up → review generation loop</p>
+      <div class="vc-note">
+        <div class="vc-note-label">Compliance Note</div>
+        <p>Local licensing and permit disclosures where applicable. Category-specific FTC guidelines followed. No competitor disparagement in creative.</p>
+      </div>
+    </div>
+
+    <div class="vert-card">
+      <span class="vc-num">06 — VERTICAL</span>
+      <h2 class="vc-name">CPG</h2>
+      <span class="vc-tag">Consumer Packaged Goods · DTC · Retail</span>
+      <p class="vc-desc">Creator content that converts at the shelf and online. We build influencer programs tied directly to sell-through data — not reach metrics. ROAS, DTC conversion, and retail velocity are the scorecard.</p>
+      <div class="vc-loop">The Loop in this vertical:</div>
+      <p class="vc-loop-steps">Creator unboxing + review content → affiliate + paid amplification → DTC landing page → email/SMS retention loop → cohort LTV measurement</p>
+      <div class="vc-note">
+        <div class="vc-note-label">Compliance Note</div>
+        <p>FTC influencer disclosure requirements on all creator content. FDA/FTC claim guidelines for health-adjacent products. No unsubstantiated efficacy claims.</p>
+      </div>
+    </div>
+
+    <div class="vert-card">
+      <span class="vc-num">07 — VERTICAL</span>
+      <h2 class="vc-name">Automotive</h2>
+      <span class="vc-tag">OEM · Dealer Groups · EV · Parts &amp; Service</span>
+      <p class="vc-desc">Long consideration cycles and high-value transactions demand a full-funnel approach. We use creator content to build brand preference early, performance media to capture intent, and AI follow-up to convert showroom-ready shoppers.</p>
+      <div class="vc-loop">The Loop in this vertical:</div>
+      <p class="vc-loop-steps">Vehicle review creator content → intent-based search + YouTube pre-roll → inventory/offer landing pages → call or form capture → AI dealer appointment booking</p>
+      <div class="vc-note">
+        <div class="vc-note-label">Compliance Note</div>
+        <p>Dealer-specific fine print and incentive disclosure compliance. FTC auto advertising guidelines. No lease/purchase term misrepresentation in creative.</p>
+      </div>
+    </div>
+
+    <div class="vert-card" style="background:var(--navy);display:flex;flex-direction:column;justify-content:center;">
+      <span class="vc-num" style="color:rgba(255,255,255,.3)">One system</span>
+      <h2 class="vc-name" style="color:var(--white);">Don't see your vertical?</h2>
+      <p style="font-size:15px;color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:32px;">If your market has high-intent buyers, a measurable conversion event, and accountability requirements — the Loop works. Tell us what you're solving for.</p>
+      <a href="contact.html" class="btn-p" style="align-self:flex-start;">Start a Conversation</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="why-it-works">
+  <div class="container">
+    <div class="label">System Design</div>
+    <h2 class="h2" style="color:var(--white);">Why vertical-agnostic<br><em>system design works.</em></h2>
+    <p class="body-l" style="color:rgba(255,255,255,.6);margin-top:16px;">The Loop doesn't reinvent itself for each vertical. It configures. The core architecture — intent capture, conversion, follow-up, measurement — is the same. What changes is the compliance layer, the creative strategy, and the channel mix.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-card-title">Proven mechanics, new configuration</div>
+        <p class="why-card-body">We don't start from scratch in each market. The performance playbooks are battle-tested. We apply known-working systems to new contexts faster than any single-vertical agency can build from zero.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-title">Compliance built in, not bolted on</div>
+        <p class="why-card-body">Every vertical in our system has a pre-built compliance layer: TCPA protocols, FTC disclosure requirements, HIPAA-aware data handling, and category-specific creative review. It ships with the campaign.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-title">Cross-vertical intelligence</div>
+        <p class="why-card-body">Insights from one vertical make every other vertical smarter. A contact-rate breakthrough in home services gets tested in insurance. A CPG funnel structure improves SMB conversion. The whole system learns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <div class="cta-label">One loop. Every vertical.</div>
+    <h2>Tell us your market.</h2>
+    <p>We'll map exactly how EMG Loop™ applies to your vertical, your compliance requirements, and your specific conversion goal.</p>
+    <a href="contact.html" class="btn-p">Start a Conversation</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="ft-grid">
+      <div>
+        <span class="nav-wordmark">EMG <span style="color:var(--teal-light)">Loop™</span></span>
+        <p class="ft-brand-tagline">Influence fades. Systems endure.</p>
+      </div>
+      <div class="ft-col">
+        <div class="ft-col-head">Services</div>
+        <ul>
+          <li><a href="services.html">All Services</a></li>
+          <li><a href="services.html">Influencer Programs</a></li>
+          <li><a href="services.html">Performance Media</a></li>
+          <li><a href="services.html">AI Messaging</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <div class="ft-col-head">Verticals</div>
+        <ul>
+          <li><a href="verticals.html">Home Services</a></li>
+          <li><a href="verticals.html">Insurance</a></li>
+          <li><a href="verticals.html">Legal &amp; Mass Tort</a></li>
+          <li><a href="verticals.html">All Verticals</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <div class="ft-col-head">Company</div>
+        <ul>
+          <li><a href="why-emg.html">Why EMG</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span class="ft-copy">&copy; 2025 Elite Media Group. All rights reserved.</span>
+      <span class="ft-tagline">Influence fades. Systems endure.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/global.js"></script>
+</body>
+</html>
