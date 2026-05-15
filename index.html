@@ -23,8 +23,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .hero{min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:0 40px 80px;}
 .hero-photo{position:absolute;inset:0;z-index:1;}
 .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block;}
-.hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg, rgba(3,8,16,1) 0%, rgba(3,8,16,.92) 22%, rgba(3,8,16,.55) 42%, rgba(0,0,0,.2) 60%, rgba(0,0,0,.1) 75%, transparent 90%),linear-gradient(180deg, rgba(3,8,16,.6) 0%, transparent 14%);}
-.screen-overlay{position:absolute;z-index:10;left:29%;top:10%;width:42%;height:48%;display:flex;align-items:center;justify-content:center;pointer-events:none;}
+.hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg, rgba(3,8,16,.95) 0%, rgba(3,8,16,.8) 18%, rgba(3,8,16,.35) 38%, rgba(0,0,0,.05) 55%, transparent 75%),linear-gradient(180deg, rgba(3,8,16,.4) 0%, transparent 12%);}
+.screen-overlay{position:absolute;z-index:10;left:22%;top:9%;width:57%;height:50%;display:flex;align-items:center;justify-content:center;pointer-events:none;}
 .screen-inner{width:100%;height:100%;background:rgba(3,10,18,.82);border:1px solid rgba(57,255,154,.06);position:relative;overflow:hidden;border-radius:4px;}
 .screen-inner::before{content:'';position:absolute;inset:0;z-index:5;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.12) 2px,rgba(0,0,0,.12) 3px);pointer-events:none;}
 .screen-inner::after{content:'';position:absolute;inset:0;z-index:4;background:radial-gradient(ellipse 80% 65% at 50% 45%,transparent 45%,rgba(0,0,0,.5) 100%);pointer-events:none;}
@@ -48,7 +48,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .st-met-l{font-size:clamp(5px,.7vw,8px);color:rgba(57,255,154,.22);letter-spacing:.1em;text-transform:uppercase;margin-top:4px;}
 .hero-bottom{position:relative;z-index:20;display:flex;flex-direction:column;align-items:center;text-align:center;width:100%;max-width:680px;margin-top:20px;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-.hero-h1{font-family:'Instrument Serif',serif;font-size:clamp(52px,7.5vw,108px);line-height:.93;letter-spacing:-.03em;color:#fff;margin-bottom:20px;text-shadow:0 2px 40px rgba(0,0,0,.9),0 4px 80px rgba(0,0,0,.7);-webkit-text-stroke:1px rgba(255,255,255,.1);}
+.hero-h1{font-family:'Instrument Serif',serif;font-size:clamp(38px,5vw,72px);line-height:.93;letter-spacing:-.03em;color:#fff;margin-bottom:20px;text-shadow:0 2px 40px rgba(0,0,0,.9),0 4px 80px rgba(0,0,0,.7);-webkit-text-stroke:1px rgba(255,255,255,.1);}
 .hero-h1 em{font-style:italic;color:var(--teal-light);-webkit-text-stroke:1px rgba(62,196,173,.15);text-shadow:0 0 40px rgba(62,196,173,.35),0 2px 40px rgba(0,0,0,.9);}
 .hero-p{font-size:17px;line-height:1.8;color:var(--teal-light);font-weight:400;margin-bottom:36px;text-shadow:0 1px 18px rgba(0,0,0,.8);}
 .hero-btns{display:flex;gap:16px;justify-content:center;align-items:center;margin-bottom:0;}
@@ -213,7 +213,7 @@ footer{background:var(--navy);padding:56px 64px;}
 
 <section class="hero">
   <div class="hero-photo">
-    <img src="assets/images/hero-bg.jpg" alt="">
+    <img src="assets/images/hero-bg.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;">
   </div>
   <div class="screen-overlay">
     <div class="screen-inner">
@@ -227,11 +227,6 @@ footer{background:var(--navy);padding:56px 64px;}
         <div class="st-sub2">ELITE MEDIA GROUP — SIGNAL ONLINE</div>
         <div class="st-bar-wrap"><div class="st-bar-fill" id="htFill" style="width:0%"></div></div>
         <div class="st-status">LOOP STATUS: ACTIVE <span class="st-cur"></span></div>
-        <div class="st-metrics">
-          <div class="st-met"><div class="st-met-n">1</div><div class="st-met-l">Core System</div></div>
-          <div class="st-met"><div class="st-met-n">5<em>+</em></div><div class="st-met-l">Entry Points</div></div>
-          <div class="st-met"><div class="st-met-n">100<em>%</em></div><div class="st-met-l">Accountable</div></div>
-        </div>
       </div>
     </div>
   </div>
