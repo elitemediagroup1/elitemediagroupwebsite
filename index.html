@@ -66,7 +66,9 @@ nav{
 .hero{
   position:relative;
   width:100%;
-  height:100vh;
+  /* photo's natural aspect ratio so screen glass % values track precisely */
+  aspect-ratio:1601/900;
+  height:auto;
   overflow:hidden;
   display:block;
   background:#030810;
@@ -94,11 +96,11 @@ nav{
 /* When photo is object-fit:cover these % still track the screen.        */
 .hero-screen-inset{
   position:absolute;
-  /* These match the screen glass position in the source image */
-  left:20.93%;
-  top:12.22%;
-  width:57.72%;
-  height:61.5%;
+  /* Image-natural screen glass position (1601x900 source): top y=107, bottom y=774, left x=332, right x=1265 */
+  left:20.74%;
+  top:11.89%;
+  width:58.28%;
+  height:74.11%;
   overflow:hidden;
   z-index:5;
 }
