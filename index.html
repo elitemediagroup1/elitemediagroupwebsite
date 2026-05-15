@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elite Media Group — Systems That Convert</title>
+<title>Elite Media Group â Systems That Convert</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -29,12 +29,14 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{font-family:'Barlow',sans-serif;background:var(--cream);color:var(--navy);overflow-x:hidden;}
-/* scanlines on whole page — very subtle */
+
+/* scanlines on whole page â very subtle */
 body::before{
   content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
   background:repeating-linear-gradient(180deg,transparent 0px,transparent 3px,rgba(0,0,0,0.008) 3px,rgba(0,0,0,0.008) 4px);
 }
-/* ── NAV ── */
+
+/* ââ NAV ââ */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:500;
   display:flex;justify-content:space-between;align-items:center;
@@ -59,7 +61,8 @@ nav{
   text-transform:uppercase;transition:background .2s;
 }
 .nav-cta:hover{background:var(--teal)!important;}
-/* ── HERO ── */
+
+/* ââ HERO ââ */
 .hero{
   position:relative;
   width:100%;
@@ -68,13 +71,15 @@ nav{
   display:block;
   background:#030810;
 }
-/* Monitor photo — full bleed, fills 100% of hero */
+
+/* Monitor photo â full bleed, fills 100% of hero */
 .hero-monitor-wrap{
   position:absolute;
   inset:0;
   width:100%;
   height:100%;
 }
+
 .hero-monitor-img{
   width:100%;
   height:100%;
@@ -82,7 +87,8 @@ nav{
   object-position:center center;
   display:block;
 }
-/* ── SCREEN INSET — % locked to where the glass lives in the photo ── */
+
+/* ââ SCREEN INSET â % locked to where the glass lives in the photo ââ */
 /* Photo is 1601x900. Screen glass: x1=342,y1=112,x2=1258,y2=774       */
 /* As % of photo: left=21.36%, top=12.44%, w=57.21%, h=73.56%           */
 /* When photo is object-fit:cover these % still track the screen.        */
@@ -96,6 +102,7 @@ nav{
   overflow:hidden;
   z-index:5;
 }
+
 /* CRT vignette */
 .hsi-glass{
   position:absolute;inset:0;z-index:30;pointer-events:none;
@@ -106,7 +113,8 @@ nav{
   position:absolute;inset:0;z-index:31;pointer-events:none;
   background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.13) 2px,rgba(0,0,0,.13) 3px);
 }
-/* ── SCREEN CONTENT ── */
+
+/* ââ SCREEN CONTENT ââ */
 .hsi-content{
   position:absolute;inset:0;z-index:20;
   background:#040c18;
@@ -118,6 +126,7 @@ nav{
   text-shadow:0 0 6px rgba(57,255,154,.4);
   color:#39ff9a;
 }
+
 .hsi-topbar{
   display:flex;justify-content:space-between;align-items:center;
   border-bottom:1px solid rgba(57,255,154,.15);
@@ -127,6 +136,7 @@ nav{
 }
 .hsi-brand{font-weight:700;}
 .hsi-time{color:rgba(57,255,154,.4);}
+
 .hsi-headline{
   font-size:clamp(12px,1.4vw,20px);font-weight:700;letter-spacing:.08em;
   color:#39ff9a;margin-bottom:.3em;min-height:1.3em;flex-shrink:0;
@@ -141,11 +151,14 @@ nav{
   font-size:clamp(8px,0.85vw,12px);color:rgba(57,255,154,.35);
   letter-spacing:.1em;margin-bottom:.4em;flex-shrink:0;
 }
+
 .hsi-bar-wrap{margin-bottom:.45em;flex-shrink:0;}
 .hsi-bar{height:clamp(2px,0.3vw,4px);background:rgba(57,255,154,.07);border:1px solid rgba(57,255,154,.15);overflow:hidden;}
 .hsi-fill{height:100%;width:0%;background:linear-gradient(90deg,#2d9e8a,#39ff9a);box-shadow:0 0 6px rgba(57,255,154,.5);transition:width 1.8s cubic-bezier(.4,0,.2,1);}
+
 .hsi-divider{border:none;border-top:1px solid rgba(57,255,154,.12);margin:.5em 0;flex-shrink:0;}
-/* ── BIG HEADLINE ── */
+
+/* ââ BIG HEADLINE ââ */
 .hsi-main-headline{
   font-family:'Instrument Serif',serif;
   font-size:clamp(26px,5.5vw,76px);
@@ -157,6 +170,7 @@ nav{
   font-style:italic;color:#3ec4ad;
   text-shadow:0 0 24px rgba(62,196,173,.45);
 }
+
 /* Subhead */
 .hsi-main-sub{
   font-family:'Barlow',sans-serif;
@@ -164,6 +178,7 @@ nav{
   line-height:1.65;color:rgba(62,196,173,.85);
   font-weight:400;margin-bottom:.5em;flex-shrink:0;letter-spacing:.01em;
 }
+
 /* CTAs */
 .hsi-ctas{display:flex;gap:.8em;align-items:center;margin-bottom:.5em;flex-shrink:0;}
 .hsi-btn-primary{
@@ -183,6 +198,7 @@ nav{
   transition:color .2s,gap .2s;white-space:nowrap;
 }
 .hsi-btn-ghost:hover{color:#3ec4ad;gap:.7em;}
+
 /* Stats */
 .hsi-stats{display:flex;align-items:center;gap:0;margin-bottom:auto;flex-shrink:0;}
 .hsi-stat{text-align:center;padding:0 .9em;}
@@ -195,6 +211,7 @@ nav{
 .hsi-stat-n span{color:#3ec4ad;font-style:italic;}
 .hsi-stat-l{font-size:clamp(7px,0.7vw,10px);color:rgba(255,255,255,.3);letter-spacing:.12em;text-transform:uppercase;margin-top:.25em;}
 .hsi-stat-div{width:1px;height:clamp(22px,3vw,44px);background:rgba(255,255,255,.08);flex-shrink:0;}
+
 /* Bottom nav */
 .hsi-navbar{
   border-top:1px solid rgba(57,255,154,.1);
@@ -206,16 +223,20 @@ nav{
 }
 .hsi-nav{padding:.2em .3em;}
 .hsi-nav.active,.hsi-nav:hover{color:#39ff9a;background:rgba(57,255,154,.06);}
+
 .hsi-cur{display:inline-block;width:.55em;height:.88em;background:#39ff9a;margin-left:.2em;vertical-align:text-bottom;animation:cur .9s step-end infinite;box-shadow:0 0 4px rgba(57,255,154,.8);}
 @keyframes cur{50%{opacity:0}}
+
 /* kill leftover old styles */
 .hero-inner,.hero-text-block,.hero-eyebrow,.hero-h1,.hero-p,.hero-btns,.hero-stats,
 .hero-bg,.hero-screen-overlay,.ovl-glass,.ovl-content{display:none;}
+
 @media(max-width:700px){
   .hero{height:60vw;min-height:320px;}
   .hsi-main-headline{font-size:clamp(12px,3vw,22px);}
 }
-/* ── TICKER ── */
+
+/* ââ TICKER ââ */
 .ticker{background:var(--teal);overflow:hidden;padding:13px 0;display:flex;}
 .ticker-inner{display:flex;animation:tick 30s linear infinite;white-space:nowrap;}
 .tick-item{
@@ -224,14 +245,16 @@ nav{
   color:rgba(255,255,255,.88);padding:0 36px;flex-shrink:0;
   display:flex;align-items:center;gap:0;
 }
-.tick-item::after{content:'◆';margin-left:36px;color:rgba(255,255,255,.3);font-size:7px;}
+.tick-item::after{content:'â';margin-left:36px;color:rgba(255,255,255,.3);font-size:7px;}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-/* ── SHARED ── */
+
+/* ââ SHARED ââ */
 .sec{padding:120px 64px;}
 .sec-dark{background:var(--navy);padding:120px 64px;}
 .sec-cream{background:var(--cream);}
 .sec-off{background:var(--warm-off);}
 .sec-white{background:#fff;}
+
 .label{
   font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;
   letter-spacing:.22em;text-transform:uppercase;color:var(--teal);
@@ -240,6 +263,7 @@ nav{
 .label::before{content:'';width:22px;height:1px;background:var(--teal);display:block;}
 .label-light{color:var(--teal-light);}
 .label-light::before{background:var(--teal-light);}
+
 h2.h{
   font-family:'Instrument Serif',serif;
   font-size:clamp(40px,5vw,68px);line-height:.97;
@@ -248,8 +272,10 @@ h2.h{
 h2.h-light{color:#fff;}
 h2.h em{font-style:italic;color:var(--teal);}
 h2.h-light em{color:var(--teal-light);}
+
 .body-l{font-size:18px;line-height:1.78;color:var(--mid-gray);font-weight:300;max-width:540px;}
-/* ── PROBLEM ── */
+
+/* ââ PROBLEM ââ */
 .prob-grid{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:start;}
 .prob-lede{
   font-family:'Instrument Serif',serif;
@@ -265,6 +291,7 @@ h2.h-light em{color:var(--teal-light);}
 .prob-pt:first-child{border-top:1px solid rgba(255,255,255,.06);}
 .pnum{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--teal-light);letter-spacing:.1em;flex-shrink:0;}
 .ptxt{font-size:16px;line-height:1.55;color:rgba(255,255,255,.52);font-weight:300;}
+
 .res-box{
   background:rgba(62,196,173,.1);border:1px solid rgba(62,196,173,.22);
   border-radius:3px;padding:44px;position:relative;overflow:hidden;
@@ -279,8 +306,10 @@ h2.h-light em{color:var(--teal-light);}
   color:#fff;line-height:1.2;margin-bottom:14px;letter-spacing:-.02em;
 }
 .res-box p{font-size:15px;line-height:1.8;color:rgba(255,255,255,.58);font-weight:300;}
-/* ── LOOP / THREE FORCES ── */
+
+/* ââ LOOP / THREE FORCES ââ */
 .loop-top{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:end;margin-bottom:72px;}
+
 .loop-diagram{position:relative;height:300px;display:flex;align-items:center;justify-content:center;}
 .ld-ring{
   width:230px;height:230px;border-radius:50%;
@@ -309,6 +338,7 @@ h2.h-light em{color:var(--teal-light);}
 .ld-node.t{top:-10px;left:50%;transform:translateX(-50%);border-color:var(--navy);}
 .ld-node.r{right:-68px;top:50%;transform:translateY(-50%);border-color:var(--teal);color:var(--teal);}
 .ld-node.b{bottom:-10px;left:50%;transform:translateX(-50%);}
+
 .forces{
   display:grid;grid-template-columns:repeat(3,1fr);gap:2px;
   background:var(--warm-gray);border:2px solid var(--warm-gray);border-radius:3px;overflow:hidden;
@@ -325,7 +355,8 @@ h2.h-light em{color:var(--teal-light);}
 }
 .force-t{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:21px;letter-spacing:.04em;color:var(--navy);margin-bottom:10px;text-transform:uppercase;transition:color .25s;}
 .force-b{font-size:14px;line-height:1.68;color:var(--mid-gray);font-weight:300;transition:color .25s;}
-/* ── SERVICES ── */
+
+/* ââ SERVICES ââ */
 .svc-intro{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:end;margin-bottom:64px;}
 .svc-grid{
   display:grid;grid-template-columns:repeat(3,1fr);gap:2px;
@@ -345,14 +376,16 @@ h2.h-light em{color:var(--teal-light);}
 .svc-d{font-size:13px;line-height:1.68;color:var(--mid-gray);margin-bottom:20px;font-weight:300;transition:color .25s;}
 .svc-ul{list-style:none;display:flex;flex-direction:column;}
 .svc-li{font-size:12px;color:var(--mid-gray);padding:8px 0;border-bottom:1px solid var(--warm-gray);display:flex;align-items:center;gap:8px;line-height:1.4;transition:all .25s;}
-.svc-li::before{content:'→';color:var(--teal);font-size:11px;flex-shrink:0;transition:color .25s;}
-/* ── VERTICALS ── */
+.svc-li::before{content:'â';color:var(--teal);font-size:11px;flex-shrink:0;transition:color .25s;}
+
+/* ââ VERTICALS ââ */
 .vert-intro{display:grid;grid-template-columns:1fr 1.3fr;gap:88px;align-items:end;margin-bottom:64px;}
 .vert-frame{
   font-family:'Instrument Serif',serif;font-size:20px;
   color:rgba(255,255,255,.38);line-height:1.55;font-style:italic;
 }
 .vert-frame strong{color:var(--teal-light);font-style:normal;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;letter-spacing:.04em;text-transform:uppercase;}
+
 .vg4{
   display:grid;grid-template-columns:repeat(4,1fr);gap:2px;
   background:rgba(255,255,255,.05);border:2px solid rgba(255,255,255,.05);
@@ -373,7 +406,8 @@ h2.h-light em{color:var(--teal-light);}
 .vn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:7px;transition:color .25s;}
 .vd{font-size:12px;line-height:1.6;color:rgba(255,255,255,.32);font-weight:300;transition:color .25s;margin-bottom:14px;}
 .vtag{font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-light);background:rgba(62,196,173,.1);padding:4px 8px;transition:all .25s;display:inline-block;}
-/* ── WHY ── */
+
+/* ââ WHY ââ */
 .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:center;margin-top:52px;}
 .why-rows{display:flex;flex-direction:column;}
 .why-row{display:flex;align-items:baseline;gap:20px;padding:20px 0;border-bottom:1px solid var(--warm-gray);}
@@ -385,7 +419,8 @@ h2.h-light em{color:var(--teal-light);}
 .why-q{font-family:'Instrument Serif',serif;font-size:27px;color:#fff;line-height:1.3;margin-bottom:22px;letter-spacing:-.015em;position:relative;z-index:1;}
 .why-q em{color:var(--teal-light);font-style:italic;}
 .why-by{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.28);position:relative;z-index:1;}
-/* ── COMPARISON ── */
+
+/* ââ COMPARISON ââ */
 .comp-tbl{margin-top:52px;border:2px solid var(--warm-gray);border-radius:3px;overflow:hidden;}
 .comp-h{display:grid;grid-template-columns:1.2fr 1fr 1fr;background:var(--navy);}
 .comp-hc{padding:17px 28px;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.3);}
@@ -396,7 +431,8 @@ h2.h-light em{color:var(--teal-light);}
 .comp-c:last-child{border-right:none;}
 .comp-c.topic{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;color:var(--navy);letter-spacing:.04em;text-transform:uppercase;}
 .comp-c.emgv{color:var(--navy);font-weight:500;background:rgba(62,196,173,.03);}
-/* ── PROCESS ── */
+
+/* ââ PROCESS ââ */
 .proc-wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:52px;position:relative;}
 .proc-wrap::before{content:'';position:absolute;top:26px;left:10%;right:10%;height:1px;background:var(--warm-gray);z-index:0;}
 .proc-s{text-align:center;padding:0 10px;position:relative;z-index:1;}
@@ -411,7 +447,8 @@ h2.h-light em{color:var(--teal-light);}
 .proc-s:hover .proc-dot{background:var(--teal);border-color:var(--teal);color:#fff;}
 .proc-t{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--navy);margin-bottom:6px;}
 .proc-d{font-size:12px;line-height:1.6;color:var(--mid-gray);font-weight:300;}
-/* ── CTA ── */
+
+/* ââ CTA ââ */
 .cta{background:var(--darker);padding:120px 64px;text-align:center;position:relative;overflow:hidden;}
 .cta-atm{position:absolute;bottom:-60px;left:50%;transform:translateX(-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(45,158,138,.18) 0%,transparent 70%);pointer-events:none;}
 .cta .label{justify-content:center;}
@@ -433,7 +470,8 @@ h2.h-light em{color:var(--teal-light);}
 .cta-in::placeholder{color:rgba(255,255,255,.26);}
 .cta-in:focus{border-color:var(--teal);}
 .cta-note{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.18);letter-spacing:.06em;}
-/* ── FOOTER ── */
+
+/* ââ FOOTER ââ */
 footer{background:var(--navy);padding:56px 64px;}
 .ft{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:56px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:30px;}
 .ft-brand p{font-size:13px;line-height:1.78;color:rgba(255,255,255,.32);font-weight:300;margin-top:14px;max-width:280px;}
@@ -444,7 +482,8 @@ footer{background:var(--navy);padding:56px 64px;}
 .ft-bot{display:flex;justify-content:space-between;align-items:center;}
 .ft-copy{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.18);letter-spacing:.06em;}
 .ft-tag{font-family:'Instrument Serif',serif;font-size:15px;font-style:italic;color:rgba(255,255,255,.22);}
-/* ── RESPONSIVE ── */
+
+/* ââ RESPONSIVE ââ */
 @media(max-width:960px){
   nav{padding:14px 22px;}
   .nav-links{display:none;}
@@ -464,69 +503,84 @@ footer{background:var(--navy);padding:56px 64px;}
   .hero-stats{gap:0;flex-wrap:wrap;}
   .hstat{padding:0 24px;}
 }
+
+.btn-p{background:var(--teal);color:#fff;padding:14px 24px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;white-space:nowrap;transition:background .2s;display:inline-block;}
+.btn-p:hover{background:var(--teal-light);}
 </style>
 </head>
 <body>
+
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
     <svg class="emg-loop-mark" viewBox="0 0 80 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Left loop — navy -->
+      <!-- Left loop â navy -->
       <path d="M40 22 C34 10, 22 6, 14 8 C6 10, 2 16, 2 22 C2 28, 6 34, 14 36 C22 38, 34 34, 40 22 Z" fill="none" stroke="#0c1a2e" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <!-- Right loop — teal -->
+      <!-- Right loop â teal -->
       <path d="M40 22 C46 34, 58 38, 66 36 C74 34, 78 28, 78 22 C78 16, 74 10, 66 8 C58 6, 46 10, 40 22 Z" fill="none" stroke="#2d9e8a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
     <div class="nav-logo-text">
-      <div class="nav-wordmark-main">EMG <span>Loop</span><sup>™</sup></div>
+      <div class="nav-wordmark-main">EMG <span>Loop</span><sup>â¢</sup></div>
       <div class="nav-wordmark-sub">Elite Media Group</div>
     </div>
   </a>
   <ul class="nav-links">
     <li><a href="services.html">Services</a></li>
     <li><a href="verticals.html">Verticals</a></li>
-    <li><a href="the-loop.html">The Loop</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="results.html">Results</a></li>
+    <li><a href="services.html">The Loop</a></li>
+    <li><a href="why-emg.html">About</a></li>
+    <li><a href="process.html">Results</a></li>
     <li><a href="contact.html" class="nav-cta">Start a Conversation</a></li>
   </ul>
 </nav>
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-monitor-wrap">
-    <img class="hero-monitor-img" src="assets/images/hero-bg.jpg" alt="EMG — 80s office CRT monitor">
+    <img class="hero-monitor-img" src="assets/images/hero-bg.jpg" alt="EMG â 80s office CRT monitor">
+
     <!-- Everything lives inside the screen -->
     <div class="hero-screen-inset">
       <div class="hsi-glass"></div>
       <div class="hsi-scanlines"></div>
       <div class="hsi-content">
+
         <!-- TOP BAR -->
         <div class="hsi-topbar">
-          <span class="hsi-brand">EMG LOOP™ &nbsp;// &nbsp;v2.6</span>
+          <span class="hsi-brand">EMG LOOPâ¢ &nbsp;// &nbsp;v2.6</span>
           <span class="hsi-time" id="htTime">--:--:--</span>
         </div>
+
         <!-- CYCLING STATUS LINE -->
         <div class="hsi-headline" id="htCycle">&nbsp;</div>
-        <div class="hsi-sub">ELITE MEDIA GROUP — ACQUISITION SYSTEM ONLINE</div>
+        <div class="hsi-sub">ELITE MEDIA GROUP â ACQUISITION SYSTEM ONLINE</div>
+
         <!-- PROGRESS BAR -->
         <div class="hsi-bar-wrap">
           <div class="hsi-bar"><div class="hsi-fill" id="htFill"></div></div>
         </div>
+
         <div class="hsi-divider"></div>
+
         <!-- MAIN HEADLINE -->
         <div class="hsi-main-headline">
           One loop.<br><em>Every</em> vertical.
         </div>
+
         <!-- SUBHEAD -->
         <div class="hsi-main-sub">
           Influence builds the trust. Performance creates the scale.<br>
-          AI compounds the signal. One system — infinite entry points.
+          AI compounds the signal. One system â infinite entry points.
         </div>
+
         <!-- CTA BUTTONS -->
         <div class="hsi-ctas">
           <a href="contact.html" class="hsi-btn-primary">Start a Conversation</a>
-          <a href="services.html" class="hsi-btn-ghost">See What We Build →</a>
+          <a href="services.html" class="hsi-btn-ghost">See What We Build â</a>
         </div>
+
         <div class="hsi-divider"></div>
+
         <!-- STATS -->
         <div class="hsi-stats">
           <div class="hsi-stat">
@@ -544,6 +598,7 @@ footer{background:var(--navy);padding:56px 64px;}
             <div class="hsi-stat-l">Accountable</div>
           </div>
         </div>
+
         <!-- BOTTOM NAV -->
         <div class="hsi-navbar">
           <span class="hsi-nav">[ INFLUENCE ]</span>
@@ -551,10 +606,12 @@ footer{background:var(--navy);padding:56px 64px;}
           <span class="hsi-nav">[ AI ]</span>
           <span class="hsi-nav">[ LOOP ]</span>
         </div>
+
       </div>
     </div>
   </div>
 </section>
+
 <!-- TICKER -->
 <div class="ticker">
   <div class="ticker-inner">
@@ -562,6 +619,7 @@ footer{background:var(--navy);padding:56px 64px;}
     <span class="tick-item">Home Services</span><span class="tick-item">Insurance</span><span class="tick-item">Legal &amp; Mass Tort</span><span class="tick-item">Medicare</span><span class="tick-item">Final Expense</span><span class="tick-item">Disability / SSDI</span><span class="tick-item">Home Warranty</span><span class="tick-item">SMB</span><span class="tick-item">CPG</span><span class="tick-item">Automotive</span><span class="tick-item">Pay-Per-Call</span><span class="tick-item">Influencer Programs</span><span class="tick-item">Performance Media</span><span class="tick-item">AI Acquisition</span>
   </div>
 </div>
+
 <!-- PROBLEM -->
 <section class="sec-dark sec" id="about">
   <div class="prob-grid">
@@ -578,18 +636,19 @@ footer{background:var(--navy);padding:56px 64px;}
     <div>
       <div class="res-box">
         <h3>EMG was built for this exact moment.</h3>
-        <p>We design integrated systems that combine creator-led trust, performance media reach, and AI-driven optimization. Not separate campaigns — one compounding loop that learns, adapts, and delivers. Every vertical is a different entry point into the same system.</p>
+        <p>We design integrated systems that combine creator-led trust, performance media reach, and AI-driven optimization. Not separate campaigns â one compounding loop that learns, adapts, and delivers. Every vertical is a different entry point into the same system.</p>
       </div>
     </div>
   </div>
 </section>
+
 <!-- THE LOOP -->
 <section class="sec-cream sec">
   <div class="loop-top">
     <div>
       <div class="label">The EMG Loop</div>
       <h2 class="h">One system.<br>Three forces.</h2>
-      <p class="body-l" style="margin-top:16px">Influence initiates trust. Performance creates reach. AI captures signal and optimizes the whole. Each feeds the others — every interaction compounds value across the loop.</p>
+      <p class="body-l" style="margin-top:16px">Influence initiates trust. Performance creates reach. AI captures signal and optimizes the whole. Each feeds the others â every interaction compounds value across the loop.</p>
     </div>
     <div class="loop-diagram">
       <div class="ld-ring">
@@ -602,11 +661,12 @@ footer{background:var(--navy);padding:56px 64px;}
     </div>
   </div>
   <div class="forces">
-    <div class="force"><div class="force-n">01</div><div class="force-t">Influence</div><p class="force-b">Creator-led trust programs that initiate belief at the top of the funnel. Creators aren't distribution — they're signal that makes everything downstream convert harder.</p></div>
+    <div class="force"><div class="force-n">01</div><div class="force-t">Influence</div><p class="force-b">Creator-led trust programs that initiate belief at the top of the funnel. Creators aren't distribution â they're signal that makes everything downstream convert harder.</p></div>
     <div class="force"><div class="force-n">02</div><div class="force-t">Performance</div><p class="force-b">Paid social, search, and CTV/OTT that creates scale. Media that adapts to people, not platforms. Accountable to revenue, not reach.</p></div>
     <div class="force"><div class="force-n">03</div><div class="force-t">AI</div><p class="force-b">Signal capture, real-time learning, and continuous optimization. Campaigns that learn instead of reporting after the fact. The loop never stops.</p></div>
   </div>
 </section>
+
 <!-- SERVICES -->
 <section class="sec-white sec" id="services">
   <div class="svc-intro">
@@ -614,17 +674,18 @@ footer{background:var(--navy);padding:56px 64px;}
       <div class="label">Core Capabilities</div>
       <h2 class="h">What we build<br>for partners.</h2>
     </div>
-    <p class="body-l">Every engagement is outcome-accountable. Performance-only, hybrid, or strategic partnership models — we're operators, not pitchmen. We embed where execution and learning intersect.</p>
+    <p class="body-l">Every engagement is outcome-accountable. Performance-only, hybrid, or strategic partnership models â we're operators, not pitchmen. We embed where execution and learning intersect.</p>
   </div>
   <div class="svc-grid">
     <div class="svc"><div class="svc-n">01</div><div class="svc-tag">Creator</div><div class="svc-t">Influencer & Creator Programs</div><p class="svc-d">Rigorous selection, deep alignment, whitelisting-ready execution. Creators are signal, not just reach.</p><ul class="svc-ul"><li class="svc-li">Values & issue alignment</li><li class="svc-li">Engagement quality & sentiment scoring</li><li class="svc-li">Historical content audit</li><li class="svc-li">Brand safety & compliance</li><li class="svc-li">Whitelisting & paid amplification</li></ul></div>
-    <div class="svc"><div class="svc-n">02</div><div class="svc-tag">Paid Media</div><div class="svc-t">Performance Media</div><p class="svc-d">Paid social, search, and CTV/OTT managed for conversion — not impressions. Every dollar accountable.</p><ul class="svc-ul"><li class="svc-li">Meta, Google, YouTube, TikTok</li><li class="svc-li">Connected TV & OTT</li><li class="svc-li">Audience intelligence & lookalike modeling</li><li class="svc-li">Real-time creative optimization</li><li class="svc-li">Cross-channel attribution</li></ul></div>
+    <div class="svc"><div class="svc-n">02</div><div class="svc-tag">Paid Media</div><div class="svc-t">Performance Media</div><p class="svc-d">Paid social, search, and CTV/OTT managed for conversion â not impressions. Every dollar accountable.</p><ul class="svc-ul"><li class="svc-li">Meta, Google, YouTube, TikTok</li><li class="svc-li">Connected TV & OTT</li><li class="svc-li">Audience intelligence & lookalike modeling</li><li class="svc-li">Real-time creative optimization</li><li class="svc-li">Cross-channel attribution</li></ul></div>
     <div class="svc"><div class="svc-n">03</div><div class="svc-tag">Pay-Per-Call</div><div class="svc-t">Conversational Acquisition</div><p class="svc-d">Inbound call and lead generation that converts consumer intent into real conversations with real buyers.</p><ul class="svc-ul"><li class="svc-li">Inbound call generation at scale</li><li class="svc-li">Intent-qualified lead delivery</li><li class="svc-li">TCPA-compliant programs</li><li class="svc-li">Vertical-specific compliance</li><li class="svc-li">Performance-only pricing available</li></ul></div>
     <div class="svc"><div class="svc-n">04</div><div class="svc-tag">AI Systems</div><div class="svc-t">AI Messaging & Follow-Up</div><p class="svc-d">Intelligent sequencing, real-time signal capture, and automated nurture that keeps the loop running.</p><ul class="svc-ul"><li class="svc-li">AI-powered outreach sequencing</li><li class="svc-li">Behavioral trigger-based messaging</li><li class="svc-li">Multi-channel follow-up automation</li><li class="svc-li">Lead scoring & prioritization</li><li class="svc-li">Continuous learning optimization</li></ul></div>
-    <div class="svc"><div class="svc-n">05</div><div class="svc-tag">Conversion</div><div class="svc-t">Funnel & Conversion Architecture</div><p class="svc-d">Landing pages and conversion paths designed from the outcome backward — not the brief forward.</p><ul class="svc-ul"><li class="svc-li">CRO-first landing page design</li><li class="svc-li">Offer & incentive architecture</li><li class="svc-li">A/B and multivariate testing</li><li class="svc-li">Form & funnel optimization</li><li class="svc-li">Revenue path mapping</li></ul></div>
+    <div class="svc"><div class="svc-n">05</div><div class="svc-tag">Conversion</div><div class="svc-t">Funnel & Conversion Architecture</div><p class="svc-d">Landing pages and conversion paths designed from the outcome backward â not the brief forward.</p><ul class="svc-ul"><li class="svc-li">CRO-first landing page design</li><li class="svc-li">Offer & incentive architecture</li><li class="svc-li">A/B and multivariate testing</li><li class="svc-li">Form & funnel optimization</li><li class="svc-li">Revenue path mapping</li></ul></div>
     <div class="svc"><div class="svc-n">06</div><div class="svc-tag">Intelligence</div><div class="svc-t">Measurement & Attribution</div><p class="svc-d">We measure honestly because that's how you learn faster. Transparent reporting, no black boxes.</p><ul class="svc-ul"><li class="svc-li">Multi-touch attribution modeling</li><li class="svc-li">Call tracking & recording analytics</li><li class="svc-li">Revenue-level performance reporting</li><li class="svc-li">Partner-facing dashboards</li><li class="svc-li">Ongoing learning loop documentation</li></ul></div>
   </div>
 </section>
+
 <!-- VERTICALS -->
 <section class="sec-dark sec" id="verticals">
   <div class="vert-intro">
@@ -632,38 +693,40 @@ footer{background:var(--navy);padding:56px 64px;}
       <div class="label label-light">Industries We Serve</div>
       <h2 class="h h-light">Every vertical.<br><em>Same loop.</em></h2>
     </div>
-    <p class="vert-frame">The system doesn't change — the entry point does. We build <strong>vertical-specific</strong> compliance, messaging, and conversion logic on top of the same compounding loop. Same power, tuned for your market.</p>
+    <p class="vert-frame">The system doesn't change â the entry point does. We build <strong>vertical-specific</strong> compliance, messaging, and conversion logic on top of the same compounding loop. Same power, tuned for your market.</p>
   </div>
   <div class="vg4">
-    <div class="vc"><div class="vi">🏠</div><div class="vn">Home Services</div><p class="vd">Pest control, HVAC, roofing, windows, siding, home warranty. High-intent, local-conversion programs built to close.</p><span class="vtag">Pay-Per-Call · Lead Gen</span></div>
-    <div class="vc"><div class="vi">🛡</div><div class="vn">Insurance</div><p class="vd">Final expense, Medicare, life. Compliant, trust-first programs built for sensitive, skeptical audiences.</p><span class="vtag">Compliance · Creator · Call</span></div>
-    <div class="vc"><div class="vi">⚖️</div><div class="vn">Legal & Mass Tort</div><p class="vd">High-volume case acquisition with intent-qualified lead delivery and deep TCPA compliance expertise.</p><span class="vtag">Volume · Qualified Leads</span></div>
-    <div class="vc"><div class="vi">♿</div><div class="vn">Disability / SSDI</div><p class="vd">Sensitive, compliant programs connecting qualified applicants with the advocacy and support they need.</p><span class="vtag">Compliance · Trust</span></div>
+    <div class="vc"><div class="vi">ð </div><div class="vn">Home Services</div><p class="vd">Pest control, HVAC, roofing, windows, siding, home warranty. High-intent, local-conversion programs built to close.</p><span class="vtag">Pay-Per-Call Â· Lead Gen</span></div>
+    <div class="vc"><div class="vi">ð¡</div><div class="vn">Insurance</div><p class="vd">Final expense, Medicare, life. Compliant, trust-first programs built for sensitive, skeptical audiences.</p><span class="vtag">Compliance Â· Creator Â· Call</span></div>
+    <div class="vc"><div class="vi">âï¸</div><div class="vn">Legal & Mass Tort</div><p class="vd">High-volume case acquisition with intent-qualified lead delivery and deep TCPA compliance expertise.</p><span class="vtag">Volume Â· Qualified Leads</span></div>
+    <div class="vc"><div class="vi">â¿</div><div class="vn">Disability / SSDI</div><p class="vd">Sensitive, compliant programs connecting qualified applicants with the advocacy and support they need.</p><span class="vtag">Compliance Â· Trust</span></div>
   </div>
   <div class="vg3">
-    <div class="vc"><div class="vi">🏢</div><div class="vn">SMB</div><p class="vd">Small and mid-size business acquisition — from local operators to regional businesses looking to scale their customer base with performance-accountable programs.</p><span class="vtag">Lead Gen · Performance</span></div>
-    <div class="vc"><div class="vi">🛒</div><div class="vn">CPG</div><p class="vd">Consumer packaged goods brands that need creator-led trust to break through retail noise and drive measurable purchase intent at scale.</p><span class="vtag">Influencer · CTV · Social</span></div>
-    <div class="vc"><div class="vi">🚗</div><div class="vn">Automotive</div><p class="vd">Dealer networks, OEM campaigns, and service providers. High-consideration buyers require trust before they step into a showroom.</p><span class="vtag">Creator · CTV · Call</span></div>
+    <div class="vc"><div class="vi">ð¢</div><div class="vn">SMB</div><p class="vd">Small and mid-size business acquisition â from local operators to regional businesses looking to scale their customer base with performance-accountable programs.</p><span class="vtag">Lead Gen Â· Performance</span></div>
+    <div class="vc"><div class="vi">ð</div><div class="vn">CPG</div><p class="vd">Consumer packaged goods brands that need creator-led trust to break through retail noise and drive measurable purchase intent at scale.</p><span class="vtag">Influencer Â· CTV Â· Social</span></div>
+    <div class="vc"><div class="vi">ð</div><div class="vn">Automotive</div><p class="vd">Dealer networks, OEM campaigns, and service providers. High-consideration buyers require trust before they step into a showroom.</p><span class="vtag">Creator Â· CTV Â· Call</span></div>
   </div>
 </section>
+
 <!-- WHY EMG -->
 <section class="sec-cream sec" id="why">
   <div class="label">Why Elite Media Group</div>
   <h2 class="h">Elite is earned.</h2>
   <div class="why-grid">
     <div class="why-rows">
-      <div class="why-row"><span class="why-kw">for</span><span class="why-tx">We take responsibility for outcomes — not credit for impressions.</span></div>
+      <div class="why-row"><span class="why-kw">for</span><span class="why-tx">We take responsibility for outcomes â not credit for impressions.</span></div>
       <div class="why-row"><span class="why-kw">not</span><span class="why-tx">We design systems, not stunts. Every engagement is built to compound.</span></div>
       <div class="why-row"><span class="why-kw">over</span><span class="why-tx">We value trust over attention. Authentic reach outperforms bought reach every time.</span></div>
       <div class="why-row"><span class="why-kw">when</span><span class="why-tx">We stay when others rotate out. Our partners are long-term because our systems are.</span></div>
-      <div class="why-row"><span class="why-kw">honestly</span><span class="why-tx">We learn faster because we measure honestly — even when the data is uncomfortable.</span></div>
+      <div class="why-row"><span class="why-kw">honestly</span><span class="why-tx">We learn faster because we measure honestly â even when the data is uncomfortable.</span></div>
     </div>
     <div class="why-card">
-      <p class="why-q">Built by operators who've worked where <em>outcomes matter</em> — and where trust, governance, and accountability aren't optional.</p>
-      <div class="why-by">Elite Media Group — Founders</div>
+      <p class="why-q">Built by operators who've worked where <em>outcomes matter</em> â and where trust, governance, and accountability aren't optional.</p>
+      <div class="why-by">Elite Media Group â Founders</div>
     </div>
   </div>
 </section>
+
 <!-- COMPARISON -->
 <section class="sec-white sec">
   <div class="label">How We Operate</div>
@@ -684,6 +747,7 @@ footer{background:var(--navy);padding:56px 64px;}
     <div class="comp-r"><div class="comp-c topic">Partnership Style</div><div class="comp-c">Engagement-first</div><div class="comp-c emgv">Relationship-based, outcome-accountable</div></div>
   </div>
 </section>
+
 <!-- PROCESS -->
 <section class="sec-off sec" id="process">
   <div class="label">How Engagements Work</div>
@@ -693,21 +757,23 @@ footer{background:var(--navy);padding:56px 64px;}
     <div class="proc-s"><div class="proc-dot">02</div><div class="proc-t">System Design</div><p class="proc-d">We map the influence, performance, and AI components that fit your specific outcome.</p></div>
     <div class="proc-s"><div class="proc-dot">03</div><div class="proc-t">Pilot Launch</div><p class="proc-d">Fast start with defined KPIs and honest measurement from day one.</p></div>
     <div class="proc-s"><div class="proc-dot">04</div><div class="proc-t">Optimize & Learn</div><p class="proc-d">Every signal feeds the loop. We adapt in real time and report honestly.</p></div>
-    <div class="proc-s"><div class="proc-dot">05</div><div class="proc-t">Scale</div><p class="proc-d">Once the system learns, we scale what works — with full transparency on what doesn't.</p></div>
+    <div class="proc-s"><div class="proc-dot">05</div><div class="proc-t">Scale</div><p class="proc-d">Once the system learns, we scale what works â with full transparency on what doesn't.</p></div>
   </div>
 </section>
+
 <!-- CTA -->
 <section class="cta" id="contact">
   <div class="cta-atm"></div>
   <div class="label label-light" style="justify-content:center">Start a Conversation</div>
   <h2>Ready to build a system that <em>actually converts?</em></h2>
-  <p>No pitch decks until we know if we're a fit. Let's talk about where your consumer intent starts — and what's stopping it from becoming revenue.</p>
+  <p>No pitch decks until we know if we're a fit. Let's talk about where your consumer intent starts â and what's stopping it from becoming revenue.</p>
   <div class="cta-row">
     <input type="email" class="cta-in" placeholder="Work email">
     <a href="mailto:hello@elitemediagroup.io" class="btn-p">Let's Talk</a>
   </div>
   <div class="cta-note">Or reach us at hello@elitemediagroup.io</div>
 </section>
+
 <!-- FOOTER -->
 <footer>
   <div class="ft">
@@ -718,23 +784,25 @@ footer{background:var(--navy);padding:56px 64px;}
           <path d="M40 22 C46 34, 58 38, 66 36 C74 34, 78 28, 78 22 C78 16, 74 10, 66 8 C58 6, 46 10, 40 22 Z" fill="none" stroke="#2d9e8a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <div>
-          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.06em;color:white;text-transform:uppercase;line-height:1">EMG <span style="color:#2d9e8a">Loop</span><sup style="font-size:9px;color:#2d9e8a">™</sup></div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.06em;color:white;text-transform:uppercase;line-height:1">EMG <span style="color:#2d9e8a">Loop</span><sup style="font-size:9px;color:#2d9e8a">â¢</sup></div>
           <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;color:rgba(255,255,255,.35);text-transform:uppercase;margin-top:2px">Elite Media Group</div>
         </div>
       </div>
-      <p>We design systems that integrate influence, performance, and intelligence to drive measurable outcomes — not optics.</p>
+      <p>We design systems that integrate influence, performance, and intelligence to drive measurable outcomes â not optics.</p>
     </div>
-    <div class="ft-col"><h4>Services</h4><ul><li><a href="elitemediagroup.html">Influencer Programs</a></li><li><a href="elitemediagroup.html">Performance Media</a></li><li><a href="elitemediagroup.html">Pay-Per-Call</a></li><li><a href="elitemediagroup.html">AI Messaging</a></li><li><a href="elitemediagroup.html">Funnel Architecture</a></li><li><a href="elitemediagroup.html">Attribution</a></li></ul></div>
-    <div class="ft-col"><h4>Verticals</h4><ul><li><a href="elitemediagroup.html">Home Services</a></li><li><a href="elitemediagroup.html">Insurance</a></li><li><a href="elitemediagroup.html">Legal / Mass Tort</a></li><li><a href="elitemediagroup.html">Disability / SSDI</a></li><li><a href="elitemediagroup.html">SMB</a></li><li><a href="elitemediagroup.html">CPG</a></li><li><a href="elitemediagroup.html">Automotive</a></li></ul></div>
-    <div class="ft-col"><h4>Company</h4><ul><li><a href="elitemediagroup.html">About EMG</a></li><li><a href="elitemediagroup.html">Why We're Elite</a></li><li><a href="elitemediagroup.html">Partnership Models</a></li><li><a href="contact.html">Start a Conversation</a></li></ul></div>
+    <div class="ft-col"><h4>Services</h4><ul><li><a href="#">Influencer Programs</a></li><li><a href="#">Performance Media</a></li><li><a href="#">Pay-Per-Call</a></li><li><a href="#">AI Messaging</a></li><li><a href="#">Funnel Architecture</a></li><li><a href="#">Attribution</a></li></ul></div>
+    <div class="ft-col"><h4>Verticals</h4><ul><li><a href="#">Home Services</a></li><li><a href="#">Insurance</a></li><li><a href="#">Legal / Mass Tort</a></li><li><a href="#">Disability / SSDI</a></li><li><a href="#">SMB</a></li><li><a href="#">CPG</a></li><li><a href="#">Automotive</a></li></ul></div>
+    <div class="ft-col"><h4>Company</h4><ul><li><a href="#">About EMG</a></li><li><a href="#">Why We're Elite</a></li><li><a href="#">Partnership Models</a></li><li><a href="contact.html">Start a Conversation</a></li></ul></div>
   </div>
   <div class="ft-bot">
-    <div class="ft-copy">© 2026 Elite Media Group · elitemediagroup.io</div>
+    <div class="ft-copy">Â© 2026 Elite Media Group Â· elitemediagroup.io</div>
     <div class="ft-tag">Influence fades. Systems endure.</div>
   </div>
 </footer>
+
 <script>
-// Stars removed — photo hero
+// Stars removed â photo hero
+
 // Terminal clock
 function tick(){
   const n=new Date();
@@ -744,11 +812,13 @@ function tick(){
   if(el)el.textContent=t;
 }
 tick();setInterval(tick,1000);
+
 // Cycling terminal headline
 (function(){
   const el=document.getElementById('htCycle');
   const bar=document.getElementById('htFill');
   if(!el)return;
+
   const phases=[
     {text:'LOCKING ON TO SIGNAL...',     pct:'18%',  dur:2200},
     {text:'CONSUMER BEHAVIOR CAPTURED.', pct:'44%',  dur:2000},
@@ -756,8 +826,10 @@ tick();setInterval(tick,1000);
     {text:"YOU'VE GOT LEADS.",           pct:'100%', dur:2600},
     {text:'RE-ENGAGING...',              pct:'12%',  dur:2000},
   ];
+
   let idx=0;
   let blinkTimer=null;
+
   function setPhase(i){
     const p=phases[i];
     // blink out
@@ -783,6 +855,7 @@ tick();setInterval(tick,1000);
       },p.dur);
     },220);
   }
+
   // small delay before starting so page has loaded
   setTimeout(()=>setPhase(0),800);
 })();
