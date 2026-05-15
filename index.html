@@ -7,256 +7,567 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#0c1a2e;--teal:#2d9e8a;--teal-light:#3ec4ad;--white:#fff;--cream:#f3f0ea;--warm-off:#eae6de;--warm-gray:#d8d3c8;--mid-gray:#888278;--dark:#060d18;--darker:#030810;--phosphor:#39ff9a;}
-*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+:root {
+  --navy: #0c1a2e;
+  --navy-mid: #162540;
+  --teal: #2d9e8a;
+  --teal-light: #3ec4ad;
+  --white: #ffffff;
+  --cream: #f3f0ea;
+  --warm-off: #eae6de;
+  --warm-gray: #d8d3c8;
+  --mid-gray: #888278;
+  --dark: #060d18;
+  --darker: #030810;
+  --phosphor: #39ff9a;
+  --phosphor-mid: rgba(57,255,154,0.6);
+  --phosphor-dim: rgba(57,255,154,0.3);
+  --amber: #f0a832;
+  --amber-dim: rgba(240,168,50,0.6);
+  --crt: #050e1c;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 body{font-family:'Barlow',sans-serif;background:var(--cream);color:var(--navy);overflow-x:hidden;}
-nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content:space-between;align-items:center;padding:20px 60px;background:rgba(4,8,16,.92);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.07);}
-.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
-.nav-wm-main{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;letter-spacing:.07em;color:#fff;text-transform:uppercase;line-height:1;}
-.nav-wm-main span{color:var(--teal);}
-.nav-wm-main sup{font-size:8px;color:var(--teal);}
-.nav-wm-sub{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.15em;color:rgba(255,255,255,.28);text-transform:uppercase;margin-top:2px;}
-.nav-links{display:flex;gap:34px;list-style:none;align-items:center;}
-.nav-links a{text-decoration:none;color:rgba(255,255,255,.55);font-size:13px;font-weight:500;transition:color .2s;}
-.nav-links a:hover{color:var(--teal-light);}
-.nav-cta{background:var(--teal)!important;color:#fff!important;padding:9px 20px;font-family:'Barlow Condensed',sans-serif!important;font-weight:700!important;font-size:12px!important;letter-spacing:.1em!important;text-transform:uppercase;}
-.hero{min-height:90vh;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:0 40px 80px;}
-.hero-photo{position:absolute;inset:0;z-index:1;}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block;}
-.hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg, rgba(3,8,16,1) 0%, rgba(3,8,16,.9) 14%, rgba(3,8,16,.15) 30%, transparent 50%),linear-gradient(180deg, rgba(3,8,16,.5) 0%, transparent 8%);}
-.screen-overlay{position:absolute;z-index:10;left:22%;top:8%;width:57%;height:44%;display:flex;align-items:center;justify-content:center;pointer-events:none;}
-.screen-inner{width:100%;height:100%;background:rgba(3,10,18,.82);border:1px solid rgba(57,255,154,.06);position:relative;overflow:hidden;border-radius:4px;}
-.screen-inner::before{content:'';position:absolute;inset:0;z-index:5;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.12) 2px,rgba(0,0,0,.12) 3px);pointer-events:none;}
-.screen-inner::after{content:'';position:absolute;inset:0;z-index:4;background:radial-gradient(ellipse 80% 65% at 50% 45%,transparent 45%,rgba(0,0,0,.5) 100%);pointer-events:none;}
-.screen-glow{position:absolute;inset:0;z-index:3;pointer-events:none;background:radial-gradient(ellipse 60% 45% at 50% 50%,rgba(57,255,154,.04) 0%,transparent 70%);}
-.screen-terminal{position:relative;z-index:6;font-family:'IBM Plex Mono',monospace;padding:6% 7%;height:100%;display:flex;flex-direction:column;justify-content:center;}
-.st-topbar{display:flex;justify-content:space-between;border-bottom:1px solid rgba(57,255,154,.09);padding-bottom:3%;margin-bottom:4%;}
-.st-sys{font-size:clamp(7px,1vw,11px);color:rgba(57,255,154,.32);letter-spacing:.1em;}
-.st-time{font-size:clamp(7px,1vw,11px);color:rgba(57,255,154,.28);letter-spacing:.06em;}
-.st-headline{font-size:clamp(10px,1.6vw,18px);font-weight:700;letter-spacing:.1em;color:#39ff9a;margin-bottom:2%;min-height:1.3em;animation:phos 3s ease-in-out infinite alternate;}
-@keyframes phos{from{text-shadow:0 0 8px rgba(57,255,154,.6);}to{text-shadow:0 0 22px rgba(57,255,154,1),0 0 45px rgba(57,255,154,.4);}}
-.st-sub2{font-size:clamp(6px,.9vw,10px);color:rgba(57,255,154,.25);letter-spacing:.12em;margin-bottom:5%;}
-.st-bar-wrap{height:3px;background:rgba(57,255,154,.06);border:1px solid rgba(57,255,154,.1);overflow:hidden;margin-bottom:3%;}
-.st-bar-fill{height:100%;background:linear-gradient(90deg,#2d9e8a,#39ff9a);box-shadow:0 0 8px rgba(57,255,154,.5);}
-.st-status{font-size:clamp(6px,.85vw,9px);color:rgba(57,255,154,.4);letter-spacing:.1em;margin-bottom:5%;}
-.st-cur{display:inline-block;width:5px;height:.8em;background:#39ff9a;margin-left:3px;vertical-align:text-bottom;animation:blink .9s step-end infinite;}
-@keyframes blink{50%{opacity:0}}
-.st-metrics{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(57,255,154,.07);padding-top:4%;}
-.st-met{text-align:center;}
-.st-met-n{font-family:'Instrument Serif',serif;font-size:clamp(14px,2.2vw,28px);color:#fff;line-height:1;font-style:italic;}
-.st-met-n em{font-style:normal;color:var(--teal-light);}
-.st-met-l{font-size:clamp(5px,.7vw,8px);color:rgba(57,255,154,.22);letter-spacing:.1em;text-transform:uppercase;margin-top:4px;}
-.hero-bottom{position:relative;z-index:20;display:flex;flex-direction:column;align-items:center;text-align:center;width:100%;max-width:680px;margin-top:20px;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-.hero-h1{font-family:'Instrument Serif',serif;font-size:clamp(38px,5vw,72px);line-height:.93;letter-spacing:-.03em;color:#fff;margin-bottom:20px;text-shadow:0 2px 40px rgba(0,0,0,.9),0 4px 80px rgba(0,0,0,.7);-webkit-text-stroke:1px rgba(255,255,255,.1);}
-.hero-h1 em{font-style:italic;color:var(--teal-light);-webkit-text-stroke:1px rgba(62,196,173,.15);text-shadow:0 0 40px rgba(62,196,173,.35),0 2px 40px rgba(0,0,0,.9);}
-.hero-p{font-size:17px;line-height:1.8;color:var(--teal-light);font-weight:400;margin-bottom:36px;text-shadow:0 1px 18px rgba(0,0,0,.8);}
-.hero-btns{display:flex;gap:16px;justify-content:center;align-items:center;margin-bottom:0;}
-.btn-p{background:var(--teal);color:#fff;padding:15px 36px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .25s;box-shadow:0 0 28px rgba(45,158,138,.35);}
-.btn-p:hover{background:var(--teal-light);transform:translateY(-2px);}
-.btn-g{color:rgba(255,255,255,.5);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;display:flex;align-items:center;gap:9px;transition:color .2s,gap .2s;}
-.btn-g:hover{color:var(--teal-light);gap:14px;}
-.hero-stats{position:relative;z-index:20;display:flex;justify-content:center;width:100%;margin-top:32px;border-top:1px solid rgba(255,255,255,.07);padding-top:28px;}
-.hstat{text-align:center;padding:0 44px;border-right:1px solid rgba(255,255,255,.07);}
-.hstat:last-child{border-right:none;}
-.hstat-n{font-family:'Instrument Serif',serif;font-size:clamp(36px,4.5vw,58px);color:#fff;letter-spacing:-.03em;line-height:1;}
-.hstat-n em{font-style:normal;color:var(--teal-light);}
-.hstat-l{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;color:rgba(255,255,255,.28);letter-spacing:.16em;text-transform:uppercase;margin-top:7px;}
+/* scanlines on whole page — very subtle */
+body::before{
+  content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
+  background:repeating-linear-gradient(180deg,transparent 0px,transparent 3px,rgba(0,0,0,0.008) 3px,rgba(0,0,0,0.008) 4px);
+}
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 60px;
+  background:rgba(243,240,234,0.94);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--warm-gray);
+}
+.nav-logo{display:flex;align-items:center;gap:13px;text-decoration:none;}
+.emg-loop-mark{width:52px;height:28px;flex-shrink:0;}
+.nav-logo-text{display:flex;flex-direction:column;gap:1px;}
+.nav-wordmark-main{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.06em;color:var(--navy);text-transform:uppercase;line-height:1;}
+.nav-wordmark-main span{color:var(--teal);}
+.nav-wordmark-main sup{font-size:9px;color:var(--teal);vertical-align:super;}
+.nav-wordmark-sub{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.16em;color:var(--mid-gray);text-transform:uppercase;font-weight:500;}
+.nav-links{display:flex;gap:36px;list-style:none;align-items:center;}
+.nav-links a{text-decoration:none;color:var(--navy);font-size:13px;font-weight:500;letter-spacing:0.02em;transition:color .2s;font-family:'Barlow',sans-serif;}
+.nav-links a:hover{color:var(--teal);}
+.nav-cta{
+  background:var(--navy)!important;color:var(--white)!important;
+  padding:9px 22px;font-family:'Barlow Condensed',sans-serif!important;
+  font-weight:700!important;font-size:12px!important;letter-spacing:0.12em!important;
+  text-transform:uppercase;transition:background .2s;
+}
+.nav-cta:hover{background:var(--teal)!important;}
+/* ── HERO ── */
+.hero{
+  position:relative;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
+  display:block;
+  background:#030810;
+}
+/* Monitor photo — full bleed, fills 100% of hero */
+.hero-monitor-wrap{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+}
+.hero-monitor-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+  display:block;
+}
+/* ── SCREEN INSET — % locked to where the glass lives in the photo ── */
+/* Photo is 1601x900. Screen glass: x1=342,y1=112,x2=1258,y2=774       */
+/* As % of photo: left=21.36%, top=12.44%, w=57.21%, h=73.56%           */
+/* When photo is object-fit:cover these % still track the screen.        */
+.hero-screen-inset{
+  position:absolute;
+  /* These match the screen glass position in the source image */
+  left:20.93%;
+  top:12.22%;
+  width:57.72%;
+  height:67.27%;
+  overflow:hidden;
+  z-index:5;
+}
+/* CRT vignette */
+.hsi-glass{
+  position:absolute;inset:0;z-index:30;pointer-events:none;
+  background:radial-gradient(ellipse 118% 118% at 50% 44%,transparent 48%,rgba(0,0,0,.7) 100%);
+}
+/* Scanlines */
+.hsi-scanlines{
+  position:absolute;inset:0;z-index:31;pointer-events:none;
+  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.13) 2px,rgba(0,0,0,.13) 3px);
+}
+/* ── SCREEN CONTENT ── */
+.hsi-content{
+  position:absolute;inset:0;z-index:20;
+  background:#040c18;
+  padding:2.2% 2.6%;
+  font-family:'IBM Plex Mono',monospace;
+  display:flex;flex-direction:column;
+  gap:0;
+  overflow:hidden;
+  text-shadow:0 0 6px rgba(57,255,154,.4);
+  color:#39ff9a;
+}
+.hsi-topbar{
+  display:flex;justify-content:space-between;align-items:center;
+  border-bottom:1px solid rgba(57,255,154,.15);
+  padding-bottom:.5em;margin-bottom:.55em;
+  font-size:clamp(10px,1.1vw,15px);
+  letter-spacing:.06em;flex-shrink:0;
+}
+.hsi-brand{font-weight:700;}
+.hsi-time{color:rgba(57,255,154,.4);}
+.hsi-headline{
+  font-size:clamp(12px,1.4vw,20px);font-weight:700;letter-spacing:.08em;
+  color:#39ff9a;margin-bottom:.3em;min-height:1.3em;flex-shrink:0;
+  transition:opacity .2s ease;
+  animation:phosphorPulse 2.8s ease-in-out infinite alternate;
+}
+@keyframes phosphorPulse{
+  from{text-shadow:0 0 6px rgba(57,255,154,.55),0 0 14px rgba(57,255,154,.2);}
+  to{text-shadow:0 0 14px rgba(57,255,154,1),0 0 36px rgba(57,255,154,.45),0 0 60px rgba(57,255,154,.15);}
+}
+.hsi-sub{
+  font-size:clamp(8px,0.85vw,12px);color:rgba(57,255,154,.35);
+  letter-spacing:.1em;margin-bottom:.4em;flex-shrink:0;
+}
+.hsi-bar-wrap{margin-bottom:.45em;flex-shrink:0;}
+.hsi-bar{height:clamp(2px,0.3vw,4px);background:rgba(57,255,154,.07);border:1px solid rgba(57,255,154,.15);overflow:hidden;}
+.hsi-fill{height:100%;width:0%;background:linear-gradient(90deg,#2d9e8a,#39ff9a);box-shadow:0 0 6px rgba(57,255,154,.5);transition:width 1.8s cubic-bezier(.4,0,.2,1);}
+.hsi-divider{border:none;border-top:1px solid rgba(57,255,154,.12);margin:.5em 0;flex-shrink:0;}
+/* ── BIG HEADLINE ── */
+.hsi-main-headline{
+  font-family:'Instrument Serif',serif;
+  font-size:clamp(26px,5.5vw,76px);
+  line-height:.95;letter-spacing:-.02em;
+  color:#fff;margin-bottom:.35em;flex-shrink:0;
+  text-shadow:0 0 40px rgba(255,255,255,.08),0 2px 30px rgba(0,0,0,.6);
+}
+.hsi-main-headline em{
+  font-style:italic;color:#3ec4ad;
+  text-shadow:0 0 24px rgba(62,196,173,.45);
+}
+/* Subhead */
+.hsi-main-sub{
+  font-family:'Barlow',sans-serif;
+  font-size:clamp(10px,1.2vw,17px);
+  line-height:1.65;color:rgba(62,196,173,.85);
+  font-weight:400;margin-bottom:.5em;flex-shrink:0;letter-spacing:.01em;
+}
+/* CTAs */
+.hsi-ctas{display:flex;gap:.8em;align-items:center;margin-bottom:.5em;flex-shrink:0;}
+.hsi-btn-primary{
+  background:#2d9e8a;color:#fff;
+  padding:.55em 1.4em;font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:clamp(9px,1vw,14px);
+  letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:none;transition:background .2s;
+  box-shadow:0 0 16px rgba(45,158,138,.4);white-space:nowrap;
+}
+.hsi-btn-primary:hover{background:#3ec4ad;}
+.hsi-btn-ghost{
+  color:rgba(255,255,255,.5);font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:clamp(9px,1vw,14px);letter-spacing:.1em;
+  text-transform:uppercase;text-decoration:none;
+  display:flex;align-items:center;gap:.5em;
+  transition:color .2s,gap .2s;white-space:nowrap;
+}
+.hsi-btn-ghost:hover{color:#3ec4ad;gap:.7em;}
+/* Stats */
+.hsi-stats{display:flex;align-items:center;gap:0;margin-bottom:auto;flex-shrink:0;}
+.hsi-stat{text-align:center;padding:0 .9em;}
+.hsi-stat:first-child{padding-left:0;}
+.hsi-stat-n{
+  font-family:'Instrument Serif',serif;
+  font-size:clamp(20px,3vw,42px);
+  color:#fff;line-height:1;letter-spacing:-.02em;
+}
+.hsi-stat-n span{color:#3ec4ad;font-style:italic;}
+.hsi-stat-l{font-size:clamp(7px,0.7vw,10px);color:rgba(255,255,255,.3);letter-spacing:.12em;text-transform:uppercase;margin-top:.25em;}
+.hsi-stat-div{width:1px;height:clamp(22px,3vw,44px);background:rgba(255,255,255,.08);flex-shrink:0;}
+/* Bottom nav */
+.hsi-navbar{
+  border-top:1px solid rgba(57,255,154,.1);
+  padding-top:.4em;
+  display:flex;justify-content:space-between;
+  font-size:clamp(7px,0.75vw,11px);
+  color:rgba(57,255,154,.28);letter-spacing:.06em;
+  flex-shrink:0;margin-top:auto;
+}
+.hsi-nav{padding:.2em .3em;}
+.hsi-nav.active,.hsi-nav:hover{color:#39ff9a;background:rgba(57,255,154,.06);}
+.hsi-cur{display:inline-block;width:.55em;height:.88em;background:#39ff9a;margin-left:.2em;vertical-align:text-bottom;animation:cur .9s step-end infinite;box-shadow:0 0 4px rgba(57,255,154,.8);}
+@keyframes cur{50%{opacity:0}}
+/* kill leftover old styles */
+.hero-inner,.hero-text-block,.hero-eyebrow,.hero-h1,.hero-p,.hero-btns,.hero-stats,
+.hero-bg,.hero-screen-overlay,.ovl-glass,.ovl-content{display:none;}
+@media(max-width:700px){
+  .hero{height:60vw;min-height:320px;}
+  .hsi-main-headline{font-size:clamp(12px,3vw,22px);}
+}
+/* ── TICKER ── */
 .ticker{background:var(--teal);overflow:hidden;padding:13px 0;display:flex;}
 .ticker-inner{display:flex;animation:tick 30s linear infinite;white-space:nowrap;}
-.tick-item{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.88);padding:0 34px;flex-shrink:0;display:flex;align-items:center;}
-.tick-item::after{content:'◆';margin-left:34px;color:rgba(255,255,255,.28);font-size:7px;}
+.tick-item{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(255,255,255,.88);padding:0 36px;flex-shrink:0;
+  display:flex;align-items:center;gap:0;
+}
+.tick-item::after{content:'◆';margin-left:36px;color:rgba(255,255,255,.3);font-size:7px;}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.sec{padding:120px 64px;}.sec-dark{background:var(--navy);padding:120px 64px;}
-.sec-cream{background:var(--cream);}.sec-off{background:var(--warm-off);}.sec-white{background:#fff;}
-.lbl{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:16px;display:flex;align-items:center;gap:12px;}
-.lbl::before{content:'';width:22px;height:1px;background:var(--teal);display:block;}
-.lbl-lt{color:var(--teal-light);}.lbl-lt::before{background:var(--teal-light);}
-h2.h{font-family:'Instrument Serif',serif;font-size:clamp(40px,5vw,68px);line-height:.97;letter-spacing:-.03em;color:var(--navy);margin-bottom:20px;}
-h2.h-lt{color:#fff;}h2.h em{font-style:italic;color:var(--teal);}h2.h-lt em{color:var(--teal-light);}
+/* ── SHARED ── */
+.sec{padding:120px 64px;}
+.sec-dark{background:var(--navy);padding:120px 64px;}
+.sec-cream{background:var(--cream);}
+.sec-off{background:var(--warm-off);}
+.sec-white{background:#fff;}
+.label{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--teal);
+  margin-bottom:16px;display:flex;align-items:center;gap:12px;
+}
+.label::before{content:'';width:22px;height:1px;background:var(--teal);display:block;}
+.label-light{color:var(--teal-light);}
+.label-light::before{background:var(--teal-light);}
+h2.h{
+  font-family:'Instrument Serif',serif;
+  font-size:clamp(40px,5vw,68px);line-height:.97;
+  letter-spacing:-.03em;color:var(--navy);margin-bottom:20px;
+}
+h2.h-light{color:#fff;}
+h2.h em{font-style:italic;color:var(--teal);}
+h2.h-light em{color:var(--teal-light);}
 .body-l{font-size:18px;line-height:1.78;color:var(--mid-gray);font-weight:300;max-width:540px;}
+/* ── PROBLEM ── */
 .prob-grid{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:start;}
-.prob-lede{font-family:'Instrument Serif',serif;font-size:clamp(26px,3vw,42px);color:#fff;line-height:1.12;letter-spacing:-.02em;}
-.prob-lede em{font-style:italic;color:var(--teal-light);}
-.prob-pts{margin-top:40px;display:flex;flex-direction:column;}
-.prob-pt{padding:18px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;gap:18px;align-items:baseline;}
+.prob-lede{
+  font-family:'Instrument Serif',serif;
+  font-size:clamp(28px,3.2vw,46px);color:#fff;
+  line-height:1.12;letter-spacing:-.025em;
+}
+.prob-lede em{font-style:italic;color:var(--teal-light);font-family:'Barlow',sans-serif;font-weight:300;}
+.prob-pts{margin-top:44px;display:flex;flex-direction:column;}
+.prob-pt{
+  padding:20px 0;border-bottom:1px solid rgba(255,255,255,.06);
+  display:flex;gap:20px;align-items:baseline;
+}
 .prob-pt:first-child{border-top:1px solid rgba(255,255,255,.06);}
-.pnum{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--teal-light);letter-spacing:.1em;flex-shrink:0;}
-.ptxt{font-size:15px;line-height:1.6;color:rgba(255,255,255,.5);font-weight:300;}
-.res-box{background:rgba(62,196,173,.1);border:1px solid rgba(62,196,173,.2);border-radius:3px;padding:44px;position:relative;overflow:hidden;}
-.res-box::before{content:'';position:absolute;top:-80px;right:-80px;width:220px;height:220px;border-radius:50%;background:rgba(62,196,173,.06);}
-.res-box h3{font-family:'Instrument Serif',serif;font-size:26px;color:#fff;line-height:1.2;margin-bottom:12px;letter-spacing:-.02em;}
-.res-box p{font-size:14px;line-height:1.8;color:rgba(255,255,255,.55);font-weight:300;}
-.loop-top{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:64px;}
-.loop-diagram{height:280px;display:flex;align-items:center;justify-content:center;}
-.ld-ring{width:220px;height:220px;border-radius:50%;border:1.5px solid var(--warm-gray);position:relative;display:flex;align-items:center;justify-content:center;}
-.ld-inner{position:absolute;width:140px;height:140px;border-radius:50%;border:1.5px solid var(--teal);opacity:.3;animation:spin 22s linear infinite;}
+.pnum{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--teal-light);letter-spacing:.1em;flex-shrink:0;}
+.ptxt{font-size:16px;line-height:1.55;color:rgba(255,255,255,.52);font-weight:300;}
+.res-box{
+  background:rgba(62,196,173,.1);border:1px solid rgba(62,196,173,.22);
+  border-radius:3px;padding:44px;position:relative;overflow:hidden;
+}
+.res-box::before{
+  content:'';position:absolute;top:-80px;right:-80px;
+  width:240px;height:240px;border-radius:50%;
+  background:rgba(62,196,173,.07);
+}
+.res-box h3{
+  font-family:'Instrument Serif',serif;font-size:28px;
+  color:#fff;line-height:1.2;margin-bottom:14px;letter-spacing:-.02em;
+}
+.res-box p{font-size:15px;line-height:1.8;color:rgba(255,255,255,.58);font-weight:300;}
+/* ── LOOP / THREE FORCES ── */
+.loop-top{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:end;margin-bottom:72px;}
+.loop-diagram{position:relative;height:300px;display:flex;align-items:center;justify-content:center;}
+.ld-ring{
+  width:230px;height:230px;border-radius:50%;
+  border:1.5px solid var(--warm-gray);
+  position:relative;display:flex;align-items:center;justify-content:center;
+}
+.ld-inner{
+  position:absolute;width:148px;height:148px;border-radius:50%;
+  border:1.5px solid var(--teal);opacity:.35;
+  animation:spin 22s linear infinite;
+}
 @keyframes spin{to{transform:rotate(360deg)}}
-.ld-center{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:11px;color:var(--navy);letter-spacing:.07em;text-transform:uppercase;text-align:center;line-height:1.4;}
-.ld-center span{display:block;font-size:8px;color:var(--teal);font-weight:400;letter-spacing:.1em;margin-top:3px;}
-.ld-node{position:absolute;font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;background:#fff;border:1.5px solid var(--warm-gray);padding:6px 12px;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.07);color:var(--navy);}
+.ld-center{
+  font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:12px;
+  color:var(--navy);letter-spacing:.08em;text-transform:uppercase;text-align:center;line-height:1.4;
+}
+.ld-center span{display:block;font-size:9px;color:var(--teal);font-weight:400;letter-spacing:.12em;margin-top:3px;}
+.ld-node{
+  position:absolute;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  background:#fff;border:1.5px solid var(--warm-gray);
+  padding:7px 13px;white-space:nowrap;
+  box-shadow:0 2px 10px rgba(0,0,0,.07);
+  color:var(--navy);
+}
 .ld-node.t{top:-10px;left:50%;transform:translateX(-50%);border-color:var(--navy);}
-.ld-node.r{right:-64px;top:50%;transform:translateY(-50%);border-color:var(--teal);color:var(--teal);}
+.ld-node.r{right:-68px;top:50%;transform:translateY(-50%);border-color:var(--teal);color:var(--teal);}
 .ld-node.b{bottom:-10px;left:50%;transform:translateX(-50%);}
-.forces{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--warm-gray);border:2px solid var(--warm-gray);border-radius:3px;overflow:hidden;}
-.force{background:#fff;padding:38px 30px;transition:background .25s;}
+.forces{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:2px;
+  background:var(--warm-gray);border:2px solid var(--warm-gray);border-radius:3px;overflow:hidden;
+}
+.force{background:#fff;padding:40px 32px;transition:background .25s;}
 .force:hover{background:var(--navy);}
-.force:hover .fn{color:rgba(255,255,255,.04);}
-.force:hover .ft2{color:#fff;}
-.force:hover .fb{color:rgba(255,255,255,.46);}
-.fn{font-family:'Instrument Serif',serif;font-size:52px;color:var(--warm-gray);line-height:1;margin-bottom:12px;font-style:italic;transition:color .25s;}
-.ft2{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;letter-spacing:.04em;color:var(--navy);margin-bottom:8px;text-transform:uppercase;transition:color .25s;}
-.fb{font-size:13px;line-height:1.7;color:var(--mid-gray);font-weight:300;transition:color .25s;}
-.svc-intro{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:56px;}
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--warm-gray);border:2px solid var(--warm-gray);border-radius:3px;overflow:hidden;}
-.svc{background:#fff;padding:38px 30px;transition:background .25s;}
+.force:hover .force-n{color:rgba(255,255,255,.05);}
+.force:hover .force-t{color:#fff;}
+.force:hover .force-b{color:rgba(255,255,255,.48);}
+.force-n{
+  font-family:'Instrument Serif',serif;font-size:56px;
+  color:var(--warm-gray);line-height:1;margin-bottom:14px;
+  font-style:italic;transition:color .25s;
+}
+.force-t{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:21px;letter-spacing:.04em;color:var(--navy);margin-bottom:10px;text-transform:uppercase;transition:color .25s;}
+.force-b{font-size:14px;line-height:1.68;color:var(--mid-gray);font-weight:300;transition:color .25s;}
+/* ── SERVICES ── */
+.svc-intro{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:end;margin-bottom:64px;}
+.svc-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:2px;
+  background:var(--warm-gray);border:2px solid var(--warm-gray);border-radius:3px;overflow:hidden;
+}
+.svc{background:#fff;padding:40px 32px;transition:background .25s;}
 .svc:hover{background:var(--navy);}
-.svc:hover .svn{color:rgba(255,255,255,.04);}
-.svc:hover .svtag{background:rgba(62,196,173,.18);color:var(--teal-light);}
-.svc:hover .svt{color:#fff;}
-.svc:hover .svd{color:rgba(255,255,255,.42);}
-.svc:hover .svli{color:rgba(255,255,255,.35);border-color:rgba(255,255,255,.06);}
-.svc:hover .svli::before{color:var(--teal-light);}
-.svn{font-family:'Instrument Serif',serif;font-size:50px;color:var(--warm-gray);line-height:1;margin-bottom:10px;font-style:italic;transition:color .25s;}
-.svtag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:8px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:4px 9px;background:var(--cream);color:var(--teal);margin-bottom:11px;transition:all .25s;}
-.svt{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:19px;letter-spacing:.03em;text-transform:uppercase;color:var(--navy);margin-bottom:8px;line-height:1.2;transition:color .25s;}
-.svd{font-size:13px;line-height:1.65;color:var(--mid-gray);margin-bottom:18px;font-weight:300;transition:color .25s;}
-.svul{list-style:none;display:flex;flex-direction:column;}
-.svli{font-size:12px;color:var(--mid-gray);padding:7px 0;border-bottom:1px solid var(--warm-gray);display:flex;align-items:center;gap:8px;line-height:1.4;transition:all .25s;}
-.svli::before{content:'→';color:var(--teal);font-size:10px;flex-shrink:0;transition:color .25s;}
-.vert-intro{display:grid;grid-template-columns:1fr 1.3fr;gap:80px;align-items:end;margin-bottom:56px;}
-.vert-frame{font-family:'Instrument Serif',serif;font-size:20px;color:rgba(255,255,255,.36);line-height:1.55;font-style:italic;}
-.vert-frame strong{color:var(--teal-light);font-style:normal;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:.04em;text-transform:uppercase;}
-.vg4{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(255,255,255,.05);border:2px solid rgba(255,255,255,.05);border-radius:3px 3px 0 0;overflow:hidden;}
-.vg3{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:2px;background:rgba(255,255,255,.05);border:2px solid rgba(255,255,255,.05);border-top:none;border-radius:0 0 3px 3px;overflow:hidden;}
-.vc{background:rgba(255,255,255,.02);padding:32px 24px;transition:background .25s;cursor:default;}
+.svc:hover .svc-n{color:rgba(255,255,255,.05);}
+.svc:hover .svc-tag{background:rgba(62,196,173,.18);color:var(--teal-light);}
+.svc:hover .svc-t{color:#fff;}
+.svc:hover .svc-d{color:rgba(255,255,255,.44);}
+.svc:hover .svc-li{color:rgba(255,255,255,.38);border-color:rgba(255,255,255,.07);}
+.svc:hover .svc-li::before{color:var(--teal-light);}
+.svc-n{font-family:'Instrument Serif',serif;font-size:52px;color:var(--warm-gray);line-height:1;margin-bottom:12px;font-style:italic;transition:color .25s;}
+.svc-tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:4px 10px;background:var(--cream);color:var(--teal);margin-bottom:13px;transition:all .25s;}
+.svc-t{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;letter-spacing:.03em;text-transform:uppercase;color:var(--navy);margin-bottom:9px;line-height:1.2;transition:color .25s;}
+.svc-d{font-size:13px;line-height:1.68;color:var(--mid-gray);margin-bottom:20px;font-weight:300;transition:color .25s;}
+.svc-ul{list-style:none;display:flex;flex-direction:column;}
+.svc-li{font-size:12px;color:var(--mid-gray);padding:8px 0;border-bottom:1px solid var(--warm-gray);display:flex;align-items:center;gap:8px;line-height:1.4;transition:all .25s;}
+.svc-li::before{content:'→';color:var(--teal);font-size:11px;flex-shrink:0;transition:color .25s;}
+/* ── VERTICALS ── */
+.vert-intro{display:grid;grid-template-columns:1fr 1.3fr;gap:88px;align-items:end;margin-bottom:64px;}
+.vert-frame{
+  font-family:'Instrument Serif',serif;font-size:20px;
+  color:rgba(255,255,255,.38);line-height:1.55;font-style:italic;
+}
+.vert-frame strong{color:var(--teal-light);font-style:normal;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;letter-spacing:.04em;text-transform:uppercase;}
+.vg4{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:2px;
+  background:rgba(255,255,255,.05);border:2px solid rgba(255,255,255,.05);
+  border-radius:3px 3px 0 0;overflow:hidden;
+}
+.vg3{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:2px;
+  background:rgba(255,255,255,.05);border:2px solid rgba(255,255,255,.05);
+  border-top:none;border-radius:0 0 3px 3px;overflow:hidden;
+}
+.vc{background:rgba(255,255,255,.02);padding:34px 26px;transition:background .25s;cursor:default;}
 .vc:hover{background:var(--teal);}
-.vc:hover .vi{border-color:rgba(255,255,255,.22);}
+.vc:hover .vi{border-color:rgba(255,255,255,.25);}
 .vc:hover .vn{color:#fff;}
-.vc:hover .vd{color:rgba(255,255,255,.75);}
-.vc:hover .vtag{background:rgba(255,255,255,.14);color:#fff;}
-.vi{font-size:18px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.09);display:flex;align-items:center;justify-content:center;margin-bottom:14px;transition:border-color .25s;}
-.vn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.82);margin-bottom:7px;transition:color .25s;}
-.vd{font-size:12px;line-height:1.6;color:rgba(255,255,255,.3);font-weight:300;transition:color .25s;margin-bottom:12px;}
-.vtag{font-family:'IBM Plex Mono',monospace;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-light);background:rgba(62,196,173,.1);padding:4px 8px;transition:all .25s;display:inline-block;}
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:48px;}
+.vc:hover .vd{color:rgba(255,255,255,.78);}
+.vc:hover .vtag{background:rgba(255,255,255,.15);color:#fff;}
+.vi{font-size:20px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;margin-bottom:16px;transition:border-color .25s;}
+.vn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:7px;transition:color .25s;}
+.vd{font-size:12px;line-height:1.6;color:rgba(255,255,255,.32);font-weight:300;transition:color .25s;margin-bottom:14px;}
+.vtag{font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-light);background:rgba(62,196,173,.1);padding:4px 8px;transition:all .25s;display:inline-block;}
+/* ── WHY ── */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:center;margin-top:52px;}
 .why-rows{display:flex;flex-direction:column;}
-.why-row{display:flex;align-items:baseline;gap:18px;padding:18px 0;border-bottom:1px solid var(--warm-gray);}
+.why-row{display:flex;align-items:baseline;gap:20px;padding:20px 0;border-bottom:1px solid var(--warm-gray);}
 .why-row:first-child{border-top:1px solid var(--warm-gray);}
-.why-kw{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;color:var(--teal);letter-spacing:.1em;text-transform:uppercase;min-width:82px;flex-shrink:0;}
-.why-tx{font-size:14px;color:var(--navy);line-height:1.55;}
-.why-card{background:var(--navy);padding:48px;border-radius:3px;position:relative;overflow:hidden;}
-.why-card::after{content:'"';position:absolute;bottom:-50px;right:4px;font-family:'Instrument Serif',serif;font-size:260px;color:rgba(255,255,255,.03);line-height:1;}
-.why-q{font-family:'Instrument Serif',serif;font-size:26px;color:#fff;line-height:1.3;margin-bottom:20px;letter-spacing:-.015em;position:relative;z-index:1;}
+.why-kw{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--teal);letter-spacing:.1em;text-transform:uppercase;min-width:86px;flex-shrink:0;}
+.why-tx{font-size:15px;color:var(--navy);line-height:1.55;font-weight:400;}
+.why-card{background:var(--navy);padding:52px;border-radius:3px;position:relative;overflow:hidden;}
+.why-card::after{content:'"';position:absolute;bottom:-50px;right:4px;font-family:'Instrument Serif',serif;font-size:280px;color:rgba(255,255,255,.03);line-height:1;}
+.why-q{font-family:'Instrument Serif',serif;font-size:27px;color:#fff;line-height:1.3;margin-bottom:22px;letter-spacing:-.015em;position:relative;z-index:1;}
 .why-q em{color:var(--teal-light);font-style:italic;}
-.why-by{font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.25);position:relative;z-index:1;}
-.comp-tbl{margin-top:48px;border:2px solid var(--warm-gray);border-radius:3px;overflow:hidden;}
+.why-by{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.28);position:relative;z-index:1;}
+/* ── COMPARISON ── */
+.comp-tbl{margin-top:52px;border:2px solid var(--warm-gray);border-radius:3px;overflow:hidden;}
 .comp-h{display:grid;grid-template-columns:1.2fr 1fr 1fr;background:var(--navy);}
-.comp-hc{padding:15px 26px;font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.28);}
-.comp-hc.emg{color:var(--teal-light);background:rgba(62,196,173,.09);}
+.comp-hc{padding:17px 28px;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.3);}
+.comp-hc.emg{color:var(--teal-light);background:rgba(62,196,173,.1);}
 .comp-r{display:grid;grid-template-columns:1.2fr 1fr 1fr;border-top:1px solid var(--warm-gray);transition:background .2s;}
 .comp-r:hover{background:var(--warm-off);}
-.comp-c{padding:15px 26px;font-size:13px;color:var(--mid-gray);border-right:1px solid var(--warm-gray);line-height:1.4;}
+.comp-c{padding:17px 28px;font-size:13px;color:var(--mid-gray);border-right:1px solid var(--warm-gray);line-height:1.4;}
 .comp-c:last-child{border-right:none;}
-.comp-c.topic{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;color:var(--navy);letter-spacing:.04em;text-transform:uppercase;}
+.comp-c.topic{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;color:var(--navy);letter-spacing:.04em;text-transform:uppercase;}
 .comp-c.emgv{color:var(--navy);font-weight:500;background:rgba(62,196,173,.03);}
-.proc-wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:48px;position:relative;}
+/* ── PROCESS ── */
+.proc-wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:52px;position:relative;}
 .proc-wrap::before{content:'';position:absolute;top:26px;left:10%;right:10%;height:1px;background:var(--warm-gray);z-index:0;}
-.proc-s{text-align:center;padding:0 8px;position:relative;z-index:1;}
-.proc-dot{width:52px;height:52px;border-radius:50%;background:#fff;border:2px solid var(--warm-gray);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--navy);transition:all .25s;}
+.proc-s{text-align:center;padding:0 10px;position:relative;z-index:1;}
+.proc-dot{
+  width:52px;height:52px;border-radius:50%;
+  background:#fff;border:2px solid var(--warm-gray);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 16px;
+  font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;color:var(--navy);
+  transition:all .25s;
+}
 .proc-s:hover .proc-dot{background:var(--teal);border-color:var(--teal);color:#fff;}
-.proc-t{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--navy);margin-bottom:6px;}
+.proc-t{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--navy);margin-bottom:6px;}
 .proc-d{font-size:12px;line-height:1.6;color:var(--mid-gray);font-weight:300;}
+/* ── CTA ── */
 .cta{background:var(--darker);padding:120px 64px;text-align:center;position:relative;overflow:hidden;}
-.cta-atm{position:absolute;bottom:-60px;left:50%;transform:translateX(-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(45,158,138,.16) 0%,transparent 70%);pointer-events:none;}
-.cta h2{font-family:'Instrument Serif',serif;font-size:clamp(44px,6vw,84px);color:#fff;line-height:.95;letter-spacing:-.03em;margin-bottom:20px;max-width:760px;margin-left:auto;margin-right:auto;}
+.cta-atm{position:absolute;bottom:-60px;left:50%;transform:translateX(-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(45,158,138,.18) 0%,transparent 70%);pointer-events:none;}
+.cta .label{justify-content:center;}
+.cta .label::before{display:none;}
+.cta h2{
+  font-family:'Instrument Serif',serif;
+  font-size:clamp(44px,6vw,84px);color:#fff;
+  line-height:.95;letter-spacing:-.03em;
+  margin-bottom:22px;max-width:760px;margin-left:auto;margin-right:auto;
+}
 .cta h2 em{color:var(--teal-light);font-style:italic;}
-.cta p{font-size:17px;color:rgba(255,255,255,.36);font-weight:300;max-width:440px;margin:0 auto 44px;line-height:1.8;}
-.cta-row{display:flex;gap:10px;justify-content:center;max-width:460px;margin:0 auto 16px;}
-.cta-in{flex:1;padding:13px 16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;font-family:'Barlow',sans-serif;font-size:14px;outline:none;transition:border-color .2s;}
-.cta-in::placeholder{color:rgba(255,255,255,.24);}
+.cta p{font-size:17px;color:rgba(255,255,255,.38);font-weight:300;max-width:440px;margin:0 auto 48px;line-height:1.8;}
+.cta-row{display:flex;gap:10px;justify-content:center;max-width:480px;margin:0 auto 18px;}
+.cta-in{
+  flex:1;padding:14px 18px;background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.12);color:#fff;
+  font-family:'Barlow',sans-serif;font-size:14px;outline:none;transition:border-color .2s;
+}
+.cta-in::placeholder{color:rgba(255,255,255,.26);}
 .cta-in:focus{border-color:var(--teal);}
-.cta-note{font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,.16);letter-spacing:.06em;}
+.cta-note{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.18);letter-spacing:.06em;}
+/* ── FOOTER ── */
 footer{background:var(--navy);padding:56px 64px;}
-.ft{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:52px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:28px;}
-.ft-brand p{font-size:13px;line-height:1.78;color:rgba(255,255,255,.3);font-weight:300;margin-top:14px;max-width:270px;}
-.ft-col h4{font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:14px;}
+.ft{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:56px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:30px;}
+.ft-brand p{font-size:13px;line-height:1.78;color:rgba(255,255,255,.32);font-weight:300;margin-top:14px;max-width:280px;}
+.ft-col h4{font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:16px;}
 .ft-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
-.ft-col a{font-size:13px;color:rgba(255,255,255,.38);text-decoration:none;transition:color .2s;font-weight:300;}
+.ft-col a{font-size:13px;color:rgba(255,255,255,.42);text-decoration:none;transition:color .2s;font-weight:300;}
 .ft-col a:hover{color:var(--teal-light);}
 .ft-bot{display:flex;justify-content:space-between;align-items:center;}
-.ft-copy{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.16);letter-spacing:.06em;}
-.ft-tag{font-family:'Instrument Serif',serif;font-size:15px;font-style:italic;color:rgba(255,255,255,.2);}
-@media(max-width:960px){nav{padding:14px 20px;}.nav-links{display:none;}.hero{padding:0 22px 52px;}.screen-overlay{left:21%;top:9%;width:58%;height:54%;}.hero-h1{font-size:52px;}.sec,.sec-dark{padding:80px 22px;}.prob-grid,.loop-top,.svc-intro,.vert-intro,.why-grid{grid-template-columns:1fr;gap:40px;}.forces,.svc-grid{grid-template-columns:1fr;}.vg4,.vg3{grid-template-columns:repeat(2,1fr);}.proc-wrap{grid-template-columns:1fr 1fr;gap:28px;}.proc-wrap::before{display:none;}footer{padding:44px 22px;}.ft{grid-template-columns:1fr 1fr;gap:32px;}.cta-row{flex-direction:column;}.hero-stats{flex-wrap:wrap;gap:20px;}.hstat{padding:0 20px;}}
+.ft-copy{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.18);letter-spacing:.06em;}
+.ft-tag{font-family:'Instrument Serif',serif;font-size:15px;font-style:italic;color:rgba(255,255,255,.22);}
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  nav{padding:14px 22px;}
+  .nav-links{display:none;}
+  .sec,.sec-dark{padding:80px 22px;}
+  .hero{padding:60px 16px 48px;}
+  .hero-monitor-wrap{width:min(98vw,520px);}
+  .hstat{padding:0 20px;}
+  .hero-h1{font-size:clamp(38px,8vw,64px);}
+  .prob-grid,.loop-top,.svc-intro,.vert-intro,.why-grid{grid-template-columns:1fr;gap:44px;}
+  .forces,.svc-grid{grid-template-columns:1fr;}
+  .vg4,.vg3{grid-template-columns:repeat(2,1fr);}
+  .proc-wrap{grid-template-columns:1fr 1fr;gap:32px;}
+  .proc-wrap::before{display:none;}
+  footer{padding:48px 22px;}
+  .ft{grid-template-columns:1fr 1fr;gap:36px;}
+  .cta-row{flex-direction:column;}
+  .hero-stats{gap:0;flex-wrap:wrap;}
+  .hstat{padding:0 24px;}
+}
 </style>
 </head>
 <body>
+<!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
-    <svg width="50" height="26" viewBox="0 0 80 44" fill="none">
-      <path d="M40 22 C34 10,22 6,14 8 C6 10,2 16,2 22 C2 28,6 34,14 36 C22 38,34 34,40 22 Z" fill="none" stroke="white" stroke-width="4.5" stroke-linecap="round"/>
-      <path d="M40 22 C46 34,58 38,66 36 C74 34,78 28,78 22 C78 16,74 10,66 8 C58 6,46 10,40 22 Z" fill="none" stroke="#2d9e8a" stroke-width="4.5" stroke-linecap="round"/>
+  <a href="#" class="nav-logo">
+    <svg class="emg-loop-mark" viewBox="0 0 80 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Left loop — navy -->
+      <path d="M40 22 C34 10, 22 6, 14 8 C6 10, 2 16, 2 22 C2 28, 6 34, 14 36 C22 38, 34 34, 40 22 Z" fill="none" stroke="#0c1a2e" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Right loop — teal -->
+      <path d="M40 22 C46 34, 58 38, 66 36 C74 34, 78 28, 78 22 C78 16, 74 10, 66 8 C58 6, 46 10, 40 22 Z" fill="none" stroke="#2d9e8a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    <div>
-      <div class="nav-wm-main">EMG <span>Loop</span><sup>™</sup></div>
-      <div class="nav-wm-sub">Elite Media Group</div>
+    <div class="nav-logo-text">
+      <div class="nav-wordmark-main">EMG <span>Loop</span><sup>™</sup></div>
+      <div class="nav-wordmark-sub">Elite Media Group</div>
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#verticals">Verticals</a></li>
-    <li><a href="#why">Why EMG</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="#contact" class="nav-cta">Start a Conversation</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="verticals.html">Verticals</a></li>
+    <li><a href="the-loop.html">The Loop</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="results.html">Results</a></li>
+    <li><a href="contact.html" class="nav-cta">Start a Conversation</a></li>
   </ul>
 </nav>
-
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-photo">
-    <img src="assets/images/hero-bg.jpg" alt="" style="width:100%;height:100%;object-fit:contain;object-position:center center;display:block;background:#060d18;">
-  </div>
-  <div class="screen-overlay">
-    <div class="screen-inner">
-      <div class="screen-glow"></div>
-      <div class="screen-terminal">
-        <div class="st-topbar">
-          <span class="st-sys">EMG LOOP™ &nbsp;//&nbsp; ACQUISITION SYSTEM</span>
-          <span class="st-time" id="htTime">--:--:--</span>
+  <div class="hero-monitor-wrap">
+    <img class="hero-monitor-img" src="assets/images/hero-bg.jpg" alt="EMG — 80s office CRT monitor">
+    <!-- Everything lives inside the screen -->
+    <div class="hero-screen-inset">
+      <div class="hsi-glass"></div>
+      <div class="hsi-scanlines"></div>
+      <div class="hsi-content">
+        <!-- TOP BAR -->
+        <div class="hsi-topbar">
+          <span class="hsi-brand">EMG LOOP™ &nbsp;// &nbsp;v2.6</span>
+          <span class="hsi-time" id="htTime">--:--:--</span>
         </div>
-        <div class="st-headline" id="htCycle">&nbsp;</div>
-        <div class="st-sub2">ELITE MEDIA GROUP — SIGNAL ONLINE</div>
-        <div class="st-bar-wrap"><div class="st-bar-fill" id="htFill" style="width:0%"></div></div>
-        <div class="st-status">LOOP STATUS: ACTIVE <span class="st-cur"></span></div>
+        <!-- CYCLING STATUS LINE -->
+        <div class="hsi-headline" id="htCycle">&nbsp;</div>
+        <div class="hsi-sub">ELITE MEDIA GROUP — ACQUISITION SYSTEM ONLINE</div>
+        <!-- PROGRESS BAR -->
+        <div class="hsi-bar-wrap">
+          <div class="hsi-bar"><div class="hsi-fill" id="htFill"></div></div>
+        </div>
+        <div class="hsi-divider"></div>
+        <!-- MAIN HEADLINE -->
+        <div class="hsi-main-headline">
+          One loop.<br><em>Every</em> vertical.
+        </div>
+        <!-- SUBHEAD -->
+        <div class="hsi-main-sub">
+          Influence builds the trust. Performance creates the scale.<br>
+          AI compounds the signal. One system — infinite entry points.
+        </div>
+        <!-- CTA BUTTONS -->
+        <div class="hsi-ctas">
+          <a href="contact.html" class="hsi-btn-primary">Start a Conversation</a>
+          <a href="services.html" class="hsi-btn-ghost">See What We Build →</a>
+        </div>
+        <div class="hsi-divider"></div>
+        <!-- STATS -->
+        <div class="hsi-stats">
+          <div class="hsi-stat">
+            <div class="hsi-stat-n">1</div>
+            <div class="hsi-stat-l">Core System</div>
+          </div>
+          <div class="hsi-stat-div"></div>
+          <div class="hsi-stat">
+            <div class="hsi-stat-n">5<span>+</span></div>
+            <div class="hsi-stat-l">Entry Points</div>
+          </div>
+          <div class="hsi-stat-div"></div>
+          <div class="hsi-stat">
+            <div class="hsi-stat-n">100<span>%</span></div>
+            <div class="hsi-stat-l">Accountable</div>
+          </div>
+        </div>
+        <!-- BOTTOM NAV -->
+        <div class="hsi-navbar">
+          <span class="hsi-nav">[ INFLUENCE ]</span>
+          <span class="hsi-nav active">[ PERFORMANCE ]</span>
+          <span class="hsi-nav">[ AI ]</span>
+          <span class="hsi-nav">[ LOOP ]</span>
+        </div>
       </div>
     </div>
   </div>
-  <div class="hero-bottom">
-    <h1 class="hero-h1">One loop.<br><em>Every</em> vertical.</h1>
-    <p class="hero-p">Influence builds the trust. Performance creates the scale.<br>AI compounds the signal. One system — infinite entry points.</p>
-    <div class="hero-btns">
-      <a href="#contact" class="btn-p">Start a Conversation</a>
-      <a href="#services" class="btn-g">See What We Build →</a>
-    </div>
-  </div>
-  <div class="hero-stats">
-    <div class="hstat"><div class="hstat-n">1</div><div class="hstat-l">Core System</div></div>
-    <div class="hstat"><div class="hstat-n">5<em>+</em></div><div class="hstat-l">Entry Points</div></div>
-    <div class="hstat"><div class="hstat-n">100<em>%</em></div><div class="hstat-l">Performance Accountable</div></div>
-  </div>
 </section>
-
+<!-- TICKER -->
 <div class="ticker">
   <div class="ticker-inner">
     <span class="tick-item">Home Services</span><span class="tick-item">Insurance</span><span class="tick-item">Legal &amp; Mass Tort</span><span class="tick-item">Medicare</span><span class="tick-item">Final Expense</span><span class="tick-item">Disability / SSDI</span><span class="tick-item">Home Warranty</span><span class="tick-item">SMB</span><span class="tick-item">CPG</span><span class="tick-item">Automotive</span><span class="tick-item">Pay-Per-Call</span><span class="tick-item">Influencer Programs</span><span class="tick-item">Performance Media</span><span class="tick-item">AI Acquisition</span>
     <span class="tick-item">Home Services</span><span class="tick-item">Insurance</span><span class="tick-item">Legal &amp; Mass Tort</span><span class="tick-item">Medicare</span><span class="tick-item">Final Expense</span><span class="tick-item">Disability / SSDI</span><span class="tick-item">Home Warranty</span><span class="tick-item">SMB</span><span class="tick-item">CPG</span><span class="tick-item">Automotive</span><span class="tick-item">Pay-Per-Call</span><span class="tick-item">Influencer Programs</span><span class="tick-item">Performance Media</span><span class="tick-item">AI Acquisition</span>
   </div>
 </div>
-
+<!-- PROBLEM -->
 <section class="sec-dark sec" id="about">
   <div class="prob-grid">
     <div>
-      <div class="lbl lbl-lt">The Problem</div>
-      <p class="prob-lede">Fragmentation reshaped attention.<br><em>Most agencies missed it.</em></p>
+      <div class="label label-light">The Problem</div>
+      <h2 class="h h-light" style="max-width:420px">Fragmentation reshaped attention.<br>Most agencies missed it.</h2>
       <div class="prob-pts">
         <div class="prob-pt"><span class="pnum">01</span><span class="ptxt">Audiences are skeptical of ads from brands they don't trust.</span></div>
         <div class="prob-pt"><span class="pnum">02</span><span class="ptxt">Performance without trust doesn't convert at scale.</span></div>
@@ -267,16 +578,16 @@ footer{background:var(--navy);padding:56px 64px;}
     <div>
       <div class="res-box">
         <h3>EMG was built for this exact moment.</h3>
-        <p>We design integrated systems that combine creator-led trust, performance media reach, and AI-driven optimization. Not separate campaigns — one compounding loop that learns, adapts, and delivers.</p>
+        <p>We design integrated systems that combine creator-led trust, performance media reach, and AI-driven optimization. Not separate campaigns — one compounding loop that learns, adapts, and delivers. Every vertical is a different entry point into the same system.</p>
       </div>
     </div>
   </div>
 </section>
-
+<!-- THE LOOP -->
 <section class="sec-cream sec">
   <div class="loop-top">
     <div>
-      <div class="lbl">The EMG Loop</div>
+      <div class="label">The EMG Loop</div>
       <h2 class="h">One system.<br>Three forces.</h2>
       <p class="body-l" style="margin-top:16px">Influence initiates trust. Performance creates reach. AI captures signal and optimizes the whole. Each feeds the others — every interaction compounds value across the loop.</p>
     </div>
@@ -291,53 +602,53 @@ footer{background:var(--navy);padding:56px 64px;}
     </div>
   </div>
   <div class="forces">
-    <div class="force"><div class="fn">01</div><div class="ft2">Influence</div><p class="fb">Creator-led trust programs that initiate belief at the top of the funnel. Creators aren't distribution — they're signal that makes everything downstream convert harder.</p></div>
-    <div class="force"><div class="fn">02</div><div class="ft2">Performance</div><p class="fb">Paid social, search, and CTV/OTT that creates scale. Media that adapts to people, not platforms. Accountable to revenue, not reach.</p></div>
-    <div class="force"><div class="fn">03</div><div class="ft2">AI</div><p class="fb">Signal capture, real-time learning, and continuous optimization. Campaigns that learn instead of reporting after the fact. The loop never stops.</p></div>
+    <div class="force"><div class="force-n">01</div><div class="force-t">Influence</div><p class="force-b">Creator-led trust programs that initiate belief at the top of the funnel. Creators aren't distribution — they're signal that makes everything downstream convert harder.</p></div>
+    <div class="force"><div class="force-n">02</div><div class="force-t">Performance</div><p class="force-b">Paid social, search, and CTV/OTT that creates scale. Media that adapts to people, not platforms. Accountable to revenue, not reach.</p></div>
+    <div class="force"><div class="force-n">03</div><div class="force-t">AI</div><p class="force-b">Signal capture, real-time learning, and continuous optimization. Campaigns that learn instead of reporting after the fact. The loop never stops.</p></div>
   </div>
 </section>
-
+<!-- SERVICES -->
 <section class="sec-white sec" id="services">
   <div class="svc-intro">
     <div>
-      <div class="lbl">Core Capabilities</div>
+      <div class="label">Core Capabilities</div>
       <h2 class="h">What we build<br>for partners.</h2>
     </div>
-    <p class="body-l">Every engagement is outcome-accountable. Performance-only, hybrid, or strategic partnership models — we're operators, not pitchmen.</p>
+    <p class="body-l">Every engagement is outcome-accountable. Performance-only, hybrid, or strategic partnership models — we're operators, not pitchmen. We embed where execution and learning intersect.</p>
   </div>
   <div class="svc-grid">
-    <div class="svc"><div class="svn">01</div><div class="svtag">Creator</div><div class="svt">Influencer &amp; Creator Programs</div><p class="svd">Rigorous selection, deep alignment, whitelisting-ready execution.</p><ul class="svul"><li class="svli">Values &amp; issue alignment</li><li class="svli">Engagement quality scoring</li><li class="svli">Brand safety &amp; compliance</li><li class="svli">Whitelisting &amp; paid amplification</li></ul></div>
-    <div class="svc"><div class="svn">02</div><div class="svtag">Paid Media</div><div class="svt">Performance Media</div><p class="svd">Paid social, search, and CTV/OTT managed for conversion — not impressions.</p><ul class="svul"><li class="svli">Meta, Google, YouTube, TikTok</li><li class="svli">Connected TV &amp; OTT</li><li class="svli">Audience intelligence &amp; lookalike modeling</li><li class="svli">Cross-channel attribution</li></ul></div>
-    <div class="svc"><div class="svn">03</div><div class="svtag">Pay-Per-Call</div><div class="svt">Conversational Acquisition</div><p class="svd">Inbound call and lead generation that converts consumer intent into real conversations.</p><ul class="svul"><li class="svli">Inbound call generation at scale</li><li class="svli">Intent-qualified lead delivery</li><li class="svli">TCPA-compliant programs</li><li class="svli">Performance-only pricing available</li></ul></div>
-    <div class="svc"><div class="svn">04</div><div class="svtag">AI Systems</div><div class="svt">AI Messaging &amp; Follow-Up</div><p class="svd">Intelligent sequencing and automated nurture that keeps the loop running.</p><ul class="svul"><li class="svli">AI-powered outreach sequencing</li><li class="svli">Behavioral trigger-based messaging</li><li class="svli">Lead scoring &amp; prioritization</li><li class="svli">Continuous learning optimization</li></ul></div>
-    <div class="svc"><div class="svn">05</div><div class="svtag">Conversion</div><div class="svt">Funnel &amp; Conversion Architecture</div><p class="svd">Landing pages and conversion paths designed from the outcome backward.</p><ul class="svul"><li class="svli">CRO-first landing page design</li><li class="svli">Offer &amp; incentive architecture</li><li class="svli">A/B and multivariate testing</li><li class="svli">Revenue path mapping</li></ul></div>
-    <div class="svc"><div class="svn">06</div><div class="svtag">Intelligence</div><div class="svt">Measurement &amp; Attribution</div><p class="svd">Transparent reporting, no black boxes. Honest measurement because that's how you learn faster.</p><ul class="svul"><li class="svli">Multi-touch attribution modeling</li><li class="svli">Call tracking &amp; recording analytics</li><li class="svli">Revenue-level performance reporting</li><li class="svli">Partner-facing dashboards</li></ul></div>
+    <div class="svc"><div class="svc-n">01</div><div class="svc-tag">Creator</div><div class="svc-t">Influencer & Creator Programs</div><p class="svc-d">Rigorous selection, deep alignment, whitelisting-ready execution. Creators are signal, not just reach.</p><ul class="svc-ul"><li class="svc-li">Values & issue alignment</li><li class="svc-li">Engagement quality & sentiment scoring</li><li class="svc-li">Historical content audit</li><li class="svc-li">Brand safety & compliance</li><li class="svc-li">Whitelisting & paid amplification</li></ul></div>
+    <div class="svc"><div class="svc-n">02</div><div class="svc-tag">Paid Media</div><div class="svc-t">Performance Media</div><p class="svc-d">Paid social, search, and CTV/OTT managed for conversion — not impressions. Every dollar accountable.</p><ul class="svc-ul"><li class="svc-li">Meta, Google, YouTube, TikTok</li><li class="svc-li">Connected TV & OTT</li><li class="svc-li">Audience intelligence & lookalike modeling</li><li class="svc-li">Real-time creative optimization</li><li class="svc-li">Cross-channel attribution</li></ul></div>
+    <div class="svc"><div class="svc-n">03</div><div class="svc-tag">Pay-Per-Call</div><div class="svc-t">Conversational Acquisition</div><p class="svc-d">Inbound call and lead generation that converts consumer intent into real conversations with real buyers.</p><ul class="svc-ul"><li class="svc-li">Inbound call generation at scale</li><li class="svc-li">Intent-qualified lead delivery</li><li class="svc-li">TCPA-compliant programs</li><li class="svc-li">Vertical-specific compliance</li><li class="svc-li">Performance-only pricing available</li></ul></div>
+    <div class="svc"><div class="svc-n">04</div><div class="svc-tag">AI Systems</div><div class="svc-t">AI Messaging & Follow-Up</div><p class="svc-d">Intelligent sequencing, real-time signal capture, and automated nurture that keeps the loop running.</p><ul class="svc-ul"><li class="svc-li">AI-powered outreach sequencing</li><li class="svc-li">Behavioral trigger-based messaging</li><li class="svc-li">Multi-channel follow-up automation</li><li class="svc-li">Lead scoring & prioritization</li><li class="svc-li">Continuous learning optimization</li></ul></div>
+    <div class="svc"><div class="svc-n">05</div><div class="svc-tag">Conversion</div><div class="svc-t">Funnel & Conversion Architecture</div><p class="svc-d">Landing pages and conversion paths designed from the outcome backward — not the brief forward.</p><ul class="svc-ul"><li class="svc-li">CRO-first landing page design</li><li class="svc-li">Offer & incentive architecture</li><li class="svc-li">A/B and multivariate testing</li><li class="svc-li">Form & funnel optimization</li><li class="svc-li">Revenue path mapping</li></ul></div>
+    <div class="svc"><div class="svc-n">06</div><div class="svc-tag">Intelligence</div><div class="svc-t">Measurement & Attribution</div><p class="svc-d">We measure honestly because that's how you learn faster. Transparent reporting, no black boxes.</p><ul class="svc-ul"><li class="svc-li">Multi-touch attribution modeling</li><li class="svc-li">Call tracking & recording analytics</li><li class="svc-li">Revenue-level performance reporting</li><li class="svc-li">Partner-facing dashboards</li><li class="svc-li">Ongoing learning loop documentation</li></ul></div>
   </div>
 </section>
-
+<!-- VERTICALS -->
 <section class="sec-dark sec" id="verticals">
   <div class="vert-intro">
     <div>
-      <div class="lbl lbl-lt">Industries We Serve</div>
-      <h2 class="h h-lt">Every vertical.<br><em>Same loop.</em></h2>
+      <div class="label label-light">Industries We Serve</div>
+      <h2 class="h h-light">Every vertical.<br><em>Same loop.</em></h2>
     </div>
-    <p class="vert-frame">The system doesn't change — the entry point does. We build <strong>vertical-specific</strong> compliance, messaging, and conversion logic on top of the same compounding loop.</p>
+    <p class="vert-frame">The system doesn't change — the entry point does. We build <strong>vertical-specific</strong> compliance, messaging, and conversion logic on top of the same compounding loop. Same power, tuned for your market.</p>
   </div>
   <div class="vg4">
     <div class="vc"><div class="vi">🏠</div><div class="vn">Home Services</div><p class="vd">Pest control, HVAC, roofing, windows, siding, home warranty. High-intent, local-conversion programs built to close.</p><span class="vtag">Pay-Per-Call · Lead Gen</span></div>
     <div class="vc"><div class="vi">🛡</div><div class="vn">Insurance</div><p class="vd">Final expense, Medicare, life. Compliant, trust-first programs built for sensitive, skeptical audiences.</p><span class="vtag">Compliance · Creator · Call</span></div>
-    <div class="vc"><div class="vi">⚖️</div><div class="vn">Legal &amp; Mass Tort</div><p class="vd">High-volume case acquisition with intent-qualified lead delivery and deep TCPA compliance expertise.</p><span class="vtag">Volume · Qualified Leads</span></div>
+    <div class="vc"><div class="vi">⚖️</div><div class="vn">Legal & Mass Tort</div><p class="vd">High-volume case acquisition with intent-qualified lead delivery and deep TCPA compliance expertise.</p><span class="vtag">Volume · Qualified Leads</span></div>
     <div class="vc"><div class="vi">♿</div><div class="vn">Disability / SSDI</div><p class="vd">Sensitive, compliant programs connecting qualified applicants with the advocacy and support they need.</p><span class="vtag">Compliance · Trust</span></div>
   </div>
   <div class="vg3">
-    <div class="vc"><div class="vi">🏢</div><div class="vn">SMB</div><p class="vd">Small and mid-size business acquisition — from local operators to regional businesses looking to scale with performance-accountable programs.</p><span class="vtag">Lead Gen · Performance</span></div>
-    <div class="vc"><div class="vi">🛒</div><div class="vn">CPG</div><p class="vd">Consumer packaged goods brands that need creator-led trust to break through retail noise and drive measurable purchase intent.</p><span class="vtag">Influencer · CTV · Social</span></div>
+    <div class="vc"><div class="vi">🏢</div><div class="vn">SMB</div><p class="vd">Small and mid-size business acquisition — from local operators to regional businesses looking to scale their customer base with performance-accountable programs.</p><span class="vtag">Lead Gen · Performance</span></div>
+    <div class="vc"><div class="vi">🛒</div><div class="vn">CPG</div><p class="vd">Consumer packaged goods brands that need creator-led trust to break through retail noise and drive measurable purchase intent at scale.</p><span class="vtag">Influencer · CTV · Social</span></div>
     <div class="vc"><div class="vi">🚗</div><div class="vn">Automotive</div><p class="vd">Dealer networks, OEM campaigns, and service providers. High-consideration buyers require trust before they step into a showroom.</p><span class="vtag">Creator · CTV · Call</span></div>
   </div>
 </section>
-
+<!-- WHY EMG -->
 <section class="sec-cream sec" id="why">
-  <div class="lbl">Why Elite Media Group</div>
+  <div class="label">Why Elite Media Group</div>
   <h2 class="h">Elite is earned.</h2>
   <div class="why-grid">
     <div class="why-rows">
@@ -353,9 +664,9 @@ footer{background:var(--navy);padding:56px 64px;}
     </div>
   </div>
 </section>
-
+<!-- COMPARISON -->
 <section class="sec-white sec">
-  <div class="lbl">How We Operate</div>
+  <div class="label">How We Operate</div>
   <h2 class="h">EMG vs. the standard approach.</h2>
   <p class="body-l">Designed to support procurement, internal review, and long-term partnership decisions.</p>
   <div class="comp-tbl">
@@ -366,29 +677,29 @@ footer{background:var(--navy);padding:56px 64px;}
     </div>
     <div class="comp-r"><div class="comp-c topic">Creator Selection</div><div class="comp-c">Brief-based casting</div><div class="comp-c emgv">Conversion-led alignment</div></div>
     <div class="comp-r"><div class="comp-c topic">Performance Reporting</div><div class="comp-c">Self-reported metrics</div><div class="comp-c emgv">Verified, recent performance signals</div></div>
-    <div class="comp-r"><div class="comp-c topic">Creator Fees</div><div class="comp-c">Bundled, opaque pricing</div><div class="comp-c emgv">Clear creator &amp; media rate disclosure</div></div>
-    <div class="comp-r"><div class="comp-c topic">Execution</div><div class="comp-c">Platform-only</div><div class="comp-c emgv">Paid, CTV, Call, AI extensions</div></div>
+    <div class="comp-r"><div class="comp-c topic">Creator Fees</div><div class="comp-c">Bundled, opaque pricing</div><div class="comp-c emgv">Clear creator & media rate disclosure</div></div>
+    <div class="comp-r"><div class="comp-c topic">Execution</div><div class="comp-c">Platform-only</div><div class="comp-c emgv">Vetted extensions: Paid, CTV, Call, AI</div></div>
     <div class="comp-r"><div class="comp-c topic">Engagement Model</div><div class="comp-c">Campaign-based, then out</div><div class="comp-c emgv">Ongoing learning loops</div></div>
     <div class="comp-r"><div class="comp-c topic">Pricing</div><div class="comp-c">Opaque structures</div><div class="comp-c emgv">Transparent fee structures</div></div>
     <div class="comp-r"><div class="comp-c topic">Partnership Style</div><div class="comp-c">Engagement-first</div><div class="comp-c emgv">Relationship-based, outcome-accountable</div></div>
   </div>
 </section>
-
+<!-- PROCESS -->
 <section class="sec-off sec" id="process">
-  <div class="lbl">How Engagements Work</div>
+  <div class="label">How Engagements Work</div>
   <h2 class="h">From conversation<br>to compounding.</h2>
   <div class="proc-wrap">
     <div class="proc-s"><div class="proc-dot">01</div><div class="proc-t">Discovery</div><p class="proc-d">We learn your vertical, goals, compliance requirements, and existing stack.</p></div>
-    <div class="proc-s"><div class="proc-dot">02</div><div class="proc-t">System Design</div><p class="proc-d">We map the influence, performance, and AI components that fit your outcome.</p></div>
+    <div class="proc-s"><div class="proc-dot">02</div><div class="proc-t">System Design</div><p class="proc-d">We map the influence, performance, and AI components that fit your specific outcome.</p></div>
     <div class="proc-s"><div class="proc-dot">03</div><div class="proc-t">Pilot Launch</div><p class="proc-d">Fast start with defined KPIs and honest measurement from day one.</p></div>
-    <div class="proc-s"><div class="proc-dot">04</div><div class="proc-t">Optimize</div><p class="proc-d">Every signal feeds the loop. We adapt in real time and report honestly.</p></div>
-    <div class="proc-s"><div class="proc-dot">05</div><div class="proc-t">Scale</div><p class="proc-d">Once the system learns, we scale what works — with full transparency.</p></div>
+    <div class="proc-s"><div class="proc-dot">04</div><div class="proc-t">Optimize & Learn</div><p class="proc-d">Every signal feeds the loop. We adapt in real time and report honestly.</p></div>
+    <div class="proc-s"><div class="proc-dot">05</div><div class="proc-t">Scale</div><p class="proc-d">Once the system learns, we scale what works — with full transparency on what doesn't.</p></div>
   </div>
 </section>
-
+<!-- CTA -->
 <section class="cta" id="contact">
   <div class="cta-atm"></div>
-  <div class="lbl lbl-lt" style="justify-content:center;margin-bottom:20px">Start a Conversation</div>
+  <div class="label label-light" style="justify-content:center">Start a Conversation</div>
   <h2>Ready to build a system that <em>actually converts?</em></h2>
   <p>No pitch decks until we know if we're a fit. Let's talk about where your consumer intent starts — and what's stopping it from becoming revenue.</p>
   <div class="cta-row">
@@ -397,69 +708,83 @@ footer{background:var(--navy);padding:56px 64px;}
   </div>
   <div class="cta-note">Or reach us at hello@elitemediagroup.io</div>
 </section>
-
+<!-- FOOTER -->
 <footer>
   <div class="ft">
     <div class="ft-brand">
-      <div style="display:flex;align-items:center;gap:13px">
-        <svg viewBox="0 0 80 44" fill="none" style="width:48px;height:26px;flex-shrink:0">
-          <path d="M40 22 C34 10,22 6,14 8 C6 10,2 16,2 22 C2 28,6 34,14 36 C22 38,34 34,40 22 Z" fill="none" stroke="white" stroke-width="4.5" stroke-linecap="round"/>
-          <path d="M40 22 C46 34,58 38,66 36 C74 34,78 28,78 22 C78 16,74 10,66 8 C58 6,46 10,40 22 Z" fill="none" stroke="#2d9e8a" stroke-width="4.5" stroke-linecap="round"/>
+      <div style="display:flex;align-items:center;gap:14px">
+        <svg viewBox="0 0 80 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:52px;height:28px;flex-shrink:0">
+          <path d="M40 22 C34 10, 22 6, 14 8 C6 10, 2 16, 2 22 C2 28, 6 34, 14 36 C22 38, 34 34, 40 22 Z" fill="none" stroke="white" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M40 22 C46 34, 58 38, 66 36 C74 34, 78 28, 78 22 C78 16, 74 10, 66 8 C58 6, 46 10, 40 22 Z" fill="none" stroke="#2d9e8a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <div>
-          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;letter-spacing:.07em;color:#fff;text-transform:uppercase;line-height:1">EMG <span style="color:#2d9e8a">Loop</span><sup style="font-size:8px;color:#2d9e8a">™</sup></div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;color:rgba(255,255,255,.28);text-transform:uppercase;margin-top:2px">Elite Media Group</div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.06em;color:white;text-transform:uppercase;line-height:1">EMG <span style="color:#2d9e8a">Loop</span><sup style="font-size:9px;color:#2d9e8a">™</sup></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;color:rgba(255,255,255,.35);text-transform:uppercase;margin-top:2px">Elite Media Group</div>
         </div>
       </div>
       <p>We design systems that integrate influence, performance, and intelligence to drive measurable outcomes — not optics.</p>
     </div>
-    <div class="ft-col"><h4>Services</h4><ul><li><a href="#">Influencer Programs</a></li><li><a href="#">Performance Media</a></li><li><a href="#">Pay-Per-Call</a></li><li><a href="#">AI Messaging</a></li><li><a href="#">Funnel Architecture</a></li><li><a href="#">Attribution</a></li></ul></div>
-    <div class="ft-col"><h4>Verticals</h4><ul><li><a href="#">Home Services</a></li><li><a href="#">Insurance</a></li><li><a href="#">Legal / Mass Tort</a></li><li><a href="#">Disability / SSDI</a></li><li><a href="#">SMB</a></li><li><a href="#">CPG</a></li><li><a href="#">Automotive</a></li></ul></div>
-    <div class="ft-col"><h4>Company</h4><ul><li><a href="#">About EMG</a></li><li><a href="#">Why We're Elite</a></li><li><a href="#">Partnership Models</a></li><li><a href="#contact">Start a Conversation</a></li></ul></div>
+    <div class="ft-col"><h4>Services</h4><ul><li><a href="elitemediagroup.html">Influencer Programs</a></li><li><a href="elitemediagroup.html">Performance Media</a></li><li><a href="elitemediagroup.html">Pay-Per-Call</a></li><li><a href="elitemediagroup.html">AI Messaging</a></li><li><a href="elitemediagroup.html">Funnel Architecture</a></li><li><a href="elitemediagroup.html">Attribution</a></li></ul></div>
+    <div class="ft-col"><h4>Verticals</h4><ul><li><a href="elitemediagroup.html">Home Services</a></li><li><a href="elitemediagroup.html">Insurance</a></li><li><a href="elitemediagroup.html">Legal / Mass Tort</a></li><li><a href="elitemediagroup.html">Disability / SSDI</a></li><li><a href="elitemediagroup.html">SMB</a></li><li><a href="elitemediagroup.html">CPG</a></li><li><a href="elitemediagroup.html">Automotive</a></li></ul></div>
+    <div class="ft-col"><h4>Company</h4><ul><li><a href="elitemediagroup.html">About EMG</a></li><li><a href="elitemediagroup.html">Why We're Elite</a></li><li><a href="elitemediagroup.html">Partnership Models</a></li><li><a href="contact.html">Start a Conversation</a></li></ul></div>
   </div>
   <div class="ft-bot">
     <div class="ft-copy">© 2026 Elite Media Group · elitemediagroup.io</div>
     <div class="ft-tag">Influence fades. Systems endure.</div>
   </div>
 </footer>
-
 <script>
+// Stars removed — photo hero
+// Terminal clock
+function tick(){
+  const n=new Date();
+  const pad=x=>String(x).padStart(2,'0');
+  const t=pad(n.getHours())+':'+pad(n.getMinutes())+':'+pad(n.getSeconds());
+  const el=document.getElementById('htTime');
+  if(el)el.textContent=t;
+}
+tick();setInterval(tick,1000);
+// Cycling terminal headline
 (function(){
-  function tick(){
-    var n=new Date(),p=function(x){return String(x).padStart(2,'0');};
-    var el=document.getElementById('htTime');
-    if(el)el.textContent=p(n.getHours())+':'+p(n.getMinutes())+':'+p(n.getSeconds());
-  }
-  tick();setInterval(tick,1000);
-  var el=document.getElementById('htCycle');
-  var fill=document.getElementById('htFill');
+  const el=document.getElementById('htCycle');
+  const bar=document.getElementById('htFill');
   if(!el)return;
-  var phases=[
-    {text:'LOCKING ON TO SIGNAL...',      p:18, dur:2200},
-    {text:'CONSUMER BEHAVIOR CAPTURED.', p:44, dur:2000},
-    {text:'SIGNAL ACQUIRED.',             p:67, dur:1800},
-    {text:"YOU'VE GOT LEADS.",           p:100,dur:2800},
-    {text:'RE-ENGAGING...',               p:12, dur:2000}
+  const phases=[
+    {text:'LOCKING ON TO SIGNAL...',     pct:'18%',  dur:2200},
+    {text:'CONSUMER BEHAVIOR CAPTURED.', pct:'44%',  dur:2000},
+    {text:'SIGNAL ACQUIRED.',            pct:'67%',  dur:1800},
+    {text:"YOU'VE GOT LEADS.",           pct:'100%', dur:2600},
+    {text:'RE-ENGAGING...',              pct:'12%',  dur:2000},
   ];
-  var idx=0,timer=null;
-  function next(i){
-    var ph=phases[i];
+  let idx=0;
+  let blinkTimer=null;
+  function setPhase(i){
+    const p=phases[i];
+    // blink out
     el.style.opacity='0';
-    if(timer)clearTimeout(timer);
-    timer=setTimeout(function(){
-      el.textContent=ph.text;
+    if(blinkTimer)clearTimeout(blinkTimer);
+    blinkTimer=setTimeout(()=>{
+      el.textContent=p.text;
       el.style.opacity='1';
-      if(fill){
-        fill.style.transition='none';fill.style.width='0%';
-        requestAnimationFrame(function(){requestAnimationFrame(function(){
-          fill.style.transition='width '+Math.round(ph.dur*.82)+'ms cubic-bezier(.4,0,.2,1)';
-          fill.style.width=ph.p+'%';
-        });});
+      // bar
+      if(bar){
+        bar.style.transition='none';
+        bar.style.width='0%';
+        requestAnimationFrame(()=>{
+          requestAnimationFrame(()=>{
+            bar.style.transition='width '+Math.round(p.dur*0.85)+'ms cubic-bezier(.4,0,.2,1)';
+            bar.style.width=p.pct;
+          });
+        });
       }
-      timer=setTimeout(function(){idx=(idx+1)%phases.length;next(idx);},ph.dur);
-    },200);
+      blinkTimer=setTimeout(()=>{
+        idx=(idx+1)%phases.length;
+        setPhase(idx);
+      },p.dur);
+    },220);
   }
-  setTimeout(function(){next(0);},700);
+  // small delay before starting so page has loaded
+  setTimeout(()=>setPhase(0),800);
 })();
 </script>
 </body>
