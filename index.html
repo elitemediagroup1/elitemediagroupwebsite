@@ -20,11 +20,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .nav-links a{text-decoration:none;color:rgba(255,255,255,.55);font-size:13px;font-weight:500;transition:color .2s;}
 .nav-links a:hover{color:var(--teal-light);}
 .nav-cta{background:var(--teal)!important;color:#fff!important;padding:9px 20px;font-family:'Barlow Condensed',sans-serif!important;font-weight:700!important;font-size:12px!important;letter-spacing:.1em!important;text-transform:uppercase;}
-.hero{min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:0 40px 60px;}
+.hero{min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:0 40px 80px;}
 .hero-photo{position:absolute;inset:0;z-index:1;}
 .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block;}
 .hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg, rgba(3,8,16,1) 0%, rgba(3,8,16,.92) 22%, rgba(3,8,16,.55) 42%, rgba(0,0,0,.2) 60%, rgba(0,0,0,.1) 75%, transparent 90%),linear-gradient(180deg, rgba(3,8,16,.6) 0%, transparent 14%);}
-.screen-overlay{position:absolute;z-index:10;left:27%;top:9%;width:44%;height:60%;display:flex;align-items:center;justify-content:center;pointer-events:none;}
+.screen-overlay{position:absolute;z-index:10;left:29%;top:10%;width:42%;height:48%;display:flex;align-items:center;justify-content:center;pointer-events:none;}
 .screen-inner{width:100%;height:100%;background:rgba(3,10,18,.82);border:1px solid rgba(57,255,154,.06);position:relative;overflow:hidden;border-radius:4px;}
 .screen-inner::before{content:'';position:absolute;inset:0;z-index:5;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.12) 2px,rgba(0,0,0,.12) 3px);pointer-events:none;}
 .screen-inner::after{content:'';position:absolute;inset:0;z-index:4;background:radial-gradient(ellipse 80% 65% at 50% 45%,transparent 45%,rgba(0,0,0,.5) 100%);pointer-events:none;}
@@ -46,7 +46,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .st-met-n{font-family:'Instrument Serif',serif;font-size:clamp(14px,2.2vw,28px);color:#fff;line-height:1;font-style:italic;}
 .st-met-n em{font-style:normal;color:var(--teal-light);}
 .st-met-l{font-size:clamp(5px,.7vw,8px);color:rgba(57,255,154,.22);letter-spacing:.1em;text-transform:uppercase;margin-top:4px;}
-.hero-bottom{position:relative;z-index:20;display:flex;flex-direction:column;align-items:center;text-align:center;width:100%;max-width:760px;animation:fadeUp .5s ease .3s both;}
+.hero-bottom{position:relative;z-index:20;display:flex;flex-direction:column;align-items:center;text-align:center;width:100%;max-width:680px;margin-top:20px;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 .hero-h1{font-family:'Instrument Serif',serif;font-size:clamp(52px,7.5vw,108px);line-height:.93;letter-spacing:-.03em;color:#fff;margin-bottom:20px;text-shadow:0 2px 40px rgba(0,0,0,.9),0 4px 80px rgba(0,0,0,.7);-webkit-text-stroke:1px rgba(255,255,255,.1);}
 .hero-h1 em{font-style:italic;color:var(--teal-light);-webkit-text-stroke:1px rgba(62,196,173,.15);text-shadow:0 0 40px rgba(62,196,173,.35),0 2px 40px rgba(0,0,0,.9);}
@@ -56,7 +56,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .btn-p:hover{background:var(--teal-light);transform:translateY(-2px);}
 .btn-g{color:rgba(255,255,255,.5);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;display:flex;align-items:center;gap:9px;transition:color .2s,gap .2s;}
 .btn-g:hover{color:var(--teal-light);gap:14px;}
-.hero-stats{position:relative;z-index:20;display:flex;justify-content:center;width:100%;margin-top:48px;border-top:1px solid rgba(255,255,255,.07);padding-top:32px;animation:fadeUp .5s ease .5s both;}
+.hero-stats{position:relative;z-index:20;display:flex;justify-content:center;width:100%;margin-top:32px;border-top:1px solid rgba(255,255,255,.07);padding-top:28px;}
 .hstat{text-align:center;padding:0 44px;border-right:1px solid rgba(255,255,255,.07);}
 .hstat:last-child{border-right:none;}
 .hstat-n{font-family:'Instrument Serif',serif;font-size:clamp(36px,4.5vw,58px);color:#fff;letter-spacing:-.03em;line-height:1;}
