@@ -66,9 +66,7 @@ nav{
 .hero{
   position:relative;
   width:100%;
-  /* photo's natural aspect ratio so screen glass % values track precisely */
-  aspect-ratio:1601/900;
-  height:auto;
+  height:100vh;
   overflow:hidden;
   display:block;
   background:#030810;
@@ -96,11 +94,11 @@ nav{
 /* When photo is object-fit:cover these % still track the screen.        */
 .hero-screen-inset{
   position:absolute;
-  /* Image-natural screen glass position (1601x900 source): top y=107, bottom y=774, left x=332, right x=1265 */
-  left:20.74%;
-  top:13.5%;
-  width:58.28%;
-  height:63%;
+  /* dimensions set dynamically by JS in setupHeroInset() to track the cover-cropped photo's screen-glass area */
+  left:0;
+  top:0;
+  width:0;
+  height:0;
   overflow:hidden;
   z-index:5;
 }
@@ -860,6 +858,38 @@ tick();setInterval(tick,1000);
 
   // small delay before starting so page has loaded
   setTimeout(()=>setPhase(0),800);
+})();
+</script>
+
+<script>
+(function(){
+  // Position .hero-screen-inset to track the cover-cropped hero photo's screen-glass area.
+  // Source image 1601x900. Glass coords: x 332..1265, y 107..774.
+  function setupHeroInset(){
+    var img=document.querySelector('.hero-monitor-img');
+    var inset=document.querySelector('.hero-screen-inset');
+    var wrap=document.querySelector('.hero-monitor-wrap');
+    if(!img||!inset||!wrap||!img.naturalWidth)return;
+    var wr=wrap.getBoundingClientRect();
+    var natW=img.naturalWidth, natH=img.naturalHeight;
+    var scale=Math.max(wr.width/natW, wr.height/natH);
+    var renderedW=natW*scale, renderedH=natH*scale;
+    var offsetX=(wr.width-renderedW)/2;
+    var offsetY=(wr.height-renderedH)/2;
+    var glassL=332, glassT=107, glassR=1265, glassB=774;
+    var topTrim=4, bottomTrim=22, sideTrim=6;
+    inset.style.left=(offsetX+(glassL+sideTrim)*scale)+'px';
+    inset.style.top=(offsetY+(glassT+topTrim)*scale)+'px';
+    inset.style.width=((glassR-glassL-2*sideTrim)*scale)+'px';
+    inset.style.height=((glassB-glassT-bottomTrim-topTrim)*scale)+'px';
+  }
+  var img=document.querySelector('.hero-monitor-img');
+  if(img){
+    if(img.complete) setupHeroInset();
+    else img.addEventListener('load', setupHeroInset);
+  }
+  window.addEventListener('resize', setupHeroInset);
+  window.addEventListener('orientationchange', setupHeroInset);
 })();
 </script>
 </body>
