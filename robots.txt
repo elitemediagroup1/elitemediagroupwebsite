@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://elitemediagroup.io/sitemap.xml
