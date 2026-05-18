@@ -1,11 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elite Media Group ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Systems That Convert</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Elite Media Group builds accountable growth systems across influencer marketing, pay-per-call, performance media, owned properties, and The Loop intelligence platform." name="description"/>
+<meta content="Elite Media Group | Influence, Performance Media &amp; The Loop Intelligence System" property="og:title"/>
+<meta content="Elite Media Group builds accountable growth systems across influencer marketing, pay-per-call, performance media, owned properties, and The Loop intelligence platform." property="og:description"/>
+<title>Elite Media Group | Influence, Performance Media &amp; The Loop Intelligence System</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Barlow:wght@300;400;500;600&amp;family=Barlow+Condensed:wght@600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
 <style>
 :root {
   --navy: #0c1a2e;
@@ -30,13 +34,13 @@
 html{scroll-behavior:smooth;}
 body{font-family:'Barlow',sans-serif;background:var(--cream);color:var(--navy);overflow-x:hidden;}
 
-/* scanlines on whole page ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ very subtle */
+/* scanlines on whole page — very subtle */
 body::before{
   content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
   background:repeating-linear-gradient(180deg,transparent 0px,transparent 3px,rgba(0,0,0,0.008) 3px,rgba(0,0,0,0.008) 4px);
 }
 
-/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ NAV ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */
+/* ── NAV ── */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:500;
   display:flex;justify-content:space-between;align-items:center;
@@ -62,7 +66,7 @@ nav{
 }
 .nav-cta:hover{background:var(--teal)!important;}
 
-/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ HERO ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */
+/* ── HERO ── */
 .hero{
   position:relative;
   width:100%;
@@ -72,7 +76,7 @@ nav{
   background:#030810;
 }
 
-/* Monitor photo ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ full bleed, fills 100% of hero */
+/* Monitor photo — full bleed, fills 100% of hero */
 .hero-monitor-wrap{
   position:absolute;
   inset:0;
@@ -88,17 +92,17 @@ nav{
   display:block;
 }
 
-/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ SCREEN INSET ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ % locked to where the glass lives in the photo ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */
+/* ── SCREEN INSET — % locked to where the glass lives in the photo ── */
 /* Photo is 1601x900. Screen glass: x1=342,y1=112,x2=1258,y2=774       */
-/* As % of photo: left=21.36%, top=12.44%, w=57.21%, h=63.56%           */
+/* As % of photo: left=21.36%, top=12.44%, w=57.21%, h=73.56%           */
 /* When photo is object-fit:cover these % still track the screen.        */
 .hero-screen-inset{
   position:absolute;
-  /* dimensions set dynamically by JS in setupHeroInset() to track the cover-cropped photo's screen-glass area */
-  left:0;
-  top:0;
-  width:0;
-  height:0;
+  /* These match the screen glass position in the source image */
+  left:20.93%;
+  top:12.22%;
+  width:57.72%;
+  height:67.27%;
   overflow:hidden;
   z-index:5;
 }
@@ -114,7 +118,7 @@ nav{
   background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.13) 2px,rgba(0,0,0,.13) 3px);
 }
 
-/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ SCREEN CONTENT ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */
+/* ── SCREEN CONTENT ── */
 .hsi-content{
   position:absolute;inset:0;z-index:20;
   background:#040c18;
@@ -158,7 +162,7 @@ nav{
 
 .hsi-divider{border:none;border-top:1px solid rgba(57,255,154,.12);margin:.5em 0;flex-shrink:0;}
 
-/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ BIG HEADLINE ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */
+/* ── BIG HEADLINE ── */
 .hsi-main-headline{
   font-family:'Instrument Serif',serif;
   font-size:clamp(26px,5.5vw,76px);
@@ -200,7 +204,7 @@ nav{
 .hsi-btn-ghost:hover{color:#3ec4ad;gap:.7em;}
 
 /* Stats */
-.hsi-stats{display:flex;align-items:center;gap:0;flex-shrink:0;}
+.hsi-stats{display:flex;align-items:center;gap:0;margin-bottom:auto;flex-shrink:0;}
 .hsi-stat{text-align:center;padding:0 .9em;}
 .hsi-stat:first-child{padding-left:0;}
 .hsi-stat-n{
@@ -227,6 +231,29 @@ nav{
 .hsi-cur{display:inline-block;width:.55em;height:.88em;background:#39ff9a;margin-left:.2em;vertical-align:text-bottom;animation:cur .9s step-end infinite;box-shadow:0 0 4px rgba(57,255,154,.8);}
 @keyframes cur{50%{opacity:0}}
 
+/* live status row */
+.hsi-status-row{display:flex;align-items:center;gap:.5em;margin-bottom:.3em;flex-shrink:0;}
+.hsi-dot{width:.6em;height:.6em;border-radius:50%;background:#39ff9a;flex-shrink:0;box-shadow:0 0 6px rgba(57,255,154,.9);animation:dotPulse 1.8s ease-in-out infinite;}
+@keyframes dotPulse{0%,100%{opacity:1;box-shadow:0 0 4px rgba(57,255,154,.7);}50%{opacity:.6;box-shadow:0 0 10px rgba(57,255,154,1);}}
+.hsi-status-txt{font-size:clamp(7px,0.9vw,12px);font-weight:700;letter-spacing:.08em;color:#39ff9a;min-height:1.2em;transition:opacity .2s;animation:phosphorPulse 2.8s ease-in-out infinite alternate;}
+
+/* signal types */
+.hsi-signal-row{display:flex;align-items:center;gap:.4em;flex-wrap:wrap;margin-bottom:.35em;flex-shrink:0;}
+.hsi-sig-label{font-size:clamp(5px,0.6vw,8px);color:rgba(57,255,154,.35);letter-spacing:.12em;text-transform:uppercase;}
+.hsi-sig{font-size:clamp(5px,0.65vw,8.5px);font-weight:700;letter-spacing:.08em;color:rgba(57,255,154,.4);padding:.15em .45em;border:1px solid rgba(57,255,154,.15);border-radius:1px;transition:all .3s;}
+.hsi-sig.active{color:#39ff9a;border-color:rgba(57,255,154,.5);background:rgba(57,255,154,.08);box-shadow:0 0 6px rgba(57,255,154,.2);}
+
+/* system cards */
+.hsi-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(2px,.4vw,6px);margin-bottom:.4em;flex-shrink:0;}
+.hsi-card{background:rgba(57,255,154,.04);border:1px solid rgba(57,255,154,.14);padding:clamp(3px,.5vw,7px) clamp(3px,.5vw,6px);}
+.hsi-card-label{font-size:clamp(4px,.5vw,6.5px);font-weight:700;letter-spacing:.16em;color:rgba(57,255,154,.4);margin-bottom:.25em;text-transform:uppercase;}
+.hsi-card-val{font-size:clamp(5px,.6vw,8px);color:#39ff9a;font-weight:700;letter-spacing:.04em;margin-bottom:.3em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.hsi-card-bar{height:2px;background:rgba(57,255,154,.1);}
+.hsi-card-fill{height:100%;background:linear-gradient(90deg,#2d9e8a,#39ff9a);box-shadow:0 0 4px rgba(57,255,154,.4);}
+
+/* bar label */
+.hsi-bar-label{font-size:clamp(4.5px,.55vw,7px);color:rgba(57,255,154,.4);letter-spacing:.1em;margin-bottom:.3em;}
+
 /* kill leftover old styles */
 .hero-inner,.hero-text-block,.hero-eyebrow,.hero-h1,.hero-p,.hero-btns,.hero-stats,
 .hero-bg,.hero-screen-overlay,.ovl-glass,.ovl-content{display:none;}
@@ -236,7 +263,7 @@ nav{
   .hsi-main-headline{font-size:clamp(12px,3vw,22px);}
 }
 
-/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ TICKER ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */
+/* ── TICKER ── */
 .ticker{background:var(--teal);overflow:hidden;padding:13px 0;display:flex;}
 .ticker-inner{display:flex;animation:tick 30s linear infinite;white-space:nowrap;}
 .tick-item{
@@ -245,10 +272,10 @@ nav{
   color:rgba(255,255,255,.88);padding:0 36px;flex-shrink:0;
   display:flex;align-items:center;gap:0;
 }
-.tick-item::after{content:'ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ';margin-left:36px;color:rgba(255,255,255,.3);font-size:7px;}
+.tick-item::after{content:'◆';margin-left:36px;color:rgba(255,255,255,.3);font-size:7px;}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ SHARED ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */
+/* ── SHARED ── */
 .sec{padding:120px 64px;}
 .sec-dark{background:var(--navy);padding:120px 64px;}
 .sec-cream{background:var(--cream);}
@@ -275,7 +302,7 @@ h2.h-light em{color:var(--teal-light);}
 
 .body-l{font-size:18px;line-height:1.78;color:var(--mid-gray);font-weight:300;max-width:540px;}
 
-/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ PROBLEM ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */
+/* ── PROBLEM ── */
 .prob-grid{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:start;}
 .prob-lede{
   font-family:'Instrument Serif',serif;
@@ -298,7 +325,7 @@ h2.h-light em{color:var(--teal-light);}
 }
 .res-box::before{
   content:'';position:absolute;top:-80px;right:-80px;
-  width:140px;height:240px;border-radius:50%;
+  width:240px;height:240px;border-radius:50%;
   background:rgba(62,196,173,.07);
 }
 .res-box h3{
@@ -307,7 +334,7 @@ h2.h-light em{color:var(--teal-light);}
 }
 .res-box p{font-size:15px;line-height:1.8;color:rgba(255,255,255,.58);font-weight:300;}
 
-/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ LOOP / THREE FORCES ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */
+/* ── LOOP / THREE FORCES ── */
 .loop-top{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:end;margin-bottom:72px;}
 
 .loop-diagram{position:relative;height:300px;display:flex;align-items:center;justify-content:center;}
@@ -356,7 +383,7 @@ h2.h-light em{color:var(--teal-light);}
 .force-t{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:21px;letter-spacing:.04em;color:var(--navy);margin-bottom:10px;text-transform:uppercase;transition:color .25s;}
 .force-b{font-size:14px;line-height:1.68;color:var(--mid-gray);font-weight:300;transition:color .25s;}
 
-/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ SERVICES ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */
+/* ── SERVICES ── */
 .svc-intro{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:end;margin-bottom:64px;}
 .svc-grid{
   display:grid;grid-template-columns:repeat(3,1fr);gap:2px;
@@ -376,9 +403,9 @@ h2.h-light em{color:var(--teal-light);}
 .svc-d{font-size:13px;line-height:1.68;color:var(--mid-gray);margin-bottom:20px;font-weight:300;transition:color .25s;}
 .svc-ul{list-style:none;display:flex;flex-direction:column;}
 .svc-li{font-size:12px;color:var(--mid-gray);padding:8px 0;border-bottom:1px solid var(--warm-gray);display:flex;align-items:center;gap:8px;line-height:1.4;transition:all .25s;}
-.svc-li::before{content:'ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ';color:var(--teal);font-size:11px;flex-shrink:0;transition:color .25s;}
+.svc-li::before{content:'→';color:var(--teal);font-size:11px;flex-shrink:0;transition:color .25s;}
 
-/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ VERTICALS ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */
+/* ── VERTICALS ── */
 .vert-intro{display:grid;grid-template-columns:1fr 1.3fr;gap:88px;align-items:end;margin-bottom:64px;}
 .vert-frame{
   font-family:'Instrument Serif',serif;font-size:20px;
@@ -407,7 +434,7 @@ h2.h-light em{color:var(--teal-light);}
 .vd{font-size:12px;line-height:1.6;color:rgba(255,255,255,.32);font-weight:300;transition:color .25s;margin-bottom:14px;}
 .vtag{font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-light);background:rgba(62,196,173,.1);padding:4px 8px;transition:all .25s;display:inline-block;}
 
-/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ WHY ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */
+/* ── WHY ── */
 .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:center;margin-top:52px;}
 .why-rows{display:flex;flex-direction:column;}
 .why-row{display:flex;align-items:baseline;gap:20px;padding:20px 0;border-bottom:1px solid var(--warm-gray);}
@@ -420,7 +447,7 @@ h2.h-light em{color:var(--teal-light);}
 .why-q em{color:var(--teal-light);font-style:italic;}
 .why-by{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.28);position:relative;z-index:1;}
 
-/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ COMPARISON ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */
+/* ── COMPARISON ── */
 .comp-tbl{margin-top:52px;border:2px solid var(--warm-gray);border-radius:3px;overflow:hidden;}
 .comp-h{display:grid;grid-template-columns:1.2fr 1fr 1fr;background:var(--navy);}
 .comp-hc{padding:17px 28px;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.3);}
@@ -432,7 +459,7 @@ h2.h-light em{color:var(--teal-light);}
 .comp-c.topic{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;color:var(--navy);letter-spacing:.04em;text-transform:uppercase;}
 .comp-c.emgv{color:var(--navy);font-weight:500;background:rgba(62,196,173,.03);}
 
-/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ PROCESS ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */
+/* ── PROCESS ── */
 .proc-wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:52px;position:relative;}
 .proc-wrap::before{content:'';position:absolute;top:26px;left:10%;right:10%;height:1px;background:var(--warm-gray);z-index:0;}
 .proc-s{text-align:center;padding:0 10px;position:relative;z-index:1;}
@@ -448,7 +475,7 @@ h2.h-light em{color:var(--teal-light);}
 .proc-t{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--navy);margin-bottom:6px;}
 .proc-d{font-size:12px;line-height:1.6;color:var(--mid-gray);font-weight:300;}
 
-/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ CTA ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */
+/* ── CTA ── */
 .cta{background:var(--darker);padding:120px 64px;text-align:center;position:relative;overflow:hidden;}
 .cta-atm{position:absolute;bottom:-60px;left:50%;transform:translateX(-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(45,158,138,.18) 0%,transparent 70%);pointer-events:none;}
 .cta .label{justify-content:center;}
@@ -471,7 +498,7 @@ h2.h-light em{color:var(--teal-light);}
 .cta-in:focus{border-color:var(--teal);}
 .cta-note{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.18);letter-spacing:.06em;}
 
-/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ FOOTER ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */
+/* ── FOOTER ── */
 footer{background:var(--navy);padding:56px 64px;}
 .ft{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:56px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:30px;}
 .ft-brand p{font-size:13px;line-height:1.78;color:rgba(255,255,255,.32);font-weight:300;margin-top:14px;max-width:280px;}
@@ -483,7 +510,7 @@ footer{background:var(--navy);padding:56px 64px;}
 .ft-copy{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.18);letter-spacing:.06em;}
 .ft-tag{font-family:'Instrument Serif',serif;font-size:15px;font-style:italic;color:rgba(255,255,255,.22);}
 
-/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ RESPONSIVE ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */
+/* ── RESPONSIVE ── */
 @media(max-width:960px){
   nav{padding:14px 22px;}
   .nav-links{display:none;}
@@ -504,297 +531,339 @@ footer{background:var(--navy);padding:56px 64px;}
   .hstat{padding:0 24px;}
 }
 
-.btn-p{background:var(--teal);color:#fff;padding:14px 24px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;white-space:nowrap;transition:background .2s;display:inline-block;}
-.btn-p:hover{background:var(--teal-light);}
+
+/* Mobile nav, accessibility, and motion safety */
+:focus-visible{outline:2px solid var(--teal-light);outline-offset:3px;}
+img{max-width:100%;}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important;}
+}
+@media(max-width:960px){
+  nav{position:sticky;top:0;flex-wrap:wrap;gap:12px;padding:14px 18px;}
+  .nav-logo{width:100%;justify-content:center;}
+  .nav-links{display:flex;width:100%;gap:8px;overflow-x:auto;justify-content:flex-start;padding:4px 2px 2px;scrollbar-width:none;}
+  .nav-links::-webkit-scrollbar{display:none;}
+  .nav-links li{flex:0 0 auto;}
+  .nav-links a{display:block;padding:8px 10px;border:1px solid rgba(12,26,46,.10);background:rgba(255,255,255,.34);font-size:12px;}
+  .nav-links .nav-cta{padding:8px 14px!important;}
+  .ticker{padding:10px 0;}
+  .tick-item{font-size:9px;padding:0 24px;}
+  h2.h{font-size:clamp(36px,10vw,56px);}
+}
+@media(max-width:700px){
+  .hero{height:auto;min-height:560px;}
+  .hero-monitor-img{object-position:center center;}
+  .hero-screen-inset{left:20.8%;top:12%;width:58.2%;height:67.4%;}
+  .hsi-content{padding:3.2% 3.6%;}
+  .hsi-main-headline{font-size:clamp(18px,6vw,34px);line-height:1;}
+  .hsi-main-sub{font-size:clamp(9px,2.8vw,13px);line-height:1.45;}
+  .hsi-cards{grid-template-columns:repeat(2,1fr);}
+  .hsi-stats{display:none;}
+  .hsi-navbar{display:none;}
+  .hsi-ctas{flex-wrap:wrap;}
+  .page-hero{padding:130px 22px 64px;}
+  .pg-h1{font-size:clamp(42px,13vw,64px);}
+  .vg4,.vg3,.proc-wrap,.ft{grid-template-columns:1fr;}
+  .comp-h,.comp-r{grid-template-columns:1fr;}
+  .comp-c{border-right:none;border-top:1px solid var(--warm-gray);}
+}
+
+.nav-links a.active{color:var(--teal);}
+
+/* SEO + AEO enhancement layer */
+.aeo-faq{background:#fff;padding:90px 64px;border-top:1px solid var(--warm-gray, #d8d3c8);}
+.aeo-faq .aeo-wrap{max-width:1120px;margin:0 auto;}
+.aeo-faq .aeo-head{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:end;margin-bottom:34px;}
+.aeo-faq h2{font-family:'Instrument Serif',serif;font-size:clamp(36px,4.5vw,62px);line-height:.97;letter-spacing:-.03em;color:var(--navy,#0c1a2e);margin:0;}
+.aeo-faq h2 em{font-style:italic;color:var(--teal,#2d9e8a);}
+.aeo-faq .aeo-intro{font-size:17px;line-height:1.75;color:var(--mid-gray,#888278);font-weight:300;}
+.aeo-faq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--warm-gray,#d8d3c8);border:2px solid var(--warm-gray,#d8d3c8);border-radius:3px;overflow:hidden;}
+.aeo-faq-card{background:var(--cream,#f3f0ea);padding:30px 28px;min-height:220px;}
+.aeo-faq-card h3{font-family:'Barlow Condensed',sans-serif;font-size:20px;line-height:1.12;text-transform:uppercase;letter-spacing:.04em;color:var(--navy,#0c1a2e);margin:0 0 12px;}
+.aeo-faq-card p{font-size:14px;line-height:1.7;color:var(--mid-gray,#888278);font-weight:300;margin:0;}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important;}
+@media(max-width:900px){.aeo-faq{padding:72px 22px}.aeo-faq .aeo-head{grid-template-columns:1fr;gap:22px}.aeo-faq-grid{grid-template-columns:1fr}}
 </style>
-</head>
+<meta content="index,follow" name="robots"/><meta content="Elite Media Group" name="author"/><meta content="#0c1a2e" name="theme-color"/><link href="https://elitemediagroup.io" rel="canonical"/><meta content="website" property="og:type"/><meta content="Elite Media Group" property="og:site_name"/><meta content="https://elitemediagroup.io" property="og:url"/><meta content="https://elitemediagroup.io/hero-monitor.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Elite Media Group | Influence, Performance Media &amp; The Loop Intelligence System" name="twitter:title"/><meta content="Elite Media Group builds accountable growth systems across influencer marketing, pay-per-call, performance media, owned properties, and The Loop intelligence platform." name="twitter:description"/><meta content="https://elitemediagroup.io/hero-monitor.png" name="twitter:image"/><script data-emg-schema="webpage" type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Elite Media Group | Influence, Performance Media & The Loop Intelligence System","description":"Elite Media Group builds accountable growth systems across influencer marketing, pay-per-call, performance media, owned properties, and The Loop intelligence platform.","url":"https://elitemediagroup.io","isPartOf":{"@type":"WebSite","name":"Elite Media Group","url":"https://elitemediagroup.io"},"publisher":{"@type":"Organization","name":"Elite Media Group","url":"https://elitemediagroup.io"}}</script><script data-emg-schema="breadcrumb" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://elitemediagroup.io"}]}</script><script data-emg-schema="organization" type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Elite Media Group","url":"https://elitemediagroup.io","email":"hello@elitemediagroup.io","sameAs":["https://consumersupporthelp.com","https://petsinmycity.com"],"description":"Elite Media Group builds accountable growth systems across influence, performance media, pay-per-call, owned properties, and behavioral intelligence."}</script><script data-emg-schema="website" type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Elite Media Group","url":"https://elitemediagroup.io","potentialAction":{"@type":"SearchAction","target":"https://elitemediagroup.io/?s={search_term_string}","query-input":"required name=search_term_string"}}</script><script data-emg-schema="faq" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does Elite Media Group do?","acceptedAnswer":{"@type":"Answer","text":"Elite Media Group builds performance marketing systems that connect influence, media, calls, forms, owned properties, and campaign intelligence into one accountable growth engine."}},{"@type":"Question","name":"What is The Loop?","acceptedAnswer":{"@type":"Answer","text":"The Loop is EMG’s intelligence layer for capturing consumer actions, organizing signal, and helping campaigns improve over time."}},{"@type":"Question","name":"Who does EMG work with?","acceptedAnswer":{"@type":"Answer","text":"EMG works with brands, agencies, local businesses, pay-per-call partners, and vertical advertisers that need measurable consumer acquisition."}}]}</script></head>
 <body>
-
 <!-- NAV -->
-<nav>
-  <a href="#" class="nav-logo">
-    <svg class="emg-loop-mark" viewBox="0 0 80 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Left loop ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ navy -->
-      <path d="M40 22 C34 10, 22 6, 14 8 C6 10, 2 16, 2 22 C2 28, 6 34, 14 36 C22 38, 34 34, 40 22 Z" fill="none" stroke="#0c1a2e" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <!-- Right loop ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ teal -->
-      <path d="M40 22 C46 34, 58 38, 66 36 C74 34, 78 28, 78 22 C78 16, 74 10, 66 8 C58 6, 46 10, 40 22 Z" fill="none" stroke="#2d9e8a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <div class="nav-logo-text">
-      <div class="nav-wordmark-main">EMG <span>Loop</span><sup>ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ¢</sup></div>
-      <div class="nav-wordmark-sub">Elite Media Group</div>
-    </div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="services.html">Services</a></li>
-    <li><a href="verticals.html">Verticals</a></li>
-    <li><a href="services.html">The Loop</a></li>
-    <li><a href="why-emg.html">About</a></li>
-    <li><a href="process.html">Results</a></li>
-    <li><a href="contact.html" class="nav-cta">Start a Conversation</a></li>
-  </ul>
+<nav aria-label="Main navigation">
+<a aria-label="Elite Media Group home" class="nav-logo" href="index.html">
+<svg class="emg-loop-mark" fill="none" viewbox="0 0 80 44" xmlns="http://www.w3.org/2000/svg">
+<!-- Left loop — navy -->
+<path d="M40 22 C34 10, 22 6, 14 8 C6 10, 2 16, 2 22 C2 28, 6 34, 14 36 C22 38, 34 34, 40 22 Z" fill="none" stroke="#0c1a2e" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.5"></path>
+<!-- Right loop — teal -->
+<path d="M40 22 C46 34, 58 38, 66 36 C74 34, 78 28, 78 22 C78 16, 74 10, 66 8 C58 6, 46 10, 40 22 Z" fill="none" stroke="#2d9e8a" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.5"></path>
+</svg>
+<div class="nav-logo-text">
+<div class="nav-wordmark-main">EMG <span>Loop</span><sup>™</sup></div>
+<div class="nav-wordmark-sub">Elite Media Group</div>
+</div>
+</a>
+<ul class="nav-links">
+<li><a href="services.html">Services</a></li>
+<li><a href="verticals.html">Verticals</a></li>
+<li><a href="the-loop.html">The Loop</a></li>
+<li><a href="properties.html">Properties</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="results.html">Results</a></li>
+<li><a class="nav-cta" href="contact.html">Start a Conversation</a></li>
+</ul>
 </nav>
-
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-monitor-wrap">
-    <img class="hero-monitor-img" src="assets/images/hero-bg.jpg" alt="EMG ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ 80s office CRT monitor">
-
-    <!-- Everything lives inside the screen -->
-    <div class="hero-screen-inset">
-      <div class="hsi-glass"></div>
-      <div class="hsi-scanlines"></div>
-      <div class="hsi-content">
-
-        <!-- TOP BAR -->
-        <div class="hsi-topbar">
-          <span class="hsi-brand">EMG LOOPÃÂ¢ÃÂÃÂ¢ &nbsp;// &nbsp;v2.6</span>
-          <span class="hsi-time" id="htTime">--:--:--</span>
+<div class="hero-monitor-wrap">
+<img alt="EMG — 80s office CRT monitor" class="hero-monitor-img" src="hero-monitor.png"/>
+<!-- Everything lives inside the screen -->
+<div class="hero-screen-inset">
+<div class="hsi-glass"></div>
+<div class="hsi-scanlines"></div>
+<div class="hsi-content">
+<!-- OS TOP BAR -->
+<div class="hsi-topbar">
+<span class="hsi-brand">EMG LOOP OS  ·  LIVE SIGNAL MAP</span>
+<span class="hsi-time" id="htTime">--:--:--</span>
+</div>
+<!-- LIVE STATUS -->
+<div class="hsi-status-row">
+<span class="hsi-dot"></span>
+<span class="hsi-status-txt" id="htCycle"> </span>
+</div>
+<!-- SIGNAL TYPES ROW -->
+<div class="hsi-signal-row">
+<span class="hsi-sig-label">SIGNAL TYPES:</span>
+<span class="hsi-sig active">Creators</span>
+<span class="hsi-sig">Calls</span>
+<span class="hsi-sig">Forms</span>
+<span class="hsi-sig">SMS</span>
+<span class="hsi-sig">CRM</span>
+</div>
+<div class="hsi-divider"></div>
+<!-- MAIN HEADLINE -->
+<div class="hsi-main-headline">
+          We build systems<br/>that <em>turn attention<br/>into customers.</em>
+</div>
+<div class="hsi-main-sub">
+          Attention becomes action. Action becomes signal.<br/>Signal becomes smarter conversion.
         </div>
-
-        <!-- CYCLING STATUS LINE -->
-        <div class="hsi-headline" id="htCycle">&nbsp;</div>
-        <div class="hsi-sub">ELITE MEDIA GROUP ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ ACQUISITION SYSTEM ONLINE</div>
-
-        <!-- PROGRESS BAR -->
-        <div class="hsi-bar-wrap">
-          <div class="hsi-bar"><div class="hsi-fill" id="htFill"></div></div>
-        </div>
-
-        <div class="hsi-divider"></div>
-
-        <!-- MAIN HEADLINE -->
-        <div class="hsi-main-headline">
-          One loop.<br><em>Every</em> vertical.
-        </div>
-
-        <!-- SUBHEAD -->
-        <div class="hsi-main-sub">
-          Influence builds the trust. Performance creates the scale.<br>
-          AI compounds the signal. One system ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ infinite entry points.
-        </div>
-
-        <!-- CTA BUTTONS -->
-        <div class="hsi-ctas">
-          <a href="contact.html" class="hsi-btn-primary">Start a Conversation</a>
-          <a href="services.html" class="hsi-btn-ghost">See What We Build ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ</a>
-        </div>
-
-        <div class="hsi-divider"></div>
-
-        <!-- STATS -->
-        <div class="hsi-stats">
-          <div class="hsi-stat">
-            <div class="hsi-stat-n">1</div>
-            <div class="hsi-stat-l">Core System</div>
-          </div>
-          <div class="hsi-stat-div"></div>
-          <div class="hsi-stat">
-            <div class="hsi-stat-n">5<span>+</span></div>
-            <div class="hsi-stat-l">Entry Points</div>
-          </div>
-          <div class="hsi-stat-div"></div>
-          <div class="hsi-stat">
-            <div class="hsi-stat-n">100<span>%</span></div>
-            <div class="hsi-stat-l">Accountable</div>
-          </div>
-        </div>
-
-     
-      </div>
-    </div>
-  </div>
+<!-- CTA BUTTONS -->
+<div class="hsi-ctas">
+<a class="hsi-btn-primary" href="contact.html">Start a Conversation</a>
+<a class="hsi-btn-ghost" href="the-loop.html">See The Loop →</a>
+</div>
+<div class="hsi-divider"></div>
+<!-- SYSTEM CARDS -->
+<div class="hsi-cards">
+<div class="hsi-card">
+<div class="hsi-card-label">SOURCE</div>
+<div class="hsi-card-val" id="hcSource">Creators · Paid · CTV</div>
+<div class="hsi-card-bar"><div class="hsi-card-fill" style="width:82%"></div></div>
+</div>
+<div class="hsi-card">
+<div class="hsi-card-label">INTENT</div>
+<div class="hsi-card-val" id="hcIntent">Signal Captured</div>
+<div class="hsi-card-bar"><div class="hsi-card-fill" style="width:67%"></div></div>
+</div>
+<div class="hsi-card">
+<div class="hsi-card-label">ROUTE</div>
+<div class="hsi-card-val" id="hcRoute">Call · Form · SMS</div>
+<div class="hsi-card-bar"><div class="hsi-card-fill" style="width:91%"></div></div>
+</div>
+<div class="hsi-card">
+<div class="hsi-card-label">LEARN</div>
+<div class="hsi-card-val" id="hcLearn">Loop Optimizing</div>
+<div class="hsi-card-bar"><div class="hsi-card-fill" style="width:74%"></div></div>
+</div>
+</div>
+<!-- PROGRESS BAR -->
+<div class="hsi-bar-wrap" style="margin-top:auto">
+<div class="hsi-bar-label">CONVERSION PATH ACTIVE <span class="hsi-cur"></span></div>
+<div class="hsi-bar"><div class="hsi-fill" id="htFill"></div></div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- TICKER -->
 <div class="ticker">
-  <div class="ticker-inner">
-    <span class="tick-item">Home Services</span><span class="tick-item">Insurance</span><span class="tick-item">Legal &amp; Mass Tort</span><span class="tick-item">Medicare</span><span class="tick-item">Final Expense</span><span class="tick-item">Disability / SSDI</span><span class="tick-item">Home Warranty</span><span class="tick-item">SMB</span><span class="tick-item">CPG</span><span class="tick-item">Automotive</span><span class="tick-item">Pay-Per-Call</span><span class="tick-item">Influencer Programs</span><span class="tick-item">Performance Media</span><span class="tick-item">AI Acquisition</span>
-    <span class="tick-item">Home Services</span><span class="tick-item">Insurance</span><span class="tick-item">Legal &amp; Mass Tort</span><span class="tick-item">Medicare</span><span class="tick-item">Final Expense</span><span class="tick-item">Disability / SSDI</span><span class="tick-item">Home Warranty</span><span class="tick-item">SMB</span><span class="tick-item">CPG</span><span class="tick-item">Automotive</span><span class="tick-item">Pay-Per-Call</span><span class="tick-item">Influencer Programs</span><span class="tick-item">Performance Media</span><span class="tick-item">AI Acquisition</span>
-  </div>
+<div class="ticker-inner">
+<span class="tick-item">Home Services</span><span class="tick-item">Insurance</span><span class="tick-item">Legal &amp; Mass Tort</span><span class="tick-item">Medicare</span><span class="tick-item">Final Expense</span><span class="tick-item">Disability / SSDI</span><span class="tick-item">Home Warranty</span><span class="tick-item">SMB</span><span class="tick-item">CPG</span><span class="tick-item">Automotive</span><span class="tick-item">Pay-Per-Call</span><span class="tick-item">Influencer Programs</span><span class="tick-item">Performance Media</span><span class="tick-item">AI Acquisition</span>
+<span class="tick-item">Home Services</span><span class="tick-item">Insurance</span><span class="tick-item">Legal &amp; Mass Tort</span><span class="tick-item">Medicare</span><span class="tick-item">Final Expense</span><span class="tick-item">Disability / SSDI</span><span class="tick-item">Home Warranty</span><span class="tick-item">SMB</span><span class="tick-item">CPG</span><span class="tick-item">Automotive</span><span class="tick-item">Pay-Per-Call</span><span class="tick-item">Influencer Programs</span><span class="tick-item">Performance Media</span><span class="tick-item">AI Acquisition</span>
 </div>
-
+</div>
 <!-- PROBLEM -->
 <section class="sec-dark sec" id="about">
-  <div class="prob-grid">
-    <div>
-      <div class="label label-light">The Problem</div>
-      <h2 class="h h-light" style="max-width:420px">Fragmentation reshaped attention.<br>Most agencies missed it.</h2>
-      <div class="prob-pts">
-        <div class="prob-pt"><span class="pnum">01</span><span class="ptxt">Audiences are skeptical of ads from brands they don't trust.</span></div>
-        <div class="prob-pt"><span class="pnum">02</span><span class="ptxt">Performance without trust doesn't convert at scale.</span></div>
-        <div class="prob-pt"><span class="pnum">03</span><span class="ptxt">Trust without performance doesn't move measurable outcomes.</span></div>
-        <div class="prob-pt"><span class="pnum">04</span><span class="ptxt">Most agencies pick a side. Neither side wins alone.</span></div>
-      </div>
-    </div>
-    <div>
-      <div class="res-box">
-        <h3>EMG was built for this exact moment.</h3>
-        <p>We design integrated systems that combine creator-led trust, performance media reach, and AI-driven optimization. Not separate campaigns ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ one compounding loop that learns, adapts, and delivers. Every vertical is a different entry point into the same system.</p>
-      </div>
-    </div>
-  </div>
+<div class="prob-grid">
+<div>
+<div class="label label-light">The Problem</div>
+<h2 class="h h-light" style="max-width:420px">Fragmentation reshaped attention.<br/>Most agencies missed it.</h2>
+<div class="prob-pts">
+<div class="prob-pt"><span class="pnum">01</span><span class="ptxt">Attention is everywhere. Conversion is the problem.</span></div>
+<div class="prob-pt"><span class="pnum">02</span><span class="ptxt">Most agencies report what happened. Nobody builds for what's next.</span></div>
+<div class="prob-pt"><span class="pnum">03</span><span class="ptxt">Traffic without a signal system is just spend. Not investment.</span></div>
+<div class="prob-pt"><span class="pnum">04</span><span class="ptxt">EMG captures the signal — call, form, click, SMS — and routes it into a system that learns.</span></div>
+</div>
+</div>
+<div>
+<div class="res-box">
+<h3>EMG was built to solve this.</h3>
+<p>We design systems that capture consumer attention, route it through calls, forms, clicks, and messages, and use AI to turn every signal into smarter conversion. Not a campaign. Not a vendor relationship. A system that gets better every single cycle.</p>
+</div>
+</div>
+</div>
 </section>
-
 <!-- THE LOOP -->
 <section class="sec-cream sec">
-  <div class="loop-top">
-    <div>
-      <div class="label">The EMG Loop</div>
-      <h2 class="h">One system.<br>Three forces.</h2>
-      <p class="body-l" style="margin-top:16px">Influence initiates trust. Performance creates reach. AI captures signal and optimizes the whole. Each feeds the others ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ every interaction compounds value across the loop.</p>
-    </div>
-    <div class="loop-diagram">
-      <div class="ld-ring">
-        <div class="ld-inner"></div>
-        <div class="ld-center">The Loop<span>always compounding</span></div>
-        <div class="ld-node t">Influence</div>
-        <div class="ld-node r">AI</div>
-        <div class="ld-node b">Performance</div>
-      </div>
-    </div>
-  </div>
-  <div class="forces">
-    <div class="force"><div class="force-n">01</div><div class="force-t">Influence</div><p class="force-b">Creator-led trust programs that initiate belief at the top of the funnel. Creators aren't distribution ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ they're signal that makes everything downstream convert harder.</p></div>
-    <div class="force"><div class="force-n">02</div><div class="force-t">Performance</div><p class="force-b">Paid social, search, and CTV/OTT that creates scale. Media that adapts to people, not platforms. Accountable to revenue, not reach.</p></div>
-    <div class="force"><div class="force-n">03</div><div class="force-t">AI</div><p class="force-b">Signal capture, real-time learning, and continuous optimization. Campaigns that learn instead of reporting after the fact. The loop never stops.</p></div>
-  </div>
+<div class="loop-top">
+<div>
+<div class="label">The EMG Loop</div>
+<h2 class="h">One system.<br/>Three forces.</h2>
+<p class="body-l" style="margin-top:16px">Influence initiates trust. Performance creates reach. AI captures signal and optimizes the whole. Each feeds the others — every interaction compounds value across the loop.</p>
+</div>
+<div class="loop-diagram">
+<div class="ld-ring">
+<div class="ld-inner"></div>
+<div class="ld-center">The Loop<span>always compounding</span></div>
+<div class="ld-node t">Influence</div>
+<div class="ld-node r">AI</div>
+<div class="ld-node b">Performance</div>
+</div>
+</div>
+</div>
+<div class="forces">
+<div class="force"><div class="force-n">01</div><div class="force-t">Influence</div><p class="force-b">Creator-led trust programs that initiate belief at the top of the funnel. Creators aren't distribution — they're signal that makes everything downstream convert harder.</p></div>
+<div class="force"><div class="force-n">02</div><div class="force-t">Performance</div><p class="force-b">Paid social, search, and CTV/OTT that creates scale. Media that adapts to people, not platforms. Accountable to revenue, not reach.</p></div>
+<div class="force"><div class="force-n">03</div><div class="force-t">AI</div><p class="force-b">Signal capture, real-time learning, and continuous optimization. Campaigns that learn instead of reporting after the fact. The loop never stops.</p></div>
+</div>
 </section>
-
 <!-- SERVICES -->
 <section class="sec-white sec" id="services">
-  <div class="svc-intro">
-    <div>
-      <div class="label">Core Capabilities</div>
-      <h2 class="h">What we build<br>for partners.</h2>
-    </div>
-    <p class="body-l">Every engagement is outcome-accountable. Performance-only, hybrid, or strategic partnership models ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ we're operators, not pitchmen. We embed where execution and learning intersect.</p>
-  </div>
-  <div class="svc-grid">
-    <div class="svc"><div class="svc-n">01</div><div class="svc-tag">Creator</div><div class="svc-t">Influencer & Creator Programs</div><p class="svc-d">Rigorous selection, deep alignment, whitelisting-ready execution. Creators are signal, not just reach.</p><ul class="svc-ul"><li class="svc-li">Values & issue alignment</li><li class="svc-li">Engagement quality & sentiment scoring</li><li class="svc-li">Historical content audit</li><li class="svc-li">Brand safety & compliance</li><li class="svc-li">Whitelisting & paid amplification</li></ul></div>
-    <div class="svc"><div class="svc-n">02</div><div class="svc-tag">Paid Media</div><div class="svc-t">Performance Media</div><p class="svc-d">Paid social, search, and CTV/OTT managed for conversion ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ not impressions. Every dollar accountable.</p><ul class="svc-ul"><li class="svc-li">Meta, Google, YouTube, TikTok</li><li class="svc-li">Connected TV & OTT</li><li class="svc-li">Audience intelligence & lookalike modeling</li><li class="svc-li">Real-time creative optimization</li><li class="svc-li">Cross-channel attribution</li></ul></div>
-    <div class="svc"><div class="svc-n">03</div><div class="svc-tag">Pay-Per-Call</div><div class="svc-t">Conversational Acquisition</div><p class="svc-d">Inbound call and lead generation that converts consumer intent into real conversations with real buyers.</p><ul class="svc-ul"><li class="svc-li">Inbound call generation at scale</li><li class="svc-li">Intent-qualified lead delivery</li><li class="svc-li">TCPA-compliant programs</li><li class="svc-li">Vertical-specific compliance</li><li class="svc-li">Performance-only pricing available</li></ul></div>
-    <div class="svc"><div class="svc-n">04</div><div class="svc-tag">AI Systems</div><div class="svc-t">AI Messaging & Follow-Up</div><p class="svc-d">Intelligent sequencing, real-time signal capture, and automated nurture that keeps the loop running.</p><ul class="svc-ul"><li class="svc-li">AI-powered outreach sequencing</li><li class="svc-li">Behavioral trigger-based messaging</li><li class="svc-li">Multi-channel follow-up automation</li><li class="svc-li">Lead scoring & prioritization</li><li class="svc-li">Continuous learning optimization</li></ul></div>
-    <div class="svc"><div class="svc-n">05</div><div class="svc-tag">Conversion</div><div class="svc-t">Funnel & Conversion Architecture</div><p class="svc-d">Landing pages and conversion paths designed from the outcome backward ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ not the brief forward.</p><ul class="svc-ul"><li class="svc-li">CRO-first landing page design</li><li class="svc-li">Offer & incentive architecture</li><li class="svc-li">A/B and multivariate testing</li><li class="svc-li">Form & funnel optimization</li><li class="svc-li">Revenue path mapping</li></ul></div>
-    <div class="svc"><div class="svc-n">06</div><div class="svc-tag">Intelligence</div><div class="svc-t">Measurement & Attribution</div><p class="svc-d">We measure honestly because that's how you learn faster. Transparent reporting, no black boxes.</p><ul class="svc-ul"><li class="svc-li">Multi-touch attribution modeling</li><li class="svc-li">Call tracking & recording analytics</li><li class="svc-li">Revenue-level performance reporting</li><li class="svc-li">Partner-facing dashboards</li><li class="svc-li">Ongoing learning loop documentation</li></ul></div>
-  </div>
+<div class="svc-intro">
+<div>
+<div class="label">Core Capabilities</div>
+<h2 class="h">What we build<br/>for partners.</h2>
+</div>
+<p class="body-l">Every engagement is outcome-accountable. Performance-only, hybrid, or strategic partnership models — we're operators, not pitchmen. We embed where execution and learning intersect.</p>
+</div>
+<div class="svc-grid">
+<div class="svc"><div class="svc-n">01</div><div class="svc-tag">Creator</div><div class="svc-t">Influencer &amp; Creator Programs</div><p class="svc-d">Rigorous selection, deep alignment, whitelisting-ready execution. Creators are signal, not just reach.</p><ul class="svc-ul"><li class="svc-li">Values &amp; issue alignment</li><li class="svc-li">Engagement quality &amp; sentiment scoring</li><li class="svc-li">Historical content audit</li><li class="svc-li">Brand safety &amp; compliance</li><li class="svc-li">Whitelisting &amp; paid amplification</li></ul></div>
+<div class="svc"><div class="svc-n">02</div><div class="svc-tag">Paid Media</div><div class="svc-t">Performance Media</div><p class="svc-d">Paid social, search, and CTV/OTT managed for conversion — not impressions. Every dollar accountable.</p><ul class="svc-ul"><li class="svc-li">Meta, Google, YouTube, TikTok</li><li class="svc-li">Connected TV &amp; OTT</li><li class="svc-li">Audience intelligence &amp; lookalike modeling</li><li class="svc-li">Real-time creative optimization</li><li class="svc-li">Cross-channel attribution</li></ul></div>
+<div class="svc"><div class="svc-n">03</div><div class="svc-tag">Pay-Per-Call</div><div class="svc-t">Conversational Acquisition</div><p class="svc-d">Inbound call and lead generation that converts consumer intent into real conversations with real buyers.</p><ul class="svc-ul"><li class="svc-li">Inbound call generation at scale</li><li class="svc-li">Intent-qualified lead delivery</li><li class="svc-li">TCPA-compliant programs</li><li class="svc-li">Vertical-specific compliance</li><li class="svc-li">Performance-only pricing available</li></ul></div>
+<div class="svc"><div class="svc-n">04</div><div class="svc-tag">AI Systems</div><div class="svc-t">AI Messaging &amp; Follow-Up</div><p class="svc-d">Intelligent sequencing, real-time signal capture, and automated nurture that keeps the loop running.</p><ul class="svc-ul"><li class="svc-li">AI-powered outreach sequencing</li><li class="svc-li">Behavioral trigger-based messaging</li><li class="svc-li">Multi-channel follow-up automation</li><li class="svc-li">Lead scoring &amp; prioritization</li><li class="svc-li">Continuous learning optimization</li></ul></div>
+<div class="svc"><div class="svc-n">05</div><div class="svc-tag">Conversion</div><div class="svc-t">Funnel &amp; Conversion Architecture</div><p class="svc-d">Landing pages and conversion paths designed from the outcome backward — not the brief forward.</p><ul class="svc-ul"><li class="svc-li">CRO-first landing page design</li><li class="svc-li">Offer &amp; incentive architecture</li><li class="svc-li">A/B and multivariate testing</li><li class="svc-li">Form &amp; funnel optimization</li><li class="svc-li">Revenue path mapping</li></ul></div>
+<div class="svc"><div class="svc-n">06</div><div class="svc-tag">Intelligence</div><div class="svc-t">Measurement &amp; Attribution</div><p class="svc-d">We measure honestly because that's how you learn faster. Transparent reporting, no black boxes.</p><ul class="svc-ul"><li class="svc-li">Multi-touch attribution modeling</li><li class="svc-li">Call tracking &amp; recording analytics</li><li class="svc-li">Revenue-level performance reporting</li><li class="svc-li">Partner-facing dashboards</li><li class="svc-li">Ongoing learning loop documentation</li></ul></div>
+</div>
 </section>
-
 <!-- VERTICALS -->
 <section class="sec-dark sec" id="verticals">
-  <div class="vert-intro">
-    <div>
-      <div class="label label-light">Industries We Serve</div>
-      <h2 class="h h-light">Every vertical.<br><em>Same loop.</em></h2>
-    </div>
-    <p class="vert-frame">The system doesn't change ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ the entry point does. We build <strong>vertical-specific</strong> compliance, messaging, and conversion logic on top of the same compounding loop. Same power, tuned for your market.</p>
-  </div>
-  <div class="vg4">
-    <div class="vc"><div class="vi">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ </div><div class="vn">Home Services</div><p class="vd">Pest control, HVAC, roofing, windows, siding, home warranty. High-intent, local-conversion programs built to close.</p><span class="vtag">Pay-Per-Call ÃÂÃÂÃÂÃÂ· Lead Gen</span></div>
-    <div class="vc"><div class="vi">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ¡</div><div class="vn">Insurance</div><p class="vd">Final expense, Medicare, life. Compliant, trust-first programs built for sensitive, skeptical audiences.</p><span class="vtag">Compliance ÃÂÃÂÃÂÃÂ· Creator ÃÂÃÂÃÂÃÂ· Call</span></div>
-    <div class="vc"><div class="vi">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¯ÃÂÃÂ¸ÃÂÃÂ</div><div class="vn">Legal & Mass Tort</div><p class="vd">High-volume case acquisition with intent-qualified lead delivery and deep TCPA compliance expertise.</p><span class="vtag">Volume ÃÂÃÂÃÂÃÂ· Qualified Leads</span></div>
-    <div class="vc"><div class="vi">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ¿</div><div class="vn">Disability / SSDI</div><p class="vd">Sensitive, compliant programs connecting qualified applicants with the advocacy and support they need.</p><span class="vtag">Compliance ÃÂÃÂÃÂÃÂ· Trust</span></div>
-  </div>
-  <div class="vg3">
-    <div class="vc"><div class="vi">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ¢</div><div class="vn">SMB</div><p class="vd">Small and mid-size business acquisition ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ from local operators to regional businesses looking to scale their customer base with performance-accountable programs.</p><span class="vtag">Lead Gen ÃÂÃÂÃÂÃÂ· Performance</span></div>
-    <div class="vc"><div class="vi">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ</div><div class="vn">CPG</div><p class="vd">Consumer packaged goods brands that need creator-led trust to break through retail noise and drive measurable purchase intent at scale.</p><span class="vtag">Influencer ÃÂÃÂÃÂÃÂ· CTV ÃÂÃÂÃÂÃÂ· Social</span></div>
-    <div class="vc"><div class="vi">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ</div><div class="vn">Automotive</div><p class="vd">Dealer networks, OEM campaigns, and service providers. High-consideration buyers require trust before they step into a showroom.</p><span class="vtag">Creator ÃÂÃÂÃÂÃÂ· CTV ÃÂÃÂÃÂÃÂ· Call</span></div>
-  </div>
+<div class="vert-intro">
+<div>
+<div class="label label-light">Industries We Serve</div>
+<h2 class="h h-light">Every vertical.<br/><em>Same loop.</em></h2>
+</div>
+<p class="vert-frame">The system doesn't change — the entry point does. We build <strong>vertical-specific</strong> compliance, messaging, and conversion logic on top of the same compounding loop. Same power, tuned for your market.</p>
+</div>
+<div class="vg4">
+<div class="vc"><div class="vi">🏠</div><div class="vn">Home Services</div><p class="vd">Pest control, HVAC, roofing, windows, siding, home warranty. High-intent, local-conversion programs built to close.</p><span class="vtag">Pay-Per-Call · Lead Gen</span></div>
+<div class="vc"><div class="vi">🛡</div><div class="vn">Insurance</div><p class="vd">Final expense, Medicare, life. Compliant, trust-first programs built for sensitive, skeptical audiences.</p><span class="vtag">Compliance · Creator · Call</span></div>
+<div class="vc"><div class="vi">⚖️</div><div class="vn">Legal &amp; Mass Tort</div><p class="vd">High-volume case acquisition with intent-qualified lead delivery and deep TCPA compliance expertise.</p><span class="vtag">Volume · Qualified Leads</span></div>
+<div class="vc"><div class="vi">♿</div><div class="vn">Disability / SSDI</div><p class="vd">Sensitive, compliant programs connecting qualified applicants with the advocacy and support they need.</p><span class="vtag">Compliance · Trust</span></div>
+</div>
+<div class="vg3">
+<div class="vc"><div class="vi">🏢</div><div class="vn">SMB</div><p class="vd">Small and mid-size business acquisition — from local operators to regional businesses looking to scale their customer base with performance-accountable programs.</p><span class="vtag">Lead Gen · Performance</span></div>
+<div class="vc"><div class="vi">🛒</div><div class="vn">CPG</div><p class="vd">Consumer packaged goods brands that need creator-led trust to break through retail noise and drive measurable purchase intent at scale.</p><span class="vtag">Influencer · CTV · Social</span></div>
+<div class="vc"><div class="vi">🚗</div><div class="vn">Automotive</div><p class="vd">Dealer networks, OEM campaigns, and service providers. High-consideration buyers require trust before they step into a showroom.</p><span class="vtag">Creator · CTV · Call</span></div>
+</div>
 </section>
-
 <!-- WHY EMG -->
 <section class="sec-cream sec" id="why">
-  <div class="label">Why Elite Media Group</div>
-  <h2 class="h">Elite is earned.</h2>
-  <div class="why-grid">
-    <div class="why-rows">
-      <div class="why-row"><span class="why-kw">for</span><span class="why-tx">We take responsibility for outcomes ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ not credit for impressions.</span></div>
-      <div class="why-row"><span class="why-kw">not</span><span class="why-tx">We design systems, not stunts. Every engagement is built to compound.</span></div>
-      <div class="why-row"><span class="why-kw">over</span><span class="why-tx">We value trust over attention. Authentic reach outperforms bought reach every time.</span></div>
-      <div class="why-row"><span class="why-kw">when</span><span class="why-tx">We stay when others rotate out. Our partners are long-term because our systems are.</span></div>
-      <div class="why-row"><span class="why-kw">honestly</span><span class="why-tx">We learn faster because we measure honestly ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ even when the data is uncomfortable.</span></div>
-    </div>
-    <div class="why-card">
-      <p class="why-q">Built by operators who've worked where <em>outcomes matter</em> ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ and where trust, governance, and accountability aren't optional.</p>
-      <div class="why-by">Elite Media Group ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Founders</div>
-    </div>
-  </div>
+<div class="label">Why Elite Media Group</div>
+<h2 class="h">Elite is earned.</h2>
+<div class="why-grid">
+<div class="why-rows">
+<div class="why-row"><span class="why-kw">for</span><span class="why-tx">We take responsibility for outcomes — not credit for impressions.</span></div>
+<div class="why-row"><span class="why-kw">not</span><span class="why-tx">We design systems, not stunts. Every engagement is built to compound.</span></div>
+<div class="why-row"><span class="why-kw">over</span><span class="why-tx">We value trust over attention. Authentic reach outperforms bought reach every time.</span></div>
+<div class="why-row"><span class="why-kw">when</span><span class="why-tx">We stay when others rotate out. Our partners are long-term because our systems are.</span></div>
+<div class="why-row"><span class="why-kw">honestly</span><span class="why-tx">We learn faster because we measure honestly — even when the data is uncomfortable.</span></div>
+</div>
+<div class="why-card">
+<p class="why-q">Built by operators who've worked where <em>outcomes matter</em> — and where trust, governance, and accountability aren't optional.</p>
+<div class="why-by">Elite Media Group — Founders</div>
+</div>
+</div>
 </section>
-
 <!-- COMPARISON -->
 <section class="sec-white sec">
-  <div class="label">How We Operate</div>
-  <h2 class="h">EMG vs. the standard approach.</h2>
-  <p class="body-l">Designed to support procurement, internal review, and long-term partnership decisions.</p>
-  <div class="comp-tbl">
-    <div class="comp-h">
-      <div class="comp-hc">Category</div>
-      <div class="comp-hc">Standard Industry</div>
-      <div class="comp-hc emg">EMG Approach</div>
-    </div>
-    <div class="comp-r"><div class="comp-c topic">Creator Selection</div><div class="comp-c">Brief-based casting</div><div class="comp-c emgv">Conversion-led alignment</div></div>
-    <div class="comp-r"><div class="comp-c topic">Performance Reporting</div><div class="comp-c">Self-reported metrics</div><div class="comp-c emgv">Verified, recent performance signals</div></div>
-    <div class="comp-r"><div class="comp-c topic">Creator Fees</div><div class="comp-c">Bundled, opaque pricing</div><div class="comp-c emgv">Clear creator & media rate disclosure</div></div>
-    <div class="comp-r"><div class="comp-c topic">Execution</div><div class="comp-c">Platform-only</div><div class="comp-c emgv">Vetted extensions: Paid, CTV, Call, AI</div></div>
-    <div class="comp-r"><div class="comp-c topic">Engagement Model</div><div class="comp-c">Campaign-based, then out</div><div class="comp-c emgv">Ongoing learning loops</div></div>
-    <div class="comp-r"><div class="comp-c topic">Pricing</div><div class="comp-c">Opaque structures</div><div class="comp-c emgv">Transparent fee structures</div></div>
-    <div class="comp-r"><div class="comp-c topic">Partnership Style</div><div class="comp-c">Engagement-first</div><div class="comp-c emgv">Relationship-based, outcome-accountable</div></div>
-  </div>
+<div class="label">How We Operate</div>
+<h2 class="h">EMG vs. the standard approach.</h2>
+<p class="body-l">Designed to support procurement, internal review, and long-term partnership decisions.</p>
+<div class="comp-tbl">
+<div class="comp-h">
+<div class="comp-hc">Category</div>
+<div class="comp-hc">Standard Industry</div>
+<div class="comp-hc emg">EMG Approach</div>
+</div>
+<div class="comp-r"><div class="comp-c topic">Creator Selection</div><div class="comp-c">Brief-based casting</div><div class="comp-c emgv">Conversion-led alignment</div></div>
+<div class="comp-r"><div class="comp-c topic">Performance Reporting</div><div class="comp-c">Self-reported metrics</div><div class="comp-c emgv">Verified, recent performance signals</div></div>
+<div class="comp-r"><div class="comp-c topic">Creator Fees</div><div class="comp-c">Bundled, opaque pricing</div><div class="comp-c emgv">Clear creator &amp; media rate disclosure</div></div>
+<div class="comp-r"><div class="comp-c topic">Execution</div><div class="comp-c">Platform-only</div><div class="comp-c emgv">Vetted extensions: Paid, CTV, Call, AI</div></div>
+<div class="comp-r"><div class="comp-c topic">Engagement Model</div><div class="comp-c">Campaign-based, then out</div><div class="comp-c emgv">Ongoing learning loops</div></div>
+<div class="comp-r"><div class="comp-c topic">Pricing</div><div class="comp-c">Opaque structures</div><div class="comp-c emgv">Transparent fee structures</div></div>
+<div class="comp-r"><div class="comp-c topic">Partnership Style</div><div class="comp-c">Engagement-first</div><div class="comp-c emgv">Relationship-based, outcome-accountable</div></div>
+</div>
 </section>
-
 <!-- PROCESS -->
 <section class="sec-off sec" id="process">
-  <div class="label">How Engagements Work</div>
-  <h2 class="h">From conversation<br>to compounding.</h2>
-  <div class="proc-wrap">
-    <div class="proc-s"><div class="proc-dot">01</div><div class="proc-t">Discovery</div><p class="proc-d">We learn your vertical, goals, compliance requirements, and existing stack.</p></div>
-    <div class="proc-s"><div class="proc-dot">02</div><div class="proc-t">System Design</div><p class="proc-d">We map the influence, performance, and AI components that fit your specific outcome.</p></div>
-    <div class="proc-s"><div class="proc-dot">03</div><div class="proc-t">Pilot Launch</div><p class="proc-d">Fast start with defined KPIs and honest measurement from day one.</p></div>
-    <div class="proc-s"><div class="proc-dot">04</div><div class="proc-t">Optimize & Learn</div><p class="proc-d">Every signal feeds the loop. We adapt in real time and report honestly.</p></div>
-    <div class="proc-s"><div class="proc-dot">05</div><div class="proc-t">Scale</div><p class="proc-d">Once the system learns, we scale what works ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ with full transparency on what doesn't.</p></div>
-  </div>
+<div class="label">How Engagements Work</div>
+<h2 class="h">From conversation<br/>to compounding.</h2>
+<div class="proc-wrap">
+<div class="proc-s"><div class="proc-dot">01</div><div class="proc-t">Discovery</div><p class="proc-d">We learn your vertical, goals, compliance requirements, and existing stack.</p></div>
+<div class="proc-s"><div class="proc-dot">02</div><div class="proc-t">System Design</div><p class="proc-d">We map the influence, performance, and AI components that fit your specific outcome.</p></div>
+<div class="proc-s"><div class="proc-dot">03</div><div class="proc-t">Pilot Launch</div><p class="proc-d">Fast start with defined KPIs and honest measurement from day one.</p></div>
+<div class="proc-s"><div class="proc-dot">04</div><div class="proc-t">Optimize &amp; Learn</div><p class="proc-d">Every signal feeds the loop. We adapt in real time and report honestly.</p></div>
+<div class="proc-s"><div class="proc-dot">05</div><div class="proc-t">Scale</div><p class="proc-d">Once the system learns, we scale what works — with full transparency on what doesn't.</p></div>
+</div>
 </section>
-
 <!-- CTA -->
 <section class="cta" id="contact">
-  <div class="cta-atm"></div>
-  <div class="label label-light" style="justify-content:center">Start a Conversation</div>
-  <h2>Ready to build a system that <em>actually converts?</em></h2>
-  <p>No pitch decks until we know if we're a fit. Let's talk about where your consumer intent starts ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ and what's stopping it from becoming revenue.</p>
-  <div class="cta-row">
-    <input type="email" class="cta-in" placeholder="Work email">
-    <a href="mailto:hello@elitemediagroup.io" class="btn-p">Let's Talk</a>
-  </div>
-  <div class="cta-note">Or reach us at hello@elitemediagroup.io</div>
+<div class="cta-atm"></div>
+<div class="label label-light" style="justify-content:center">Start a Conversation</div>
+<h2>Ready to build a system that <em>actually converts?</em></h2>
+<p>No pitch decks until we know if we're a fit. Let's talk about where your consumer intent starts — and what's stopping it from becoming revenue.</p>
+<div class="cta-row">
+<input class="cta-in" placeholder="Work email" type="email"/>
+<a class="btn-p" href="mailto:hello@elitemediagroup.io">Let's Talk</a>
+</div>
+<div class="cta-note">Or reach us at hello@elitemediagroup.io</div>
 </section>
-
 <!-- FOOTER -->
-<footer>
-  <div class="ft">
-    <div class="ft-brand">
-      <div style="display:flex;align-items:center;gap:14px">
-        <svg viewBox="0 0 80 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:52px;height:28px;flex-shrink:0">
-          <path d="M40 22 C34 10, 22 6, 14 8 C6 10, 2 16, 2 22 C2 28, 6 34, 14 36 C22 38, 34 34, 40 22 Z" fill="none" stroke="white" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M40 22 C46 34, 58 38, 66 36 C74 34, 78 28, 78 22 C78 16, 74 10, 66 8 C58 6, 46 10, 40 22 Z" fill="none" stroke="#2d9e8a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <div>
-          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.06em;color:white;text-transform:uppercase;line-height:1">EMG <span style="color:#2d9e8a">Loop</span><sup style="font-size:9px;color:#2d9e8a">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ¢</sup></div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;color:rgba(255,255,255,.35);text-transform:uppercase;margin-top:2px">Elite Media Group</div>
-        </div>
-      </div>
-      <p>We design systems that integrate influence, performance, and intelligence to drive measurable outcomes ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ not optics.</p>
-    </div>
-    <div class="ft-col"><h4>Services</h4><ul><li><a href="#">Influencer Programs</a></li><li><a href="#">Performance Media</a></li><li><a href="#">Pay-Per-Call</a></li><li><a href="#">AI Messaging</a></li><li><a href="#">Funnel Architecture</a></li><li><a href="#">Attribution</a></li></ul></div>
-    <div class="ft-col"><h4>Verticals</h4><ul><li><a href="#">Home Services</a></li><li><a href="#">Insurance</a></li><li><a href="#">Legal / Mass Tort</a></li><li><a href="#">Disability / SSDI</a></li><li><a href="#">SMB</a></li><li><a href="#">CPG</a></li><li><a href="#">Automotive</a></li></ul></div>
-    <div class="ft-col"><h4>Company</h4><ul><li><a href="#">About EMG</a></li><li><a href="#">Why We're Elite</a></li><li><a href="#">Partnership Models</a></li><li><a href="contact.html">Start a Conversation</a></li></ul></div>
-  </div>
-  <div class="ft-bot">
-    <div class="ft-copy">ÃÂÃÂÃÂÃÂ© 2026 Elite Media Group ÃÂÃÂÃÂÃÂ· elitemediagroup.io</div>
-    <div class="ft-tag">Influence fades. Systems endure.</div>
-  </div>
+<footer aria-label="Footer navigation">
+<div class="ft">
+<div class="ft-brand">
+<div style="display:flex;align-items:center;gap:14px">
+<svg fill="none" style="width:52px;height:28px;flex-shrink:0" viewbox="0 0 80 44" xmlns="http://www.w3.org/2000/svg">
+<path d="M40 22 C34 10, 22 6, 14 8 C6 10, 2 16, 2 22 C2 28, 6 34, 14 36 C22 38, 34 34, 40 22 Z" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.5"></path>
+<path d="M40 22 C46 34, 58 38, 66 36 C74 34, 78 28, 78 22 C78 16, 74 10, 66 8 C58 6, 46 10, 40 22 Z" fill="none" stroke="#2d9e8a" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.5"></path>
+</svg>
+<div>
+<div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:.06em;color:white;text-transform:uppercase;line-height:1">EMG <span style="color:#2d9e8a">Loop</span><sup style="font-size:9px;color:#2d9e8a">™</sup></div>
+<div style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;color:rgba(255,255,255,.35);text-transform:uppercase;margin-top:2px">Elite Media Group</div>
+</div>
+</div>
+<p>We design systems that integrate influence, performance, and intelligence to drive measurable outcomes — not optics.</p>
+</div>
+<div class="ft-col"><h4>Services</h4><ul><li><a href="services.html">Influencer Programs</a></li><li><a href="services.html">Performance Media</a></li><li><a href="services.html">Pay-Per-Call</a></li><li><a href="services.html">AI Messaging</a></li><li><a href="services.html">Funnel Architecture</a></li><li><a href="services.html">Attribution</a></li></ul></div>
+<div class="ft-col"><h4>Verticals</h4><ul><li><a href="verticals.html">Home Services</a></li><li><a href="verticals.html">Insurance</a></li><li><a href="verticals.html">Legal / Mass Tort</a></li><li><a href="verticals.html">Disability / SSDI</a></li><li><a href="verticals.html">SMB</a></li><li><a href="verticals.html">CPG</a></li><li><a href="verticals.html">Automotive</a></li></ul></div>
+<div class="ft-col"><h4>Company</h4><ul><li><a href="about.html">About EMG</a></li><li><a href="about.html">Why We're Elite</a></li><li><a href="contact.html">Partnership Models</a></li><li><a href="contact.html">Start a Conversation</a></li></ul></div>
+</div>
+<div class="ft-bot">
+<div class="ft-copy">© 2026 Elite Media Group · elitemediagroup.io</div>
+<div class="ft-tag">Influence fades. Systems endure.</div>
+</div>
 </footer>
-
 <script>
-// Stars removed ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ photo hero
+// Stars removed — photo hero
 
 // Terminal clock
 function tick(){
@@ -813,11 +882,11 @@ tick();setInterval(tick,1000);
   if(!el)return;
 
   const phases=[
-    {text:'LOCKING ON TO SIGNAL...',     pct:'18%',  dur:2200},
-    {text:'CONSUMER BEHAVIOR CAPTURED.', pct:'44%',  dur:2000},
-    {text:'SIGNAL ACQUIRED.',            pct:'67%',  dur:1800},
-    {text:"YOU'VE GOT LEADS.",           pct:'100%', dur:2600},
-    {text:'RE-ENGAGING...',              pct:'12%',  dur:2000},
+    {text:'INFLUENCE DETECTED.',           pct:'20%',  dur:2000, sig:0},
+    {text:'INTENT ROUTED.',                pct:'42%',  dur:1800, sig:1},
+    {text:'CONVERSION PATH ACTIVE.',       pct:'65%',  dur:2000, sig:2},
+    {text:"YOU'VE GOT LEADS.",             pct:'100%', dur:2800, sig:3},
+    {text:'LOOP LEARNING. OPTIMIZING.',    pct:'15%',  dur:1800, sig:4},
   ];
 
   let idx=0;
@@ -831,6 +900,9 @@ tick();setInterval(tick,1000);
     blinkTimer=setTimeout(()=>{
       el.textContent=p.text;
       el.style.opacity='1';
+      // animate signal chips
+      const chips=document.querySelectorAll('.hsi-sig');
+      chips.forEach((c,i)=>c.classList.toggle('active', i===p.sig));
       // bar
       if(bar){
         bar.style.transition='none';
@@ -851,40 +923,6 @@ tick();setInterval(tick,1000);
 
   // small delay before starting so page has loaded
   setTimeout(()=>setPhase(0),800);
-})();
-</script>
-
-<script>
-(function(){
-  // Position .hero-screen-inset to track the cover-cropped hero photo's screen-glass area.
-  // Source image 1601x900. Glass coords: x 332..1265, y 107..774.
-  function setupHeroInset(){
-    var img=document.querySelector('.hero-monitor-img');
-    var inset=document.querySelector('.hero-screen-inset');
-    var wrap=document.querySelector('.hero-monitor-wrap');
-    if(!img||!inset||!wrap||!img.naturalWidth)return;
-    var wr=wrap.getBoundingClientRect();
-    var natW=img.naturalWidth, natH=img.naturalHeight;
-    var scale=Math.max(wr.width/natW, wr.height/natH);
-    var renderedW=natW*scale, renderedH=natH*scale;
-    var offsetX=(wr.width-renderedW)/2;
-    var offsetY=(wr.height-renderedH)/2;
-    var glassL=332, glassT=107, glassR=1265, glassB=774;
-    var topTrim=4, bottomTrim=8, sideTrim=6;
-    /* dynamically shrink inset.height to fit content */
-    requestAnimationFrame(function(){var content=document.querySelector('.hsi-content');if(content&&inset){var contentH=content.scrollHeight;var paddingY=Math.round(parseFloat(getComputedStyle(content).paddingTop)+parseFloat(getComputedStyle(content).paddingBottom));inset.style.height=(contentH+8)+'px';}});
-    inset.style.left=(offsetX+(glassL+sideTrim)*scale)+'px';
-    inset.style.top=(offsetY+(glassT+topTrim)*scale)+'px';
-    inset.style.width=((glassR-glassL-2*sideTrim)*scale)+'px';
-    inset.style.height=((glassB-glassT-bottomTrim-topTrim)*scale)+'px';
-  }
-  var img=document.querySelector('.hero-monitor-img');
-  if(img){
-    if(img.complete) setupHeroInset();
-    else img.addEventListener('load', setupHeroInset);
-  }
-  window.addEventListener('resize', setupHeroInset);
-  window.addEventListener('orientationchange', setupHeroInset);
 })();
 </script>
 </body>
