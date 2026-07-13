@@ -814,8 +814,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .inquiry-grid{grid-template-columns:1fr;gap:38px}
 }
 @media(max-width:720px){
-  .deck-hero-image{max-height:390px}
-  .deck-hero-image img{height:390px;min-height:0;width:100%;object-position:72% top}
+  .deck-hero-image{max-height:none}
+  .deck-hero-image img{height:auto;min-height:0;width:100%;object-fit:contain;object-position:center}
   .hero-copy.intro-band{display:block;padding-top:34px}
   .hero-copy .kicker{position:static;width:auto;height:auto;overflow:visible;clip:auto;white-space:normal}
   .hero-copy h1{position:static;width:auto;height:auto;overflow:visible;clip:auto;white-space:normal;font-size:42px;line-height:.98;margin-bottom:20px}
@@ -871,7 +871,7 @@ h3{letter-spacing:-.032em}
 .hero-art-stage{isolation:isolate;background:var(--navy-ink)}
 .hero-art-stage:before{z-index:3;background:linear-gradient(180deg,rgba(6,20,38,.03) 46%,rgba(6,20,38,.24) 77%,var(--canvas) 100%)}
 .hero-art-stage:after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,rgba(4,20,42,.12),transparent 33%,transparent 72%,rgba(4,20,42,.1));mix-blend-mode:multiply}
-.deck-hero-image{max-height:720px;background:var(--navy-ink)}
+.deck-hero-image{background:var(--navy-ink)}
 .deck-hero-image img{filter:saturate(.88) contrast(1.03);transform:scale(1.002)}
 .hero-copy-layer{background:var(--canvas)}
 .hero-copy.intro-band{padding:48px 0 58px;gap:52px}
@@ -1010,8 +1010,8 @@ h3{letter-spacing:-.032em}
   .container{width:min(100% - 28px,1180px)}
   .site-nav{background:rgba(255,253,248,.96)}
   .deck-hero{padding-top:66px}
-  .deck-hero-image{max-height:350px}
-  .deck-hero-image img{height:350px;object-position:72% top}
+  .deck-hero-image{max-height:none}
+  .deck-hero-image img{height:auto;object-fit:contain;object-position:center}
   .page-home .deck-hero-image img,.page-talent .deck-hero-image img{object-position:100% top}
   .page-contact .deck-hero-image,.page-properties .deck-hero-image,.page-guides .deck-hero-image{max-height:none}
   .page-contact .deck-hero-image img,.page-properties .deck-hero-image img,.page-guides .deck-hero-image img{height:auto;min-height:0;object-fit:contain;object-position:center top;transform:none}
