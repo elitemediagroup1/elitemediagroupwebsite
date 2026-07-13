@@ -82,7 +82,7 @@
 <h2>A useful first conversation starts with context.</h2>
 <p class="lead">Share the opportunity, the constraint, or the outcome you are working toward. You do not need to arrive with the solution already named.</p>
 </div>
-<form class="inquiry-form" data-inquiry-form="">
+<form class="inquiry-form" name="inquiry" method="POST" action="/contact-success" data-netlify="true" netlify-honeypot="bot-field" data-inquiry-form=""><input type="hidden" name="form-name" value="inquiry"/><p class="hidden-field" hidden=""><label>Leave this field empty if you're human: <input name="bot-field" tabindex="-1" autocomplete="off"/></label></p>
 <div class="form-field full"><label for="inquiry-type">I’m reaching out about *</label><select id="inquiry-type" name="inquiry_type" required=""><option value="">Choose a path</option><option>Brand partnership</option><option>Creator representation or campaign</option><option>Local or performance partnership</option><option>Owned media or property opportunity</option><option>Strategic or platform partnership</option><option>Something else</option></select></div>
 <div class="form-field"><label for="name">Name *</label><input autocomplete="name" id="name" name="name" required="" type="text"/></div>
 <div class="form-field"><label for="company">Company or creator profile</label><input autocomplete="organization" id="company" name="company" type="text"/></div>
@@ -90,9 +90,9 @@
 <div class="form-field"><label for="phone">Phone</label><input autocomplete="tel" id="phone" name="phone" type="tel"/></div>
 <div class="form-field full"><label for="website">Website or social profile</label><input autocomplete="url" id="website" name="website" placeholder="https://" type="url"/></div>
 <div class="form-field full"><label for="message">What are you trying to build or solve? *</label><textarea id="message" name="message" required=""></textarea></div>
-<p class="form-note">Submitting prepares a structured message in your email app addressed to EMG. Your information is not stored on this website.</p>
+<p class="form-note">Submit your inquiry and a member of the EMG team will review it and follow up by email. Fields marked with an asterisk (*) are required.</p>
 <p aria-live="polite" class="form-status" data-form-status="" tabindex="-1"></p>
-<button class="button primary" type="submit">Prepare My Inquiry</button>
+<button class="button primary" type="submit">Submit Inquiry</button>
 </form>
 </div>
 </section>
@@ -115,7 +115,7 @@
 <div class="container footer-grid">
 <div class="footer-brand"><strong>Elite Media Group</strong><span>Discover. Decide. Move Forward.</span><p>Owned media. Creator talent. AI guides. Behavioral intelligence.</p></div>
 <div><b>Explore</b><a href="/">Home</a><a href="ecosystem">Ecosystem</a><a href="capabilities">Capabilities</a><a href="properties">Properties</a><a href="talent">Talent</a><a href="loop">Loop</a></div>
-<div><b>Company</b><a href="signal-library">Resources</a><a href="about">About</a><a href="contact">Contact</a><a href="mailto:charlie@elitemediagroup.io">Email EMG</a></div>
+<div><b>Company</b><a href="signal-library">Resources</a><a href="about">About</a><a href="contact">Contact</a><a href="mailto:hello@elitemediagroup.io">Email EMG</a></div>
 <div><b>Legal</b><a href="privacy">Privacy</a><a href="terms">Terms</a></div>
 </div>
 <div class="container footer-bottom"><span>© <span data-current-year="">2026</span> Elite Media Group. All rights reserved.</span><span>Built around useful decisions.</span></div>

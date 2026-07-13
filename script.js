@@ -40,34 +40,6 @@ document.querySelectorAll('[data-inquiry-choice]').forEach((choice) => {
   });
 });
 
-const inquiryForm = document.querySelector('[data-inquiry-form]');
-inquiryForm?.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const data = new FormData(inquiryForm);
-  const required = ['inquiry_type', 'name', 'email', 'message'];
-  const missing = required.filter((key) => !String(data.get(key) || '').trim());
-  const status = inquiryForm.querySelector('[data-form-status]');
-  if (missing.length) {
-    status.textContent = 'Please complete each required field.';
-    status.focus();
-    return;
-  }
-  const subject = `EMG ${data.get('inquiry_type')} inquiry from ${data.get('name')}`;
-  const body = [
-    `Inquiry type: ${data.get('inquiry_type')}`,
-    `Name: ${data.get('name')}`,
-    `Company / profile: ${data.get('company') || 'Not provided'}`,
-    `Email: ${data.get('email')}`,
-    `Phone: ${data.get('phone') || 'Not provided'}`,
-    `Website / social: ${data.get('website') || 'Not provided'}`,
-    '',
-    'What they are trying to build:',
-    data.get('message'),
-  ].join('\n');
-  status.textContent = 'Your email app is opening with the inquiry details. Review the message, then send it to EMG.';
-  window.location.href = `mailto:charlie@elitemediagroup.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-});
-
 const librarySearch = document.querySelector('#guide-search');
 const libraryCards = Array.from(document.querySelectorAll('.library-card'));
 const libraryStatus = document.querySelector('[data-library-status]');

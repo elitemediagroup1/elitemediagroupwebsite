@@ -667,8 +667,8 @@ h3{font-size:25px;line-height:1.05;letter-spacing:-.04em}
 .about-closing p{font-size:20px;line-height:1.72;color:#536277}
 .about-closing .hero-actions{justify-content:flex-start;margin-top:34px}
 @media(max-width:980px){
-  .about-founder-hero{aspect-ratio:2.2/1}
-  .about-founder-hero img{width:120%;max-width:none;transform:translateX(-10%)}
+  .about-founder-hero{aspect-ratio:1672/941}
+  .about-founder-hero img{width:100%;max-width:100%;height:auto;object-fit:contain;transform:none}
   .about-manifesto-grid,.belief-band-grid,.about-system-story-grid,.about-closing-grid{grid-template-columns:1fr;gap:48px}
   .about-manifesto-heading{position:static}
   .about-manifesto-copy{padding-top:32px}
@@ -678,8 +678,8 @@ h3{font-size:25px;line-height:1.05;letter-spacing:-.04em}
   .team-signature-feature img{min-height:0;height:auto}
 }
 @media(max-width:720px){
-  .about-founder-hero{aspect-ratio:1.15/1}
-  .about-founder-hero img{height:100%;width:220%;max-width:none;object-fit:cover;object-position:56% top;transform:none}
+  .about-founder-hero{aspect-ratio:1672/941}
+  .about-founder-hero img{height:auto;width:100%;max-width:100%;object-fit:contain;object-position:center;transform:none}
   .about-manifesto,.about-operating-system,.about-system-story,.about-team-editorial,.about-closing{padding:78px 0}
   .about-belief-band{padding:72px 0}
   .belief-notes{padding:0;border-left:0}
@@ -1003,7 +1003,7 @@ h3{letter-spacing:-.032em}
   .article-grid{grid-template-columns:1fr}
   .article-grid aside{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
   .footer-grid{gap:38px}
-  .about-founder-hero{aspect-ratio:2.2/1}
+  .about-founder-hero{aspect-ratio:1672/941}
   .about-founder-hero img{width:123%;transform:translateX(-11.5%)}
 }
 @media(max-width:720px){
@@ -1038,6 +1038,6 @@ h3{letter-spacing:-.032em}
   .article-grid aside{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
   .page-about .about-founder-hero{margin-top:66px}
-  .about-founder-hero{aspect-ratio:1.15/1}
-  .about-founder-hero img{width:235%;transform:none}
+  .about-founder-hero{aspect-ratio:1672/941}
+  .about-founder-hero img{width:100%;max-width:100%;height:auto;object-fit:contain;transform:none}
 }
