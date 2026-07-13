@@ -38,8 +38,8 @@ img{display:block;max-width:100%}
 .deck-hero{position:relative;overflow:hidden;padding:0;background:linear-gradient(180deg,var(--cream2),var(--cream))}
 .hero-art-stage{position:relative;width:100%;z-index:1;background:var(--cream2)}
 .hero-art-stage:before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(247,242,232,0) 84%,var(--cream) 100%)}
-.deck-hero-image{margin:0;width:100%;max-height:760px;overflow:hidden;border:0;box-shadow:none;background:transparent}
-.deck-hero-image img{width:100%;height:auto;min-height:430px;object-fit:cover;object-position:center top}
+.deck-hero-image{margin:0;width:100%;aspect-ratio:1672/941;overflow:hidden;border:0;box-shadow:none;background:transparent}
+.deck-hero-image img{width:100%;height:auto;object-fit:contain;object-position:center}
 
 /* V10 editorial transition: no funky box */
 .hero-copy-layer{position:relative;z-index:5;margin-top:0;background:var(--cream)}
