@@ -1,127 +1,42 @@
-# Elite Media Group — EMG Loop™ Website
+# EMG Website Redesign V22
 
-The full multi-page website for **Elite Media Group**, a performance marketing company. The site is built around the EMG Loop™ — a single accountable performance system that operates across seven verticals.
+V22 expands the redesigned EMG site into a complete search-led resource system and adds direct property destinations.
 
-> *Influence fades. Systems endure.*
+## Signal Library
 
----
+- Publishes 60 substantive guides across owned media, creator marketing, local acquisition, pay per call, data and intelligence, and AI search.
+- Adds a searchable, filterable library with six topic clusters and related-guide pathways.
+- Gives every guide a practical answer, framework, example, measurement guidance, common mistakes, FAQs, related reading, and a relevant conversion path.
+- Adds unique titles, descriptions, canonical URLs, social metadata, breadcrumbs, Article schema, and FAQ schema.
 
-## Site Structure
+## Property network
 
-\`\`\`
-/
-├── index.html              # Homepage (existing)
-├── services.html           # Six capabilities / one system
-├── verticals.html          # Seven markets / same loop
-├── why-emg.html            # Elite is earned — positioning, comparison, founder story
-├── process.html            # 5-step engagement process + FAQ + partnership models
-├── contact.html            # Split-layout contact form + response expectations
-├── README.md
-└── assets/
-    ├── css/
-    │   └── global.css      # Shared design system
-    └── js/
-        └── global.js       # Terminal clock + cycling phases + nav scroll
-\`\`\`
+- Adds a dedicated property directory with direct links to 13 verified public destinations.
+- Clearly identifies the development stage of each property.
+- Marks SpaDayInMyCity as coming soon until its public destination is available.
 
-Each interior page links to `assets/css/global.css` for the shared design system and embeds page-specific layout styles inline.
+## Design direction
 
----
+- Preserves all approved EMG people, property artwork, brand assets, strategic messaging, and optimized WebP images.
+- Establishes one editorial visual language across the site: controlled saturation, consistent contrast, navy/teal grading, inset image borders, asymmetric corner geometry, and restrained depth.
+- Treats cinematic artwork as photography and treats property/guide/contact graphics as diagrams, with different responsive behavior for each.
+- Removes awkward mobile image crops by presenting infographics at their full aspect ratio and isolating the live headline beneath cinematic artwork.
+- Replaces disconnected rounded-card collections with structured editorial grids and clearer information hierarchy.
+- Creates deliberate cream, white, and navy section rhythm so long pages feel composed rather than stacked.
+- Refines headline sizing, line length, typography rhythm, navigation glass, buttons, hover behavior, team imagery, article layouts, and footer presentation.
 
-## Design System
+## Function and flow
 
-### Colors
+- Adds a keyboard-accessible skip link and a single main-content landmark to every page.
+- Preserves the accessible mobile menu, keyboard behavior, reduced-motion support, and visible focus states from V20.
+- Adds a tailored closing action to every primary content page.
+- Connects contact audience pathways directly to the inquiry form.
+- Automatically selects the correct inquiry type for brand, creator, local/performance, and strategic pathways, then places focus at the first personal-information field.
+- Preserves the no-storage email inquiry approach until an approved form backend or CRM is selected.
 
-| Token            | Hex       | Use                                |
-|------------------|-----------|------------------------------------|
-| `--navy`         | #0c1a2e   | Primary dark surface               |
-| `--teal`         | #2d9e8a   | Primary brand accent / buttons     |
-| `--teal-light`   | #3ec4ad   | Italic headline emphasis           |
-| `--white`        | #ffffff   | Light text / clean surfaces        |
-| `--cream`        | #f3f0ea   | Soft section backgrounds           |
-| `--warm-off`     | #eae6de   | Tertiary surfaces                  |
-| `--warm-gray`    | #d8d3c8   | Grid gap color / borders           |
-| `--mid-gray`     | #888278   | Secondary body text                |
-| `--dark`         | #060d18   | Deepest hero backgrounds           |
-| `--darker`       | #030810   | Terminal widget background         |
-| `--phosphor`     | #39ff9a   | Terminal active cycle text         |
+## Launch notes
 
-### Typography
-
-- **Display / Headlines:** `Instrument Serif` — italics for emphasis words, colored `--teal-light`
-- **UI / Labels / Nav:** `Barlow Condensed` 700–800, uppercase, .06–.12em letter-spacing
-- **Body:** `Barlow` 300–400, line-height 1.75–1.8
-- **Mono / Terminal labels:** `IBM Plex Mono` 400–700, uppercase, .10–.22em letter-spacing
-
-All four fonts load from Google Fonts.
-
-### Recurring Components
-
-- `.label` — IBM Plex Mono section label with leading 22px line
-- `.btn-p` — Primary teal button
-- `.btn-g` — Ghost text button with arrow
-- `.card` — Tile card with navy hover flip
-- `.cta` — Teal full-width call-to-action section
-- `.terminal` — Dark terminal widget with cycling phases (driven by `initTerminal`)
-- `.grid-gap` — 2px gap grid using `--warm-gray` as the gap line
-
----
-
-## Pages
-
-| Page              | Hero                            | Core sections                                                                  |
-|-------------------|---------------------------------|--------------------------------------------------------------------------------|
-| `services.html`   | Six capabilities. One system.   | Terminal cycle, 6-card services grid, process teaser, CTA                     |
-| `verticals.html`  | Every vertical. Same loop.      | 7 vertical detail cards with Loop config + compliance notes, CTA              |
-| `why-emg.html`    | Elite is earned.                | 5-row philosophy, founder story, stats, comparison table, quote, CTA          |
-| `process.html`    | From conversation to compounding.| 5-step process, 3 partnership models, FAQ, CTA                                |
-| `contact.html`    | No pitch decks until we know if we're a fit. | Split form + response expectations                                  |
-
----
-
-## Updating Content
-
-- **Copy:** All copy lives inline in each HTML file inside the relevant `<section>`. Search by the section's `.label` text.
-- **Design tokens:** Change colors and base typography in `assets/css/global.css` under `:root`.
-- **Nav links:** Update the `<nav class="nav">` block on each page — keep them identical.
-- **Footer:** Update the footer block on each page — keep them identical.
-
----
-
-## Deployment
-
-### Netlify (recommended)
-1. Netlify → Add new site → Import an existing project → GitHub
-2. Select this repo
-3. Build command: *(leave blank — this is a static site)*
-4. Publish directory: `.` (single dot, the repo root)
-5. Deploy site
-
-### GitHub Pages
-Repository → Settings → Pages → Source: `Deploy from a branch` → `main` / `/ (root)`. The site will be live at `https://<org>.github.io/<repo>/`.
-
----
-
-## Tone & Copy Rules
-
-- Outcome language: **converts**, **compounds**, **accountable**, **measurable** — not reach / impressions / engagement.
-- Short sentences. Paragraphs: 2–3 sentences max.
-- Avoid "innovative" and "cutting-edge" — too generic.
-- Terminal/tech aesthetic for **labels**, not body copy.
-- "Loop" is always capitalized and followed by ™ in the logo lockup.
-- Reusable taglines: *Influence fades. Systems endure.* / *One loop. Every vertical.* / *Systems that convert.*
-
----
-
-## What Not To Do
-
-- Don't add stock photography to interior pages — use the dark navy + teal system instead.
-- Don't introduce additional fonts (Inter / Roboto / system fonts). Only the four Google Fonts above.
-- Don't change the color palette.
-- Don't break the card hover pattern (navy background + white text flip).
-- Don't add a hamburger menu yet — mobile nav hides links by design.
-- Don't add cookie banners, modals, or pop-ups.
-
----
-
-© Elite Media Group. All rights reserved.
+- Canonical URLs and the sitemap use `https://elitemediagroup.io`. Update them if the production domain differs.
+- Draft Privacy and Terms pages should receive legal review before launch.
+- Add the approved analytics or tag-manager identifier at deployment time and update the Privacy page for any measurement, advertising, or consent tools used.
+- Replace the SpaDayInMyCity coming-soon state with its public URL once that destination is live.

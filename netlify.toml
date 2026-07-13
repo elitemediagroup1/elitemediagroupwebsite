@@ -1,0 +1,7 @@
+[build]
+  publish = "."
+
+# Netlify serves extensionless URLs (e.g. /about) from the matching .html file
+# automatically ("Pretty URLs"), so no rule is needed for that direction.
+# The _redirects file in this same folder handles the reverse case: anyone
+# landing on a stray /page.html link gets 301'd to the clean canonical URL.
